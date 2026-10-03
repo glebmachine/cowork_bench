@@ -19,6 +19,7 @@ import os
 import sys
 
 import psycopg2
+from utils.evaluation.calendar_time import calendar_rows
 
 DB_CONFIG = {
     "host": os.environ.get("PGHOST", "localhost"),
@@ -229,7 +230,7 @@ def check_calendar(page):
         cur.execute(
             "SELECT summary, description, start_datetime, end_datetime FROM gcal.events"
         )
-        events = cur.fetchall()
+        events = calendar_rows(cur.fetchall())
         cur.close()
         conn.close()
     except Exception as e:

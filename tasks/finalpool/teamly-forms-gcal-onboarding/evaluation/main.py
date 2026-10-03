@@ -22,6 +22,7 @@ import sys
 
 import psycopg2
 from pptx import Presentation
+from utils.evaluation.calendar_time import calendar_rows
 
 DB_CONFIG = {
     "host": os.environ.get("PGHOST", "localhost"),
@@ -183,7 +184,7 @@ def check_gcal():
         FROM gcal.events
         ORDER BY start_datetime
     """)
-    events = cur.fetchall()
+    events = calendar_rows(cur.fetchall())
     cur.close()
     conn.close()
 

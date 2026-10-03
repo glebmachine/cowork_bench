@@ -1,0 +1,117 @@
+{
+  "upstream_revision": "d943e75bc0fc8e3b27141979300cd8cbcd1e890d",
+  "graders": {
+    "canvas-late-submission-word-gcal": {
+      "before": "e224cfdebbf198ecf481404c6d1746e593f09505d19ec0b654e6ea8c8f5f99aa",
+      "after": "2059b0afc8229c6bc83880344fdf2f0f29de1087377a90f769f060bcd5779469"
+    },
+    "canvas-quiz-remediation-forms-gcal": {
+      "before": "8a19ad5fa96e890fc8e5a7ba10bae460fe4ef3ea0e8dcfb445409010671378a5",
+      "after": "a1aee356ad1b64c6395954ac60b7f16d4e042b445e3a66a8de1727f13d6005f7"
+    },
+    "fetch-arxiv-conference-schedule-gcal-teamly": {
+      "before": "c61feeaf1abb50bd062d01478bbc3c8fc93718ca5af5dbe503757d4d495c46dc",
+      "after": "bb6c57442acf7258a0280d8aa397ecaab9db8f70c6375b6ded7a3b2fddb9135b"
+    },
+    "fetch-kulinar-catering-excel-gcal-email": {
+      "before": "5637082d7c21345c4b7bc597274c9b5d4179c1b4ee8fb23c08a9c774de17d4c1",
+      "after": "3159896fc62929b00dabe7ad3732000b98f9eba6453e0a40f0f5bc3e0b16b15e"
+    },
+    "fetch-sf-sales-forecast-ppt-gcal": {
+      "before": "6b8d69c1602cab8bb9e73ef5e9ae9eb07c4df42446f8e833ffaada09bcb81836",
+      "after": "9e22ea8f4928e2bac565092ebb093b2fbff9815123daad4302c305398387ac01"
+    },
+    "insales-order-monthly-ppt-gcal": {
+      "before": "d7ef4e5206a8503bb730dcac6d8fe0a8be130f0b8a323e1b714dbdf2acb468d2",
+      "after": "323d0ea79ddba2d2f6937c6d5f8363c301b6c2f7d9f3f6e624edfd89721a01d5"
+    },
+    "insales-product-bundle-excel-ppt-gcal": {
+      "before": "2db04f15fe3e6c75e91630b71b84922c1c4d192556cf92102951f45d29ff8e16",
+      "after": "acc9d60c8d37eac7ed4b286705566ee0d5b27a558ecce56a5cd9173468a7c263"
+    },
+    "insales-product-review-analysis-gform-gcal": {
+      "before": "35b56919672028a434fdcd91d1cd5706d97281753b8d3e603362ec81a0b9f831",
+      "after": "bb33ea61df09a4e709f67a312042f889920b323672a7ce957cc0fedaf43575d2"
+    },
+    "kulinar-weekly-gsheet-gcal": {
+      "before": "19a613d6f4015d12e408669424a2014ce95ea4a8e880cfbbaf72e0818180d97c",
+      "after": "6b440360b1bf8bdf99ba94730cc9badd71ea6e2afbf28425bbdc934431f69ec5"
+    },
+    "moex-options-expiry-monitor": {
+      "before": "a73f1a4ee6b08db1b775ccda480f1c4fa106e991f5bfa63c7622677fb33974c0",
+      "after": "eefb9c0073fd3908dab25da6a0d640131cf03701a107a56ea8f004108506f943"
+    },
+    "moex-portfolio-ppt-gcal": {
+      "before": "b99171db8dc037a5c7675aba3c4156dc34a9f4ccff45f933e25a7ce4c6842c41",
+      "after": "dd7204bbca7b7b78a99b725fd686f2b7f31f3070f3bd97f12b8f0ffe996b2b4f"
+    },
+    "scholarly-reading-group-gcal-gsheet-word": {
+      "before": "2840a18cbe0ffb1738a566f26a733a31d00f6141046b1318ae434f8803bf0f2b",
+      "after": "c23386d715cc5b2c2fdd96f3bd469adab52012f3d8c02ead98bc61e90d5a5ac2"
+    },
+    "sf-sales-quarterly-review-gcal": {
+      "before": "732f86e52247d29352b29adf1bdf3b9e87aa5077116a7e833f5df52b993cac77",
+      "after": "346c5203dad14cf3a223c6f43b995ae89458e47fd83eb87bc43dd3178ae07645"
+    },
+    "sf-support-priority-gcal-excel": {
+      "before": "f09335950b94cee4752c27f94a9a4ded02831ee520dfe3666bdedcf9b0453f82",
+      "after": "19bdb5d7a0df28ea1e7b81e7b98e038c823eb0233b2cc6bf58bb9970d3afbafc"
+    },
+    "sf-support-resolution-word-gcal": {
+      "before": "6cbb3a0a619adc81d7f70468ed42d8b5953dd64b178a2799c193be69681329a8",
+      "after": "ee024645875269ecdce425a8773f7aadc62fc8347fb8072760a2e7b0282f1748"
+    },
+    "teamly-forms-gcal-onboarding": {
+      "before": "c5373cf9bb6ad3f783beb4392c6e2fc005f42c0309cacc2fff88c16f45b295d5",
+      "after": "81bfb9c0daab40fac21cc2300e7ae0f792a9695693c6b8e50d1546df98f869ec"
+    },
+    "terminal-arxiv-canvas-gsheet-word-gcal": {
+      "before": "4c8270861f8e7c2874233468f9ea234752975c6ad7ca64992d388c77e2778b41",
+      "after": "514f00baa3e5a85d066a4699f56a0d25151a12b315196fc3f9c661078abcda7f"
+    },
+    "terminal-insales-pw-pricing-excel-word-gcal": {
+      "before": "c012e1ce96ccdfbbb676813e741f1d1bb0d203f9abc15830de832959f0ea108a",
+      "after": "bb51c9963f9ea8163e5c408d79c2ba97e5e386fb2f567caa164c64aaee5b1971"
+    },
+    "terminal-moex-canvas-excel-gcal-email": {
+      "before": "b36de2c1bde0f9e47926afa6fc8ad3bc44238a97682fae91d0078995909c88b8",
+      "after": "74877ddb73991e684834ca27fc76b3893b53bcd969b93c40d0ba2830adbe8105"
+    },
+    "terminal-sf-scholarly-excel-ppt-gcal": {
+      "before": "cc952d83d5c698e6b06c54282a91d7b3c6d4310de430aba43d895017cbc9b86e",
+      "after": "3b80a5919fd21d3cd225db5f97908f2c096c851133e8ddd593a77244e179174d"
+    }
+  },
+  "task_texts_unchanged": {
+    "canvas-late-submission-word-gcal": "7fb139690f150bacfdab92977911e8f8b1a5cc311597cd100ac6ee9b87b68292",
+    "canvas-quiz-remediation-forms-gcal": "7c40a471cdade28d448513863d25fac3ff103b978360318f47c65515cdbaf3eb",
+    "fetch-arxiv-conference-schedule-gcal-teamly": "b57c208cfefafabb6ac66415f7f80bb0b727e036caa0dc188dbd990de9731106",
+    "fetch-kulinar-catering-excel-gcal-email": "280f2fc4ec90f7205b44f71e4231ad43162040833122ad337ad4d7550eddf4ba",
+    "fetch-sf-sales-forecast-ppt-gcal": "068823e1e48c72ae99a38ea95a4f5deb2a97b40347c23a2aae20bc435e9e1ce8",
+    "insales-order-monthly-ppt-gcal": "b639d1a353fba9aff0fb8db348cb2c002052bfac07dbdb26d88c6885b56dd6fe",
+    "insales-product-bundle-excel-ppt-gcal": "0934bdfa09514cfe0cc56706238e0da62545b5b303b9d76bb8974d9db71b0310",
+    "insales-product-review-analysis-gform-gcal": "a601dc5c427ec8f987df5706e073d2b1cfb58374de01bbc1b75857db9e706ab6",
+    "kulinar-weekly-gsheet-gcal": "7eb049191722065ac1c9df4f88258785bd1bec2acf019d5f57338f513e5aae7c",
+    "moex-options-expiry-monitor": "03f303dd5f7520b588076747749428d1cd3a5d8bddacd24cbee64e5fe350da5e",
+    "moex-portfolio-ppt-gcal": "140476c8f2c32e5ab7c0e4e30f9889a519220753c518e0fa49078361db3d64c5",
+    "scholarly-reading-group-gcal-gsheet-word": "2790aaa0f614f7d3aae85423922a7dca191a90d7c8b726520a06988f902b1d17",
+    "sf-sales-quarterly-review-gcal": "39c8a9bc25bd146bbb11a27b3a71ea68a0439def6ce9429109e4839027b0eb32",
+    "sf-support-priority-gcal-excel": "f09f963a4c49f1e6d7fecae2b5c12480386f4fd1c551aa801ef995e34e1b84db",
+    "sf-support-resolution-word-gcal": "d7735bfb573146ebe1175bdafb4226875b9cd7ad96f4b654142d12e13f08a224",
+    "teamly-forms-gcal-onboarding": "c5cfa859876b892a2a0bfe9fc84def0b291fbb8d43698090b7ba24cdda7c4227",
+    "terminal-arxiv-canvas-gsheet-word-gcal": "caf5c55db9cd955b363255512a7b83d91e7aa430c2b5abce2a7a036cc7e8e334",
+    "terminal-insales-pw-pricing-excel-word-gcal": "1f71f2cc3683ed18297d66147871c578f21ea2e1c51977904b93fcceec88b3df",
+    "terminal-moex-canvas-excel-gcal-email": "ea0f09997b73f7cecf5e2361b9ce596b383fc04d1f3d66c2218d51d2560ffecf",
+    "terminal-sf-scholarly-excel-ppt-gcal": "003370597d60c87a986a5e65dc2f765e40245ab7fda59cb1e5418647e556c219"
+  },
+  "implementation_and_tests": {
+    "tests/regression/calendar_archived_moscow_events.json": "7c5c4bea752b908f1a278fbf3ec61c2bad72c8469de897fa6a560cf336ec1895",
+    "tests/regression/calendar_archived_moscow_provenance.json": "a928a5622e57cbc8abcc59c7f2ab07e2540d69411759c2e7f05f95bc1095f7d8",
+    "tests/regression/calendar_timezone_cases.json": "34be0af32230cdd8ef330403e4cdacd7e82da1b88e427a39f8ae24929c50beb5",
+    "tests/regression/calendar_timezone_fixtures.py": "e9c10a5da3fb324cb5f6fdf5b8a35bb04d3d9dc646b9050cf527480e76c4129c",
+    "tests/regression/test_calendar_native_import.py": "733a4266f1a5179965b2c44b94b9f547adb81c50ce0151d52147b57efdaaf9c4",
+    "tests/regression/test_calendar_real_graders.py": "ca6aa9f362e7c61318749857548e8c637a6b5377e4830193a1235fce64908a0c",
+    "tests/regression/test_calendar_time.py": "698541b11008d5e46010bb588dcd284c9e20db16b7f0cdf1ba482aa976aec025",
+    "utils/evaluation/calendar_time.py": "32fd25098a1eef4eede58ef92669add50c10dda3d96f25912c4c11198619d51e"
+  }
+}

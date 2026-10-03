@@ -6,6 +6,7 @@ import sys
 
 import openpyxl
 import psycopg2
+from utils.evaluation.calendar_time import calendar_rows
 
 DB_CONFIG = {
     "host": os.environ.get("PGHOST", "localhost"),
@@ -339,7 +340,7 @@ def check_calendar():
                OR LOWER(summary) LIKE '%приоритет%'
                OR LOWER(summary) LIKE '%категор%'
         """)
-        events = cur.fetchall()
+        events = calendar_rows(cur.fetchall())
         record("At least 3 bundle-related calendar events",
                len(events) >= 3,
                f"Found {len(events)} matching events")

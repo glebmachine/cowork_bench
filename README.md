@@ -196,3 +196,12 @@ Cowork Bench построен на инфраструктуре и исходн�
 Дизайн схемы мок-базы, интерфейсы MCP-серверов и фреймворк оценки происходят из проекта Toolathlon (Apache License 2.0, см. [`LICENSE`](./LICENSE)). Cowork Bench локализует пул задач на русский язык, заменяет ряд внешних сервисов на российские форки и расширяет набор данных.
 
 Каталог `local_servers/` содержит vendored-форки сторонних open-source MCP-серверов (filesystem, excel, word, powerpoint, playwright, fetch и др.) — авторство и лицензии указаны в их собственных манифестах внутри соответствующих подкаталогов.
+
+
+### Calendar grader timezone comparisons
+
+Twenty investigated calendar graders compare aware event instants in UTC, independently
+of the PostgreSQL session timezone. This is a scoped evaluator correction; it does not
+change task texts, event storage, agent timezone choices, or task-specific zoned graders.
+The [calendar timezone research and regression record](docs/failure-clusters/calendar-timezone-contract.md)
+describes the affected cases, preserved tolerances, Moscow examples, and offline replay.

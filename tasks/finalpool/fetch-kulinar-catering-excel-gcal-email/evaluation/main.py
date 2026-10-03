@@ -6,6 +6,7 @@ of accuracy. Otherwise pass threshold: accuracy >= 70% (AND no critical fail).
 import os
 import argparse, json, os, sys
 import openpyxl
+from utils.evaluation.calendar_time import calendar_rows
 
 
 def num_close(a, b, rel_tol=0.15, abs_tol=0.5):
@@ -388,7 +389,7 @@ def run_evaluation(agent_workspace, groundtruth_workspace, launch_time, res_log_
             WHERE summary LIKE '%Wellness Week Meal Prep%'
             ORDER BY start_datetime
         """)
-        cal_rows = cur.fetchall()
+        cal_rows = calendar_rows(cur.fetchall())
         cur.close()
         conn.close()
 

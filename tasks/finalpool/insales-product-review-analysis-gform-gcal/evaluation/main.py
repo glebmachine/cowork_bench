@@ -13,6 +13,7 @@ import sys
 
 import psycopg2
 import openpyxl
+from utils.evaluation.calendar_time import calendar_rows
 
 
 DB = {"host": os.environ.get("PGHOST", "localhost"), "port": 5432, "dbname": "cowork_gym", "user": "eigent", "password": "camel"}
@@ -269,9 +270,9 @@ def check_gcal_event():
     cur.execute("""
         SELECT summary, start_datetime, end_datetime
         FROM gcal.events
-        WHERE DATE(start_datetime) = '2026-03-20'
+        WHERE DATE(start_datetime AT TIME ZONE 'UTC') = '2026-03-20'
     """)
-    events = cur.fetchall()
+    events = calendar_rows(cur.fetchall())
     cur.close()
     conn.close()
 

@@ -1,0 +1,752 @@
+[
+  {
+    "case": "arxiv-reading-plan-excel-gcal-email",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "arxiv-rlhf-conference-prep-ru-pptx-gcal-email",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "arxiv-team-reading-forms-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "budget-variance-analysis-quarterly",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "canvas-assignment-calendar",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "canvas-assignment-deadline-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "canvas-assignment-deadline-word-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "canvas-assignment-workload-excel",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "canvas-enrollment-overview-excel-email",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "canvas-exam-prep-scheduler",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "canvas-grade-equity-excel-word-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "canvas-late-submission-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "canvas-late-submission-word-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "canvas-module-completion-teamly-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "canvas-quiz-item-analysis-word-gcal-email",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "canvas-quiz-performance-gcal-forms",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "canvas-quiz-remediation-forms-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "canvas-risk-intervention-excel-word-gcal-email",
+    "explicit_zone_somewhere": true,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "canvas-submission-timeline-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "clickhouse-support-coaching-plan-excel-teamly-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "course-enrollment-analytics-dashboard",
+    "explicit_zone_somewhere": true,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "event-catering-logistics-optimization",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "fetch-arxiv-conference-schedule-gcal-teamly",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "fetch-canvas-assignment-workload-excel-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "fetch-email-gcal-scheduler-excel-word",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "fetch-insales-inventory-forecast-excel-gcal-email",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "fetch-insales-supplier-restock-excel-word-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "fetch-kulinar-catering-budget-excel-gcal-word",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "fetch-kulinar-catering-excel-gcal-email",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "fetch-moex-macro-portfolio-excel-gcal-email",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "fetch-moex-portfolio-health-excel-gcal-email",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "fetch-sf-canvas-resource-excel-gcal",
+    "explicit_zone_somewhere": true,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "fetch-sf-hr-training-teamly-gcal-excel",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "fetch-sf-hr-worklife-excel-word-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "fetch-sf-sales-forecast-ppt-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "fetch-sf-sales-territory-ppt-email-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "fetch-sf-support-survey-forms-gcal-excel",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "fetch-teamly-monitoring",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "financial-audit-cross-system-reconciliation",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "gcal-canvas-office-hours",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "gcal-clickhouse-deadline-tracker",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "insales-competitor-pw-pricing-excel-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "insales-coupon-campaign-gcal-gform",
+    "explicit_zone_somewhere": true,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "insales-fetch-supply-chain-excel-word-gcal",
+    "explicit_zone_somewhere": true,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "insales-inventory-alert-gcal",
+    "explicit_zone_somewhere": true,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "insales-inventory-reorder-forecast",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "insales-inventory-report-pdf-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "insales-low-stock-reorder-gcal-email",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "insales-order-analysis-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "insales-order-monthly-ppt-gcal",
+    "explicit_zone_somewhere": true,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "insales-order-status-gcal-word",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "insales-product-bundle-excel-ppt-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "insales-product-review-analysis-gform-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "insales-product-review-ppt-email-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "insales-tax-compliance-excel-gcal-gform",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "insales-vip-customer-gsheet-gcal-email",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "inventory-supply-chain-optimization",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "kulinar-event-registration-forms-gcal-teamly-email",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "kulinar-fetch-wellness-excel-word-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "kulinar-grocery-budget-planner",
+    "explicit_zone_somewhere": true,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "kulinar-meal-plan-calendar",
+    "explicit_zone_somewhere": true,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "kulinar-meal-plan-gcal",
+    "explicit_zone_somewhere": true,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "kulinar-weekly-gsheet-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "kulinar-weekly-plan-gsheet-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "kulinar-wellness-excel-gcal-email",
+    "explicit_zone_somewhere": true,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "market-competitive-intelligence-report",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "moex-dividend-tracker-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "moex-options-expiry-monitor",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "moex-portfolio-allocation-excel-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "moex-portfolio-gsheet-pdf-gcal-email",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "moex-portfolio-ppt-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "moex-portfolio-stress-test-excel-word-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "moex-sf-market-sales-excel-ppt-gcal",
+    "explicit_zone_somewhere": true,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "moex-stock-comparison-excel-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "moex-stock-comparison-word-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "playwright-insales-competitor-pricing-excel-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "playwright-moex-earnings-report-word-email-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "portfolio-diversification-analysis-engine",
+    "explicit_zone_somewhere": true,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "pw-kulinar-diet-planner-excel-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "pw-sf-hr-dept-efficiency-excel-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "pw-sf-support-escalation-excel-email-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "pw-sf-support-sla-benchmark-excel-gcal",
+    "explicit_zone_somewhere": true,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "rzd-canvas-fieldtrip-novgorod-gcal-word-email",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "rzd-conference-travel-novgorod-excel-gcal-email",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "rzd-hr1c-training-trip-kazan-excel-email-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "rzd-hr1c-training-trip-kazan-strict-excel-email-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "rzd-insales-elektrosnab-supplier-visit-spb-kzn-excel-email-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "rzd-kulinar-novgorod-trip-gcal-word",
+    "explicit_zone_somewhere": true,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "rzd-kulinar-team-trip-spb-catering-excel-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "rzd-msk-spb-team-trip-gcal-word",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "rzd-msk-spb-trip-notion-gcal-word",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "rzd-team-novgorod-conference-excel-gcal-email-teamly",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "rzd-team-retreat-teamly-word-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "sales-territory-performance-audit",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "scholarly-arxiv-survey-word-teamly-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "scholarly-grant-proposal-prep",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "scholarly-literature-review-gcal-word-email",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "scholarly-reading-group-gcal-gsheet-word",
+    "explicit_zone_somewhere": true,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "sf-customer-health-dashboard",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "sf-deal-pipeline-review",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "sf-hr-attrition-forecast-excel-word-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "sf-hr-attrition-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "sf-hr-mentorship-excel-gcal-email",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "sf-hr-performance-excel-gcal-email",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "sf-hr-salary-review-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "sf-hr-satisfaction-excel-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "sf-hr-satisfaction-forms-excel-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "sf-hr-talent-review-excel-word-gcal-email",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "sf-sales-quarterly-review-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "sf-sales-region-forecast-gcal-excel",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "sf-sales-regional-analysis-ppt-gcal-email",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "sf-support-agent-performance-gsheet-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "sf-support-priority-gcal-excel",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "sf-support-resolution-word-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "sf-support-sla-coaching-word-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "sf-teamly-project-tracker-excel-gcal-email",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "teamly-canvas-student-tracker",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "teamly-forms-gcal-onboarding",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "terminal-arxiv-canvas-gsheet-word-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "terminal-canvas-forms-gcal-excel-email",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "terminal-canvas-gsheet-word-teamly-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "terminal-canvas-kulinar-excel-word-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "terminal-canvas-pdf-excel-teamly-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "terminal-canvas-sf-excel-ppt-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "terminal-canvas-teamly-study-gcal-excel",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "terminal-clickhouse-fetch-excel-teamly-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "terminal-clickhouse-moex-excel-ppt-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "terminal-fetch-sf-hr-gcal-excel-email",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "terminal-insales-excel-gsheet-gcal-email",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "terminal-insales-pw-pricing-excel-word-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "terminal-kulinar-pdf-excel-word-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "terminal-moex-canvas-excel-gcal-email",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "terminal-moex-kulinar-excel-word-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "terminal-moex-sf-gsheet-word-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "terminal-pw-kulinar-excel-word-gcal",
+    "explicit_zone_somewhere": true,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "terminal-sf-hr-excel-word-gcal-email",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "terminal-sf-insales-support-email-gcal-excel",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "terminal-sf-scholarly-excel-ppt-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "yt-12306-tech-conference-travel-notion-excel",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "yt-fireship-canvas-quiz-excel-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "yt-fireship-gform-survey-excel-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "yt-fireship-ppt-gcal-email",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "yt-fireship-tech-report-excel-notion",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "yt-top-videos-excel-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "yt-train-conference-planning-notion-gcal-excel",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "yt-transcript-music-schedule-gcal-gsheet-word",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "yt-veritasium-arxiv-survey-word-gcal-email",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "yt-veritasium-gcal-gform",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": true
+  },
+  {
+    "case": "yt-veritasium-kulinar-wellness-excel-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  },
+  {
+    "case": "yt-veritasium-science-quiz-word-gcal",
+    "explicit_zone_somewhere": false,
+    "wall_time_patterns": false
+  }
+]

@@ -27,6 +27,7 @@ import os
 import sys
 
 import psycopg2
+from utils.evaluation.calendar_time import calendar_rows
 
 DB = dict(host=os.environ.get("PGHOST", "localhost"), port=5432, dbname="cowork_gym", user="eigent", password="camel")
 
@@ -158,7 +159,7 @@ def check_gcal(under_titles, expected_monday):
     conn = psycopg2.connect(**DB)
     cur = conn.cursor()
     cur.execute("SELECT id, summary, start_datetime, end_datetime FROM gcal.events ORDER BY start_datetime")
-    events = cur.fetchall()
+    events = calendar_rows(cur.fetchall())
     conn.close()
 
     rem = [e for e in events if "remediation session" in (e[1] or "").lower()]

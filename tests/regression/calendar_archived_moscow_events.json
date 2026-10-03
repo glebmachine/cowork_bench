@@ -1,0 +1,166 @@
+[
+  {
+    "case": "moex-options-expiry-monitor",
+    "run_timezone": "UTC",
+    "trace_path": "/private/tmp/cowork-utc20-experiment/utc/20261003T182629Z-5db5d6f8/moex-options-expiry-monitor/traces/tool_calls.jsonl",
+    "trace_sha256": "0887ba001f22389cd04af3a6488bd770ee815dab7b70d7b4082e69305b5cb30b",
+    "task_sha256": "03f303dd5f7520b588076747749428d1cd3a5d8bddacd24cbee64e5fe350da5e",
+    "source_zone_observations": [
+      {
+        "line": 10,
+        "tool": "moex-finance__get_stock_info",
+        "symbol": "SBER.ME",
+        "exchangeTimezoneName": "Europe/Moscow"
+      },
+      {
+        "line": 17,
+        "tool": "moex-finance__get_stock_info",
+        "symbol": "MGNT.ME",
+        "exchangeTimezoneName": "Europe/Moscow"
+      },
+      {
+        "line": 18,
+        "tool": "moex-finance__get_stock_info",
+        "symbol": "MTSS.ME",
+        "exchangeTimezoneName": "Europe/Moscow"
+      },
+      {
+        "line": 23,
+        "tool": "moex-finance__get_stock_info",
+        "symbol": "GAZP.ME",
+        "exchangeTimezoneName": "Europe/Moscow"
+      },
+      {
+        "line": 24,
+        "tool": "moex-finance__get_stock_info",
+        "symbol": "LKOH.ME",
+        "exchangeTimezoneName": "Europe/Moscow"
+      }
+    ],
+    "calendar_creates": [
+      {
+        "line": 47,
+        "arguments": {
+          "summary": "Options Expiry Alert: SBER.ME",
+          "start": {
+            "dateTime": "2026-03-13T09:00:00",
+            "timeZone": "Europe/Moscow"
+          },
+          "end": {
+            "dateTime": "2026-03-13T09:30:00",
+            "timeZone": "Europe/Moscow"
+          },
+          "description": "Near-expiry options position for SBER.ME expiring 2026-03-13. Contracts expiring: 4 (calls: 2, puts: 2). Types involved: calls, puts."
+        },
+        "sha256": "be94e82d270d6d8f203e7c4534404087a78fdbacd0cf3b06c91c6535abc7d8db"
+      },
+      {
+        "line": 48,
+        "arguments": {
+          "summary": "Options Expiry Alert: LKOH.ME",
+          "start": {
+            "dateTime": "2026-03-14T09:00:00",
+            "timeZone": "Europe/Moscow"
+          },
+          "end": {
+            "dateTime": "2026-03-14T09:30:00",
+            "timeZone": "Europe/Moscow"
+          },
+          "description": "Near-expiry options position for LKOH.ME expiring 2026-03-14. Contracts expiring: 5 (calls: 2, puts: 3). Types involved: calls, puts."
+        },
+        "sha256": "a8b4d396356f6aecaccae8a8c4b1a29ca907216dc85800fbe9e5006890b7255f"
+      },
+      {
+        "line": 49,
+        "arguments": {
+          "summary": "Options Expiry Alert: MTSS.ME",
+          "start": {
+            "dateTime": "2026-03-09T09:00:00",
+            "timeZone": "Europe/Moscow"
+          },
+          "end": {
+            "dateTime": "2026-03-09T09:30:00",
+            "timeZone": "Europe/Moscow"
+          },
+          "description": "Near-expiry options position for MTSS.ME expiring 2026-03-09. Contracts expiring: 5 (calls: 2, puts: 3). Types involved: calls, puts."
+        },
+        "sha256": "124304b57adfdce70e81ea87c018d5ff58bbcecc3b743deb22c9c0641293ae83"
+      },
+      {
+        "line": 50,
+        "arguments": {
+          "summary": "Options Expiry Alert: SBER.ME",
+          "start": {
+            "dateTime": "2026-03-10T09:00:00",
+            "timeZone": "Europe/Moscow"
+          },
+          "end": {
+            "dateTime": "2026-03-10T09:30:00",
+            "timeZone": "Europe/Moscow"
+          },
+          "description": "Near-expiry options position for SBER.ME expiring 2026-03-10. Contracts expiring: 6 (calls: 3, puts: 3). Types involved: calls, puts."
+        },
+        "sha256": "f409d4fcecf53aae9577905de2a5ee3420406a5a738144489944afb63eec0ba2"
+      },
+      {
+        "line": 51,
+        "arguments": {
+          "summary": "Options Expiry Alert: MGNT.ME",
+          "start": {
+            "dateTime": "2026-03-11T09:00:00",
+            "timeZone": "Europe/Moscow"
+          },
+          "end": {
+            "dateTime": "2026-03-11T09:30:00",
+            "timeZone": "Europe/Moscow"
+          },
+          "description": "Near-expiry options position for MGNT.ME expiring 2026-03-11. Contracts expiring: 5 (calls: 3, puts: 2). Types involved: calls, puts."
+        },
+        "sha256": "e536411d22e4604985ad9e3d99a9b4106d3924165d5772c9a3e42cb256ee1958"
+      },
+      {
+        "line": 52,
+        "arguments": {
+          "summary": "Options Expiry Alert: GAZP.ME",
+          "start": {
+            "dateTime": "2026-03-12T09:00:00",
+            "timeZone": "Europe/Moscow"
+          },
+          "end": {
+            "dateTime": "2026-03-12T09:30:00",
+            "timeZone": "Europe/Moscow"
+          },
+          "description": "Near-expiry options position for GAZP.ME expiring 2026-03-12. Contracts expiring: 4 (calls: 2, puts: 2). Types involved: calls, puts."
+        },
+        "sha256": "f3c6fe90be4c6a3377ac91a357533a7a3686636aa87cc47ca0c376c79cadb79d"
+      }
+    ]
+  },
+  {
+    "case": "moex-portfolio-ppt-gcal",
+    "run_timezone": "UTC",
+    "trace_path": "/private/tmp/cowork-utc20-experiment/utc/20261003T182629Z-5db5d6f8/moex-portfolio-ppt-gcal/traces/tool_calls.jsonl",
+    "trace_sha256": "ccc90f4948b278e8ec839d616665b4204125e09c7b20e79f6fbda574a7463f97",
+    "task_sha256": "140476c8f2c32e5ab7c0e4e30f9889a519220753c518e0fa49078361db3d64c5",
+    "source_zone_observations": [],
+    "calendar_creates": [
+      {
+        "line": 38,
+        "arguments": {
+          "summary": "Q2 2026 Portfolio Review Meeting",
+          "location": "Переговорная комната А",
+          "start": {
+            "dateTime": "2026-06-15T14:00:00",
+            "timeZone": "Europe/Moscow"
+          },
+          "end": {
+            "dateTime": "2026-06-15T15:00:00",
+            "timeZone": "Europe/Moscow"
+          },
+          "description": "Investment committee meeting to review the Q2 2026 portfolio (SBER.ME, GAZP.ME, LKOH.ME, MGNT.ME, MTSS.ME)."
+        },
+        "sha256": "3791fd2768cbd0c8d88fc20cb17630d81601b670802148d5b111e97c3be44442"
+      }
+    ]
+  }
+]

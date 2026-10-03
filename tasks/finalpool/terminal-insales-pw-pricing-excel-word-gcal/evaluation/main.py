@@ -6,6 +6,7 @@ import sys
 
 import openpyxl
 import psycopg2
+from utils.evaluation.calendar_time import calendar_rows
 
 DB_CONFIG = {
     "host": os.environ.get("PGHOST", "localhost"),
@@ -251,7 +252,7 @@ def _gcal_events():
     conn = psycopg2.connect(**DB_CONFIG)
     cur = conn.cursor()
     cur.execute("SELECT summary, description, start_datetime, end_datetime FROM gcal.events")
-    rows = cur.fetchall()
+    rows = calendar_rows(cur.fetchall())
     cur.close()
     conn.close()
     return rows
@@ -449,7 +450,7 @@ def check_reverse_validation(workspace):
             WHERE (summary ILIKE '%%price review%%'
                    OR summary ILIKE '%%обзор цен%%'
                    OR summary ILIKE '%%пересмотр цен%%')
-              AND start_datetime < '2026-03-10'
+              AND start_datetime < TIMESTAMPTZ '2026-03-10 00:00:00+00'
         """)
         early_events = cur.fetchone()[0]
         record("No price review events before March 10", early_events == 0,

@@ -5,6 +5,7 @@ import os
 import sys
 
 import psycopg2
+from utils.evaluation.calendar_time import calendar_rows
 
 DB = {"host": os.environ.get("PGHOST", "localhost"), "port": 5432, "dbname": "cowork_gym", "user": "eigent", "password": "camel"}
 
@@ -130,9 +131,9 @@ def check_gcal():
             WHERE (LOWER(summary) LIKE '%sla review%'
                    OR LOWER(summary) LIKE '%support%review%'
                    OR LOWER(summary) LIKE '%обзор%поддержк%')
-            AND start_datetime >= '2026-04-01T00:00:00'
+            AND start_datetime >= TIMESTAMPTZ '2026-04-01T00:00:00+00'
         """)
-        events = cur.fetchall()
+        events = calendar_rows(cur.fetchall())
         cur.close()
         conn.close()
     except Exception as e:

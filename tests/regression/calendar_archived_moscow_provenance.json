@@ -1,0 +1,6 @@
+{
+  "source": "/private/tmp/cowork-utc3-timezone-evidence/witnesses.json",
+  "source_sha256": "089dc5fdf840ad34a69b6d073227ec2f4e121566d375a4128f6da74a92250b7d",
+  "fixture_sha256": "7c5c4bea752b908f1a278fbf3ec61c2bad72c8469de897fa6a560cf336ec1895",
+  "projection": "Complete entries for moex-options-expiry-monitor and moex-portfolio-ppt-gcal; event arguments unchanged. Source run used the UTC benchmark profile configuration. Original task hashes match pristine upstream d943e75; no task text edits."
+}

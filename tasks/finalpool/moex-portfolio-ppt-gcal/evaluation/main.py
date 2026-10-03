@@ -22,6 +22,7 @@ import sys
 
 import psycopg2
 from pptx import Presentation
+from utils.evaluation.calendar_time import calendar_rows
 
 DB = {
     "host": os.environ.get("PGHOST", "localhost"),
@@ -233,10 +234,10 @@ def check_gcal():
             """
             SELECT summary, start_datetime, end_datetime, location
               FROM gcal.events
-             WHERE start_datetime >= '2026-06-15' AND start_datetime < '2026-06-16'
+             WHERE start_datetime >= TIMESTAMPTZ '2026-06-15 00:00:00+00' AND start_datetime < TIMESTAMPTZ '2026-06-16 00:00:00+00'
             """
         )
-        events = cur.fetchall()
+        events = calendar_rows(cur.fetchall())
         conn.close()
     except Exception as e:
         record("Календарь: событие совещания 2026-06-15", False, f"ошибка БД: {e}", critical=True)

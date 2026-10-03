@@ -13,6 +13,7 @@ import sys
 from datetime import date
 
 import psycopg2
+from utils.evaluation.calendar_time import calendar_rows
 
 CURRENT_DATE = date(2026, 3, 7)
 CUTOFF_DATE = date(2026, 3, 14)
@@ -306,7 +307,7 @@ def _gcal_events():
         ORDER BY start_datetime
         """
     )
-    rows = cur.fetchall()
+    rows = calendar_rows(cur.fetchall())
     cur.close()
     conn.close()
     return rows

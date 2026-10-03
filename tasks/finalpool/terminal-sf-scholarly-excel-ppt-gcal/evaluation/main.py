@@ -22,6 +22,7 @@ import sys
 
 import openpyxl
 import psycopg2
+from utils.evaluation.calendar_time import calendar_rows
 
 DB_CONFIG = {
     "host": os.environ.get("PGHOST", "localhost"), "port": 5432,
@@ -298,7 +299,7 @@ def check_gcal():
            OR lower(summary) LIKE '%%sales%%strategy%%review%%'
         ORDER BY start_datetime
     """)
-    events = cur.fetchall()
+    events = calendar_rows(cur.fetchall())
     # CRITICAL: событие создано.
     critical("Q1 Sales Strategy Review event exists", len(events) >= 1,
              f"Found {len(events)} matching events")
@@ -353,9 +354,9 @@ def check_reverse_validation(workspace):
             FROM gcal.events
             WHERE (lower(summary) LIKE '%%q1%%strategy%%'
                OR lower(summary) LIKE '%%sales%%strategy%%review%%')
-              AND EXTRACT(DOW FROM start_datetime) IN (0, 6)
+              AND EXTRACT(DOW FROM start_datetime AT TIME ZONE 'UTC') IN (0, 6)
         """)
-        weekend_events = cur.fetchall()
+        weekend_events = calendar_rows(cur.fetchall())
         check("No strategy review events on weekends", len(weekend_events) == 0,
               f"Found {len(weekend_events)} weekend events: {weekend_events}")
 

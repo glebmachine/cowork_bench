@@ -1,0 +1,612 @@
+[
+  {
+    "case": "canvas-late-submission-word-gcal",
+    "session_zone": "America/New_York",
+    "scenarios": 10,
+    "expected_pass": 5,
+    "expected_fail": 5,
+    "baseline_false_reject": 5,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "canvas-late-submission-word-gcal",
+    "session_zone": "Europe/Moscow",
+    "scenarios": 10,
+    "expected_pass": 5,
+    "expected_fail": 5,
+    "baseline_false_reject": 5,
+    "baseline_false_accept": 2,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "canvas-late-submission-word-gcal",
+    "session_zone": "UTC",
+    "scenarios": 10,
+    "expected_pass": 5,
+    "expected_fail": 5,
+    "baseline_false_reject": 0,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "canvas-quiz-remediation-forms-gcal",
+    "session_zone": "America/New_York",
+    "scenarios": 7,
+    "expected_pass": 4,
+    "expected_fail": 3,
+    "baseline_false_reject": 4,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "canvas-quiz-remediation-forms-gcal",
+    "session_zone": "Europe/Moscow",
+    "scenarios": 7,
+    "expected_pass": 4,
+    "expected_fail": 3,
+    "baseline_false_reject": 4,
+    "baseline_false_accept": 1,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "canvas-quiz-remediation-forms-gcal",
+    "session_zone": "UTC",
+    "scenarios": 7,
+    "expected_pass": 4,
+    "expected_fail": 3,
+    "baseline_false_reject": 0,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "fetch-arxiv-conference-schedule-gcal-teamly",
+    "session_zone": "America/New_York",
+    "scenarios": 7,
+    "expected_pass": 4,
+    "expected_fail": 3,
+    "baseline_false_reject": 4,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "fetch-arxiv-conference-schedule-gcal-teamly",
+    "session_zone": "Europe/Moscow",
+    "scenarios": 7,
+    "expected_pass": 4,
+    "expected_fail": 3,
+    "baseline_false_reject": 4,
+    "baseline_false_accept": 1,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "fetch-arxiv-conference-schedule-gcal-teamly",
+    "session_zone": "UTC",
+    "scenarios": 7,
+    "expected_pass": 4,
+    "expected_fail": 3,
+    "baseline_false_reject": 0,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "fetch-kulinar-catering-excel-gcal-email",
+    "session_zone": "America/New_York",
+    "scenarios": 7,
+    "expected_pass": 4,
+    "expected_fail": 3,
+    "baseline_false_reject": 4,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "fetch-kulinar-catering-excel-gcal-email",
+    "session_zone": "Europe/Moscow",
+    "scenarios": 7,
+    "expected_pass": 4,
+    "expected_fail": 3,
+    "baseline_false_reject": 4,
+    "baseline_false_accept": 1,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "fetch-kulinar-catering-excel-gcal-email",
+    "session_zone": "UTC",
+    "scenarios": 7,
+    "expected_pass": 4,
+    "expected_fail": 3,
+    "baseline_false_reject": 0,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "fetch-sf-sales-forecast-ppt-gcal",
+    "session_zone": "America/New_York",
+    "scenarios": 7,
+    "expected_pass": 4,
+    "expected_fail": 3,
+    "baseline_false_reject": 4,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "fetch-sf-sales-forecast-ppt-gcal",
+    "session_zone": "Europe/Moscow",
+    "scenarios": 7,
+    "expected_pass": 4,
+    "expected_fail": 3,
+    "baseline_false_reject": 4,
+    "baseline_false_accept": 1,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "fetch-sf-sales-forecast-ppt-gcal",
+    "session_zone": "UTC",
+    "scenarios": 7,
+    "expected_pass": 4,
+    "expected_fail": 3,
+    "baseline_false_reject": 0,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "insales-order-monthly-ppt-gcal",
+    "session_zone": "America/New_York",
+    "scenarios": 7,
+    "expected_pass": 4,
+    "expected_fail": 3,
+    "baseline_false_reject": 4,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "insales-order-monthly-ppt-gcal",
+    "session_zone": "Europe/Moscow",
+    "scenarios": 7,
+    "expected_pass": 4,
+    "expected_fail": 3,
+    "baseline_false_reject": 4,
+    "baseline_false_accept": 1,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "insales-order-monthly-ppt-gcal",
+    "session_zone": "UTC",
+    "scenarios": 7,
+    "expected_pass": 4,
+    "expected_fail": 3,
+    "baseline_false_reject": 0,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "insales-product-bundle-excel-ppt-gcal",
+    "session_zone": "America/New_York",
+    "scenarios": 7,
+    "expected_pass": 4,
+    "expected_fail": 3,
+    "baseline_false_reject": 4,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "insales-product-bundle-excel-ppt-gcal",
+    "session_zone": "Europe/Moscow",
+    "scenarios": 7,
+    "expected_pass": 4,
+    "expected_fail": 3,
+    "baseline_false_reject": 4,
+    "baseline_false_accept": 1,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "insales-product-bundle-excel-ppt-gcal",
+    "session_zone": "UTC",
+    "scenarios": 7,
+    "expected_pass": 4,
+    "expected_fail": 3,
+    "baseline_false_reject": 0,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "insales-product-review-analysis-gform-gcal",
+    "session_zone": "America/New_York",
+    "scenarios": 10,
+    "expected_pass": 6,
+    "expected_fail": 4,
+    "baseline_false_reject": 6,
+    "baseline_false_accept": 1,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "insales-product-review-analysis-gform-gcal",
+    "session_zone": "Europe/Moscow",
+    "scenarios": 10,
+    "expected_pass": 6,
+    "expected_fail": 4,
+    "baseline_false_reject": 6,
+    "baseline_false_accept": 1,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "insales-product-review-analysis-gform-gcal",
+    "session_zone": "UTC",
+    "scenarios": 10,
+    "expected_pass": 6,
+    "expected_fail": 4,
+    "baseline_false_reject": 0,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "kulinar-weekly-gsheet-gcal",
+    "session_zone": "America/New_York",
+    "scenarios": 7,
+    "expected_pass": 4,
+    "expected_fail": 3,
+    "baseline_false_reject": 4,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "kulinar-weekly-gsheet-gcal",
+    "session_zone": "Europe/Moscow",
+    "scenarios": 7,
+    "expected_pass": 4,
+    "expected_fail": 3,
+    "baseline_false_reject": 4,
+    "baseline_false_accept": 1,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "kulinar-weekly-gsheet-gcal",
+    "session_zone": "UTC",
+    "scenarios": 7,
+    "expected_pass": 4,
+    "expected_fail": 3,
+    "baseline_false_reject": 0,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "moex-options-expiry-monitor",
+    "session_zone": "America/New_York",
+    "scenarios": 8,
+    "expected_pass": 4,
+    "expected_fail": 4,
+    "baseline_false_reject": 4,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "moex-options-expiry-monitor",
+    "session_zone": "Europe/Moscow",
+    "scenarios": 8,
+    "expected_pass": 4,
+    "expected_fail": 4,
+    "baseline_false_reject": 4,
+    "baseline_false_accept": 2,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "moex-options-expiry-monitor",
+    "session_zone": "UTC",
+    "scenarios": 8,
+    "expected_pass": 4,
+    "expected_fail": 4,
+    "baseline_false_reject": 0,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "moex-portfolio-ppt-gcal",
+    "session_zone": "America/New_York",
+    "scenarios": 8,
+    "expected_pass": 4,
+    "expected_fail": 4,
+    "baseline_false_reject": 4,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "moex-portfolio-ppt-gcal",
+    "session_zone": "Europe/Moscow",
+    "scenarios": 8,
+    "expected_pass": 4,
+    "expected_fail": 4,
+    "baseline_false_reject": 4,
+    "baseline_false_accept": 2,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "moex-portfolio-ppt-gcal",
+    "session_zone": "UTC",
+    "scenarios": 8,
+    "expected_pass": 4,
+    "expected_fail": 4,
+    "baseline_false_reject": 0,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "scholarly-reading-group-gcal-gsheet-word",
+    "session_zone": "America/New_York",
+    "scenarios": 7,
+    "expected_pass": 4,
+    "expected_fail": 3,
+    "baseline_false_reject": 0,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "scholarly-reading-group-gcal-gsheet-word",
+    "session_zone": "Europe/Moscow",
+    "scenarios": 7,
+    "expected_pass": 4,
+    "expected_fail": 3,
+    "baseline_false_reject": 0,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "scholarly-reading-group-gcal-gsheet-word",
+    "session_zone": "Pacific/Kiritimati",
+    "scenarios": 7,
+    "expected_pass": 4,
+    "expected_fail": 3,
+    "baseline_false_reject": 4,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "scholarly-reading-group-gcal-gsheet-word",
+    "session_zone": "UTC",
+    "scenarios": 7,
+    "expected_pass": 4,
+    "expected_fail": 3,
+    "baseline_false_reject": 0,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "sf-sales-quarterly-review-gcal",
+    "session_zone": "America/New_York",
+    "scenarios": 7,
+    "expected_pass": 4,
+    "expected_fail": 3,
+    "baseline_false_reject": 4,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "sf-sales-quarterly-review-gcal",
+    "session_zone": "Europe/Moscow",
+    "scenarios": 7,
+    "expected_pass": 4,
+    "expected_fail": 3,
+    "baseline_false_reject": 4,
+    "baseline_false_accept": 1,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "sf-sales-quarterly-review-gcal",
+    "session_zone": "UTC",
+    "scenarios": 7,
+    "expected_pass": 4,
+    "expected_fail": 3,
+    "baseline_false_reject": 0,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "sf-support-priority-gcal-excel",
+    "session_zone": "America/New_York",
+    "scenarios": 7,
+    "expected_pass": 4,
+    "expected_fail": 3,
+    "baseline_false_reject": 4,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "sf-support-priority-gcal-excel",
+    "session_zone": "Europe/Moscow",
+    "scenarios": 7,
+    "expected_pass": 4,
+    "expected_fail": 3,
+    "baseline_false_reject": 4,
+    "baseline_false_accept": 1,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "sf-support-priority-gcal-excel",
+    "session_zone": "UTC",
+    "scenarios": 7,
+    "expected_pass": 4,
+    "expected_fail": 3,
+    "baseline_false_reject": 0,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "sf-support-resolution-word-gcal",
+    "session_zone": "America/New_York",
+    "scenarios": 7,
+    "expected_pass": 4,
+    "expected_fail": 3,
+    "baseline_false_reject": 4,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "sf-support-resolution-word-gcal",
+    "session_zone": "Europe/Moscow",
+    "scenarios": 7,
+    "expected_pass": 4,
+    "expected_fail": 3,
+    "baseline_false_reject": 4,
+    "baseline_false_accept": 1,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "sf-support-resolution-word-gcal",
+    "session_zone": "UTC",
+    "scenarios": 7,
+    "expected_pass": 4,
+    "expected_fail": 3,
+    "baseline_false_reject": 0,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "teamly-forms-gcal-onboarding",
+    "session_zone": "America/New_York",
+    "scenarios": 7,
+    "expected_pass": 4,
+    "expected_fail": 3,
+    "baseline_false_reject": 4,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "teamly-forms-gcal-onboarding",
+    "session_zone": "Europe/Moscow",
+    "scenarios": 7,
+    "expected_pass": 4,
+    "expected_fail": 3,
+    "baseline_false_reject": 4,
+    "baseline_false_accept": 1,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "teamly-forms-gcal-onboarding",
+    "session_zone": "UTC",
+    "scenarios": 7,
+    "expected_pass": 4,
+    "expected_fail": 3,
+    "baseline_false_reject": 0,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "terminal-arxiv-canvas-gsheet-word-gcal",
+    "session_zone": "America/New_York",
+    "scenarios": 12,
+    "expected_pass": 8,
+    "expected_fail": 4,
+    "baseline_false_reject": 8,
+    "baseline_false_accept": 1,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "terminal-arxiv-canvas-gsheet-word-gcal",
+    "session_zone": "Europe/Moscow",
+    "scenarios": 12,
+    "expected_pass": 8,
+    "expected_fail": 4,
+    "baseline_false_reject": 8,
+    "baseline_false_accept": 2,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "terminal-arxiv-canvas-gsheet-word-gcal",
+    "session_zone": "UTC",
+    "scenarios": 12,
+    "expected_pass": 8,
+    "expected_fail": 4,
+    "baseline_false_reject": 0,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "terminal-insales-pw-pricing-excel-word-gcal",
+    "session_zone": "America/New_York",
+    "scenarios": 9,
+    "expected_pass": 5,
+    "expected_fail": 4,
+    "baseline_false_reject": 5,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "terminal-insales-pw-pricing-excel-word-gcal",
+    "session_zone": "Europe/Moscow",
+    "scenarios": 9,
+    "expected_pass": 5,
+    "expected_fail": 4,
+    "baseline_false_reject": 4,
+    "baseline_false_accept": 1,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "terminal-insales-pw-pricing-excel-word-gcal",
+    "session_zone": "UTC",
+    "scenarios": 9,
+    "expected_pass": 5,
+    "expected_fail": 4,
+    "baseline_false_reject": 0,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "terminal-moex-canvas-excel-gcal-email",
+    "session_zone": "America/New_York",
+    "scenarios": 10,
+    "expected_pass": 5,
+    "expected_fail": 5,
+    "baseline_false_reject": 5,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "terminal-moex-canvas-excel-gcal-email",
+    "session_zone": "Europe/Moscow",
+    "scenarios": 10,
+    "expected_pass": 5,
+    "expected_fail": 5,
+    "baseline_false_reject": 5,
+    "baseline_false_accept": 1,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "terminal-moex-canvas-excel-gcal-email",
+    "session_zone": "UTC",
+    "scenarios": 10,
+    "expected_pass": 5,
+    "expected_fail": 5,
+    "baseline_false_reject": 0,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "terminal-sf-scholarly-excel-ppt-gcal",
+    "session_zone": "America/New_York",
+    "scenarios": 12,
+    "expected_pass": 6,
+    "expected_fail": 6,
+    "baseline_false_reject": 6,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "terminal-sf-scholarly-excel-ppt-gcal",
+    "session_zone": "Europe/Moscow",
+    "scenarios": 12,
+    "expected_pass": 6,
+    "expected_fail": 6,
+    "baseline_false_reject": 0,
+    "baseline_false_accept": 2,
+    "candidate_verdict_mismatches": 0
+  },
+  {
+    "case": "terminal-sf-scholarly-excel-ppt-gcal",
+    "session_zone": "UTC",
+    "scenarios": 12,
+    "expected_pass": 6,
+    "expected_fail": 6,
+    "baseline_false_reject": 0,
+    "baseline_false_accept": 0,
+    "candidate_verdict_mismatches": 0
+  }
+]

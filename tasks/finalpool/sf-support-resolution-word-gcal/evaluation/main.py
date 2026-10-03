@@ -6,6 +6,7 @@ import re
 import sys
 
 import psycopg2
+from utils.evaluation.calendar_time import calendar_rows
 
 
 def normalize_ru_numbers(text):
@@ -227,7 +228,7 @@ def check_gcal():
         FROM gcal.events
         ORDER BY start_datetime
     """)
-    events = cur.fetchall()
+    events = calendar_rows(cur.fetchall())
     cur.close()
     conn.close()
 

@@ -23,6 +23,7 @@ from datetime import datetime, timedelta
 
 import openpyxl
 import psycopg2
+from utils.evaluation.calendar_time import calendar_rows
 
 DB = dict(host=os.environ.get("PGHOST", "localhost"), port=5432,
           dbname=os.environ.get("PGDATABASE", "cowork_gym"),
@@ -159,7 +160,7 @@ def get_injected_conflicts():
             SELECT start_datetime, end_datetime FROM gcal.events
             WHERE summary IN ('Заседание учёного совета', 'Бюджетный комитет кафедры')
         """)
-        conflicts = cur.fetchall()
+        conflicts = calendar_rows(cur.fetchall())
         cur.close()
         conn.close()
         return conflicts
@@ -338,7 +339,7 @@ def check_calendar():
                OR lower(summary) LIKE '%%risk%%manage%%'
             ORDER BY start_datetime
         """)
-        workshops = cur.fetchall()
+        workshops = calendar_rows(cur.fetchall())
         cur.close()
         conn.close()
     except Exception as e:

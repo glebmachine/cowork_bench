@@ -5,6 +5,7 @@ import os
 import sys
 
 import psycopg2
+from utils.evaluation.calendar_time import calendar_rows
 
 
 def num_close(a, b, rel_tol=0.15, abs_tol=0.5):
@@ -178,7 +179,7 @@ def check_calendar():
                OR LOWER(summary) LIKE '%обзор продаж%'
                OR LOWER(summary) LIKE '%продаж%'
         """)
-        events = cur.fetchall()
+        events = calendar_rows(cur.fetchall())
 
         # Найти событие на 2026-04-15 со стартом 14:00
         matched = None

@@ -22,6 +22,7 @@ import sys
 
 import openpyxl
 import psycopg2
+from utils.evaluation.calendar_time import calendar_rows
 
 try:
     from pptx import Presentation
@@ -432,7 +433,7 @@ def check_calendar(gt):
         cur.execute(
             "SELECT summary, description, start_datetime, end_datetime FROM gcal.events"
         )
-        events = cur.fetchall()
+        events = calendar_rows(cur.fetchall())
         cur.close()
         conn.close()
     except Exception as e:

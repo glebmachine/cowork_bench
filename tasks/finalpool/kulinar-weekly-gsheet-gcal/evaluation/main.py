@@ -27,6 +27,7 @@ import unicodedata
 from argparse import ArgumentParser
 
 import psycopg2
+from utils.evaluation.calendar_time import calendar_rows
 
 DB_CONFIG = {
     "host": os.environ.get("PGHOST", "localhost"),
@@ -243,10 +244,10 @@ def check_gcal(dinner_by_day):
     cur.execute("""
         SELECT summary, description, start_datetime, end_datetime
         FROM gcal.events
-        WHERE start_datetime >= '2026-04-07' AND start_datetime < '2026-04-14'
+        WHERE start_datetime >= TIMESTAMPTZ '2026-04-07 00:00:00+00' AND start_datetime < TIMESTAMPTZ '2026-04-14 00:00:00+00'
         ORDER BY start_datetime
     """)
-    events = cur.fetchall()
+    events = calendar_rows(cur.fetchall())
     cur.close()
     conn.close()
 

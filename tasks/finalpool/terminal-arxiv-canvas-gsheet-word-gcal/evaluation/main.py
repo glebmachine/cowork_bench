@@ -7,6 +7,7 @@ from datetime import datetime, timedelta
 
 import openpyxl
 import psycopg2
+from utils.evaluation.calendar_time import calendar_rows
 
 DB_CONFIG = {
     "host": os.environ.get("PGHOST", "localhost"),
@@ -238,7 +239,7 @@ def check_gcal(launch_time=None):
                        WHERE summary ILIKE '%curriculum%review%meeting%'
                           OR (summary ILIKE '%пересмотр%' AND summary ILIKE '%учебн%')
                           OR summary ILIKE '%curriculum review%'""")
-        rows = cur.fetchall()
+        rows = calendar_rows(cur.fetchall())
         review_exists = len(rows) >= 1
         check("'Curriculum Review Meeting' event exists", review_exists, f"Found {len(rows)}")
         review_time_ok = False
@@ -259,7 +260,7 @@ def check_gcal(launch_time=None):
                        WHERE summary ILIKE '%faculty%workshop%'
                           OR (summary ILIKE '%семинар%' AND summary ILIKE '%преподавател%')
                           OR summary ILIKE '%workshop%new%topic%'""")
-        rows = cur.fetchall()
+        rows = calendar_rows(cur.fetchall())
         workshop_exists = len(rows) >= 1
         check("'Faculty Workshop on New Topics' event exists", workshop_exists, f"Found {len(rows)}")
         workshop_time_ok = False

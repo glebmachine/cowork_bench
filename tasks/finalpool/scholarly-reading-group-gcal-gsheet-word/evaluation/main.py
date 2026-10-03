@@ -20,6 +20,7 @@ import sys
 
 import psycopg2
 from docx import Document
+from utils.evaluation.calendar_time import calendar_rows
 
 DB_CONFIG = {
     "host": os.environ.get("PGHOST", "localhost"),
@@ -156,7 +157,7 @@ def check_gcal():
             WHERE LOWER(summary) LIKE '%reading group%' OR LOWER(summary) LIKE '%transformer%'
             ORDER BY start_datetime
         """)
-        events = cur.fetchall()
+        events = calendar_rows(cur.fetchall())
         record("GCal has at least 3 Reading Group events", len(events) >= 3,
                f"Found {len(events)} events: {[(e[0], str(e[1])[:10]) for e in events]}")
 
