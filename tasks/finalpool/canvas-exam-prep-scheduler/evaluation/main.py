@@ -77,7 +77,19 @@ def is_below_no(v):
 def load_sheet_rows(wb, sheet_name):
     for name in wb.sheetnames:
         if name.strip().lower() == sheet_name.strip().lower():
-            return [[cell.value for cell in row] for row in wb[name].iter_rows()]
+            rows = [[cell.value for cell in row] for row in wb[name].iter_rows()]
+            if sheet_name.strip().lower() == "summary":
+                # The task specifies metric rows, not a mandatory header row.
+                rows = [row for row in rows if any(v is not None for v in row)]
+                if rows and [str(v).strip().lower() for v in rows[0][:2]] == ["metric", "value"]:
+                    rows = rows[1:]
+                keys = [str(row[0]).strip().lower().replace(" ", "_") for row in rows]
+                if len(keys) != len(set(keys)) or any(
+                    len(row) < 2 or row[0] is None or row[1] is None for row in rows
+                ):
+                    return None
+                return [["Metric", "Value"], *rows]
+            return rows
     return None
 
 
@@ -182,8 +194,8 @@ def check_excel(agent_workspace, expected, below_thr, courses_needing):
             if not row or not row[0]:
                 continue
             sched_courses.add(str(row[0]).strip().lower())
-            dval = row[3] if len(row) > 3 else None
-            tval = row[4] if len(row) > 4 else None
+            dval = row[2] if len(row) > 2 else None
+            tval = row[3] if len(row) > 3 else None
             d = None
             if isinstance(dval, _dt.datetime):
                 d = dval.date()

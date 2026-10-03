@@ -70,7 +70,23 @@ def str_match(a, b):
 def load_sheet_rows(wb, sheet_name):
     for name in wb.sheetnames:
         if name.strip().lower() == sheet_name.strip().lower():
-            return [[cell.value for cell in row] for row in wb[name].iter_rows()]
+            rows = [[cell.value for cell in row] for row in wb[name].iter_rows()]
+            if sheet_name.strip().lower() == "equity metrics":
+                columns = ["Department", "Experience_Band", "Highest_Paid_Group",
+                           "Lowest_Paid_Group", "Pay_Gap_Pct", "Equity_Ratio", "Equity_Status"]
+                aliases = {"highest_paid_education": "highest_paid_group",
+                           "lowest_paid_education": "lowest_paid_group", "pay_gap_%": "pay_gap_pct"}
+                headers = [str(v).strip().lower().replace(" ", "_") for v in rows[0]] if rows else []
+                headers = [aliases.get(h, h) for h in headers]
+                if any(headers.count(column.lower()) != 1 for column in columns):
+                    return None
+                indices = [headers.index(column.lower()) for column in columns]
+                data = [[row[i] for i in indices] for row in rows[1:] if any(v is not None for v in row)]
+                keys = [(str(row[0]).strip().lower(), str(row[1]).strip().lower()) for row in data]
+                if len(keys) != len(set(keys)) or any(v is None for row in data for v in row):
+                    return None
+                return [columns, *data]
+            return rows
     return None
 
 

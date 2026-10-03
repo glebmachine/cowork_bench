@@ -325,24 +325,39 @@ def critical_checks(workspace):
             idx = next((i for i, s in enumerate(sl) if "curriculum" in s or "coverage" in s), 0)
             ws = wb[wb.sheetnames[idx]]
             rows = [r for r in ws.iter_rows(values_only=True) if any(c for c in r)]
-            data = rows[1:]
-            four = len(data) >= 4
+            # A title row is presentation; locate the required table by its headers.
+            aliases = [
+                {"course_id", "courseid", "идентификатор_курса"},
+                {"course_name", "course", "название_курса"},
+                {"enrollment", "enrollments", "enrollment_count", "enrolled_students", "students", "число_записавшихся"},
+                {"assignments", "assignment_count", "количество_заданий"},
+                {"quizzes", "quiz_count", "количество_тестов"},
+                {"total_assessments", "total", "общее_число_оценочных_мероприятий"},
+            ]
+            data = []
+            indices = None
+            for ri, row in enumerate(rows):
+                headers = [str(v).strip().lower().replace(" ", "_") for v in row]
+                matches = [[i for i, h in enumerate(headers) if h in names] for names in aliases]
+                if all(len(found) == 1 for found in matches):
+                    indices = [found[0] for found in matches]
+                    data = rows[ri + 1:]
+                    break
             consistent = 0
-            for r in data[:4]:
-                ns = [n for n in _nums_in_row(r)]
-                # need at least 4 numbers: id, enrollment, assign, quiz, total(>=4 of the 5)
-                # check that some pair sums to another value (assign+quiz=total)
-                found = False
-                # total = assignments + quizzes. Exclude the two addend POSITIONS, not values:
-                # a valid row may have quizzes=0 so total==assignments (value collision).
-                for i in range(len(ns)):
-                    for j in range(i + 1, len(ns)):
-                        if any(abs((ns[i] + ns[j]) - ns[k]) <= 0.001
-                               for k in range(len(ns)) if k != i and k != j):
-                            found = True
-                if len(ns) >= 4 and found:
-                    consistent += 1
-            ok = four and consistent >= 4
+            ids = []
+            if indices is not None:
+                for row in data:
+                    course_id, title, enrolled, assignments, quizzes, total = [row[i] for i in indices]
+                    try:
+                        nums = [float(v) for v in (course_id, enrolled, assignments, quizzes, total)]
+                        cid, enrollment, assign, quiz, count = nums
+                        ids.append(cid)
+                        if (title and all(v >= 0 and v.is_integer() for v in nums)
+                                and count == assign + quiz):
+                            consistent += 1
+                    except (TypeError, ValueError):
+                        pass
+            ok = len(data) == 4 and set(ids) == {1, 2, 3, 4} and consistent == 4
             critical("C3 Curriculum_Coverage 4 rows w/ total_assessments=assignments+quizzes", ok,
                      f"rows={len(data)} consistent={consistent}")
         else:

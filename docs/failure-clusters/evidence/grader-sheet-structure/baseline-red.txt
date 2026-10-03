@@ -1,0 +1,390 @@
+F.FFFFF.FFFFFFFFFFFFFFFFFFEEEEEEFFFFFFFF
+======================================================================
+ERROR: test_incorrect_numeric_value_is_preserved_for_existing_checks (regression.SummaryTests.test_incorrect_numeric_value_is_preserved_for_existing_checks) (case='canvas-exam-prep-scheduler')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 64, in test_incorrect_numeric_value_is_preserved_for_existing_checks
+    self.assertFalse(g.num_close(rows[1][1], 22))
+                                 ~~~~^^^
+IndexError: list index out of range
+
+======================================================================
+ERROR: test_incorrect_numeric_value_is_preserved_for_existing_checks (regression.SummaryTests.test_incorrect_numeric_value_is_preserved_for_existing_checks) (case='canvas-grade-summary')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 64, in test_incorrect_numeric_value_is_preserved_for_existing_checks
+    self.assertFalse(g.num_close(rows[1][1], 22))
+                                 ~~~~^^^
+IndexError: list index out of range
+
+======================================================================
+ERROR: test_incorrect_numeric_value_is_preserved_for_existing_checks (regression.SummaryTests.test_incorrect_numeric_value_is_preserved_for_existing_checks) (case='canvas-quiz-report')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 64, in test_incorrect_numeric_value_is_preserved_for_existing_checks
+    self.assertFalse(g.num_close(rows[1][1], 22))
+                                 ~~~~^^^
+IndexError: list index out of range
+
+======================================================================
+ERROR: test_incorrect_numeric_value_is_preserved_for_existing_checks (regression.SummaryTests.test_incorrect_numeric_value_is_preserved_for_existing_checks) (case='canvas-ta-workload-excel-email')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 64, in test_incorrect_numeric_value_is_preserved_for_existing_checks
+    self.assertFalse(g.num_close(rows[1][1], 22))
+                                 ~~~~^^^
+IndexError: list index out of range
+
+======================================================================
+ERROR: test_incorrect_numeric_value_is_preserved_for_existing_checks (regression.SummaryTests.test_incorrect_numeric_value_is_preserved_for_existing_checks) (case='sf-hr-manager-report')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 64, in test_incorrect_numeric_value_is_preserved_for_existing_checks
+    self.assertFalse(g.num_close(rows[1][1], 22))
+                                 ~~~~^^^
+IndexError: list index out of range
+
+======================================================================
+ERROR: test_incorrect_numeric_value_is_preserved_for_existing_checks (regression.SummaryTests.test_incorrect_numeric_value_is_preserved_for_existing_checks) (case='sf-hr-salary-growth')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 64, in test_incorrect_numeric_value_is_preserved_for_existing_checks
+    self.assertFalse(g.num_close(rows[1][1], 22))
+                                 ~~~~^^^
+IndexError: list index out of range
+
+======================================================================
+FAIL: test_title_row_is_allowed (regression.CurriculumTests.test_title_row_is_allowed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 187, in test_title_row_is_allowed
+    self.assertTrue(self.check_c3(lambda ws: None))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_extra_columns_and_reordered_required_columns (regression.EquityTests.test_extra_columns_and_reordered_required_columns)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 134, in test_extra_columns_and_reordered_required_columns
+    self.assertEqual(self.run_excel(mutate), [])
+AssertionError: Lists differ: ['Equity Metrics: Pay_Gap_Pct/Equity_Ratio[42 chars]and'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'Equity Metrics: Pay_Gap_Pct/Equity_Ratio/Equity_Status корректны для каждой dept+band'
+
++ []
+- ['Equity Metrics: Pay_Gap_Pct/Equity_Ratio/Equity_Status корректны для каждой '
+-  'dept+band']
+
+======================================================================
+FAIL: test_wrong_values_missing_headers_duplicate_headers_and_rows_rejected (regression.EquityTests.test_wrong_values_missing_headers_duplicate_headers_and_rows_rejected) (mutate=<function EquityTests.test_wrong_values_missing_headers_duplicate_headers_and_rows_rejected.<locals>.<lambda> at 0x109871bc0>)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 145, in test_wrong_values_missing_headers_duplicate_headers_and_rows_rejected
+    self.assertTrue(self.run_excel(mutate))
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_wrong_values_missing_headers_duplicate_headers_and_rows_rejected (regression.EquityTests.test_wrong_values_missing_headers_duplicate_headers_and_rows_rejected) (mutate=<function EquityTests.test_wrong_values_missing_headers_duplicate_headers_and_rows_rejected.<locals>.<lambda> at 0x109870cc0>)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 145, in test_wrong_values_missing_headers_duplicate_headers_and_rows_rejected
+    self.assertTrue(self.run_excel(mutate))
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_wrong_values_missing_headers_duplicate_headers_and_rows_rejected (regression.EquityTests.test_wrong_values_missing_headers_duplicate_headers_and_rows_rejected) (mutate=<function EquityTests.test_wrong_values_missing_headers_duplicate_headers_and_rows_rejected.<locals>.<lambda> at 0x109870fe0>)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 145, in test_wrong_values_missing_headers_duplicate_headers_and_rows_rejected
+    self.assertTrue(self.run_excel(mutate))
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_task_column_order (regression.ExamScheduleTests.test_task_column_order)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 163, in test_task_column_order
+    self.assertTrue(self.check_schedule())
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_duplicate_metrics_and_missing_values_are_rejected (regression.SummaryTests.test_duplicate_metrics_and_missing_values_are_rejected) (case='canvas-exam-prep-scheduler', rows=[['Total_Courses', 22], [' total_courses ', 22]])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 57, in test_duplicate_metrics_and_missing_values_are_rejected
+    self.assertIsNone(grader(case).load_sheet_rows(book('Summary', rows), 'Summary'))
+AssertionError: [['Total_Courses', 22], [' total_courses ', 22]] is not None
+
+======================================================================
+FAIL: test_duplicate_metrics_and_missing_values_are_rejected (regression.SummaryTests.test_duplicate_metrics_and_missing_values_are_rejected) (case='canvas-exam-prep-scheduler', rows=[['Total_Courses']])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 57, in test_duplicate_metrics_and_missing_values_are_rejected
+    self.assertIsNone(grader(case).load_sheet_rows(book('Summary', rows), 'Summary'))
+AssertionError: [['Total_Courses']] is not None
+
+======================================================================
+FAIL: test_duplicate_metrics_and_missing_values_are_rejected (regression.SummaryTests.test_duplicate_metrics_and_missing_values_are_rejected) (case='canvas-grade-summary', rows=[['Total_Courses', 22], [' total_courses ', 22]])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 57, in test_duplicate_metrics_and_missing_values_are_rejected
+    self.assertIsNone(grader(case).load_sheet_rows(book('Summary', rows), 'Summary'))
+AssertionError: [['Total_Courses', 22], [' total_courses ', 22]] is not None
+
+======================================================================
+FAIL: test_duplicate_metrics_and_missing_values_are_rejected (regression.SummaryTests.test_duplicate_metrics_and_missing_values_are_rejected) (case='canvas-grade-summary', rows=[['Total_Courses']])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 57, in test_duplicate_metrics_and_missing_values_are_rejected
+    self.assertIsNone(grader(case).load_sheet_rows(book('Summary', rows), 'Summary'))
+AssertionError: [['Total_Courses']] is not None
+
+======================================================================
+FAIL: test_duplicate_metrics_and_missing_values_are_rejected (regression.SummaryTests.test_duplicate_metrics_and_missing_values_are_rejected) (case='canvas-quiz-report', rows=[['Total_Courses', 22], [' total_courses ', 22]])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 57, in test_duplicate_metrics_and_missing_values_are_rejected
+    self.assertIsNone(grader(case).load_sheet_rows(book('Summary', rows), 'Summary'))
+AssertionError: [['Total_Courses', 22], [' total_courses ', 22]] is not None
+
+======================================================================
+FAIL: test_duplicate_metrics_and_missing_values_are_rejected (regression.SummaryTests.test_duplicate_metrics_and_missing_values_are_rejected) (case='canvas-quiz-report', rows=[['Total_Courses']])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 57, in test_duplicate_metrics_and_missing_values_are_rejected
+    self.assertIsNone(grader(case).load_sheet_rows(book('Summary', rows), 'Summary'))
+AssertionError: [['Total_Courses']] is not None
+
+======================================================================
+FAIL: test_duplicate_metrics_and_missing_values_are_rejected (regression.SummaryTests.test_duplicate_metrics_and_missing_values_are_rejected) (case='canvas-ta-workload-excel-email', rows=[['Total_Courses', 22], [' total_courses ', 22]])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 57, in test_duplicate_metrics_and_missing_values_are_rejected
+    self.assertIsNone(grader(case).load_sheet_rows(book('Summary', rows), 'Summary'))
+AssertionError: [['Total_Courses', 22], [' total_courses ', 22]] is not None
+
+======================================================================
+FAIL: test_duplicate_metrics_and_missing_values_are_rejected (regression.SummaryTests.test_duplicate_metrics_and_missing_values_are_rejected) (case='canvas-ta-workload-excel-email', rows=[['Total_Courses']])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 57, in test_duplicate_metrics_and_missing_values_are_rejected
+    self.assertIsNone(grader(case).load_sheet_rows(book('Summary', rows), 'Summary'))
+AssertionError: [['Total_Courses']] is not None
+
+======================================================================
+FAIL: test_duplicate_metrics_and_missing_values_are_rejected (regression.SummaryTests.test_duplicate_metrics_and_missing_values_are_rejected) (case='sf-hr-manager-report', rows=[['Total_Courses', 22], [' total_courses ', 22]])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 57, in test_duplicate_metrics_and_missing_values_are_rejected
+    self.assertIsNone(grader(case).load_sheet_rows(book('Summary', rows), 'Summary'))
+AssertionError: [['Total_Courses', 22], [' total_courses ', 22]] is not None
+
+======================================================================
+FAIL: test_duplicate_metrics_and_missing_values_are_rejected (regression.SummaryTests.test_duplicate_metrics_and_missing_values_are_rejected) (case='sf-hr-manager-report', rows=[['Total_Courses']])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 57, in test_duplicate_metrics_and_missing_values_are_rejected
+    self.assertIsNone(grader(case).load_sheet_rows(book('Summary', rows), 'Summary'))
+AssertionError: [['Total_Courses']] is not None
+
+======================================================================
+FAIL: test_duplicate_metrics_and_missing_values_are_rejected (regression.SummaryTests.test_duplicate_metrics_and_missing_values_are_rejected) (case='sf-hr-salary-growth', rows=[['Total_Courses', 22], [' total_courses ', 22]])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 57, in test_duplicate_metrics_and_missing_values_are_rejected
+    self.assertIsNone(grader(case).load_sheet_rows(book('Summary', rows), 'Summary'))
+AssertionError: [['Total_Courses', 22], [' total_courses ', 22]] is not None
+
+======================================================================
+FAIL: test_duplicate_metrics_and_missing_values_are_rejected (regression.SummaryTests.test_duplicate_metrics_and_missing_values_are_rejected) (case='sf-hr-salary-growth', rows=[['Total_Courses']])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 57, in test_duplicate_metrics_and_missing_values_are_rejected
+    self.assertIsNone(grader(case).load_sheet_rows(book('Summary', rows), 'Summary'))
+AssertionError: [['Total_Courses']] is not None
+
+======================================================================
+FAIL: test_header_is_optional_without_losing_first_metric (regression.SummaryTests.test_header_is_optional_without_losing_first_metric) (case='canvas-exam-prep-scheduler')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 51, in test_header_is_optional_without_losing_first_metric
+    self.assertEqual(loaded[1:], data)
+AssertionError: Lists differ: [['Overall_Avg_Score', 71.25]] != [['Total_Courses', 22], ['Overall_Avg_Score', 71.25]]
+
+First differing element 0:
+['Overall_Avg_Score', 71.25]
+['Total_Courses', 22]
+
+Second list contains 1 additional elements.
+First extra element 1:
+['Overall_Avg_Score', 71.25]
+
+- [['Overall_Avg_Score', 71.25]]
++ [['Total_Courses', 22], ['Overall_Avg_Score', 71.25]]
+
+======================================================================
+FAIL: test_header_is_optional_without_losing_first_metric (regression.SummaryTests.test_header_is_optional_without_losing_first_metric) (case='canvas-grade-summary')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 51, in test_header_is_optional_without_losing_first_metric
+    self.assertEqual(loaded[1:], data)
+AssertionError: Lists differ: [['Overall_Avg_Score', 71.25]] != [['Total_Courses', 22], ['Overall_Avg_Score', 71.25]]
+
+First differing element 0:
+['Overall_Avg_Score', 71.25]
+['Total_Courses', 22]
+
+Second list contains 1 additional elements.
+First extra element 1:
+['Overall_Avg_Score', 71.25]
+
+- [['Overall_Avg_Score', 71.25]]
++ [['Total_Courses', 22], ['Overall_Avg_Score', 71.25]]
+
+======================================================================
+FAIL: test_header_is_optional_without_losing_first_metric (regression.SummaryTests.test_header_is_optional_without_losing_first_metric) (case='canvas-quiz-report')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 51, in test_header_is_optional_without_losing_first_metric
+    self.assertEqual(loaded[1:], data)
+AssertionError: Lists differ: [['Overall_Avg_Score', 71.25]] != [['Total_Courses', 22], ['Overall_Avg_Score', 71.25]]
+
+First differing element 0:
+['Overall_Avg_Score', 71.25]
+['Total_Courses', 22]
+
+Second list contains 1 additional elements.
+First extra element 1:
+['Overall_Avg_Score', 71.25]
+
+- [['Overall_Avg_Score', 71.25]]
++ [['Total_Courses', 22], ['Overall_Avg_Score', 71.25]]
+
+======================================================================
+FAIL: test_header_is_optional_without_losing_first_metric (regression.SummaryTests.test_header_is_optional_without_losing_first_metric) (case='canvas-ta-workload-excel-email')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 51, in test_header_is_optional_without_losing_first_metric
+    self.assertEqual(loaded[1:], data)
+AssertionError: Lists differ: [['Overall_Avg_Score', 71.25]] != [['Total_Courses', 22], ['Overall_Avg_Score', 71.25]]
+
+First differing element 0:
+['Overall_Avg_Score', 71.25]
+['Total_Courses', 22]
+
+Second list contains 1 additional elements.
+First extra element 1:
+['Overall_Avg_Score', 71.25]
+
+- [['Overall_Avg_Score', 71.25]]
++ [['Total_Courses', 22], ['Overall_Avg_Score', 71.25]]
+
+======================================================================
+FAIL: test_header_is_optional_without_losing_first_metric (regression.SummaryTests.test_header_is_optional_without_losing_first_metric) (case='sf-hr-manager-report')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 51, in test_header_is_optional_without_losing_first_metric
+    self.assertEqual(loaded[1:], data)
+AssertionError: Lists differ: [['Overall_Avg_Score', 71.25]] != [['Total_Courses', 22], ['Overall_Avg_Score', 71.25]]
+
+First differing element 0:
+['Overall_Avg_Score', 71.25]
+['Total_Courses', 22]
+
+Second list contains 1 additional elements.
+First extra element 1:
+['Overall_Avg_Score', 71.25]
+
+- [['Overall_Avg_Score', 71.25]]
++ [['Total_Courses', 22], ['Overall_Avg_Score', 71.25]]
+
+======================================================================
+FAIL: test_header_is_optional_without_losing_first_metric (regression.SummaryTests.test_header_is_optional_without_losing_first_metric) (case='sf-hr-salary-growth')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 51, in test_header_is_optional_without_losing_first_metric
+    self.assertEqual(loaded[1:], data)
+AssertionError: Lists differ: [['Overall_Avg_Score', 71.25]] != [['Total_Courses', 22], ['Overall_Avg_Score', 71.25]]
+
+First differing element 0:
+['Overall_Avg_Score', 71.25]
+['Total_Courses', 22]
+
+Second list contains 1 additional elements.
+First extra element 1:
+['Overall_Avg_Score', 71.25]
+
+- [['Overall_Avg_Score', 71.25]]
++ [['Total_Courses', 22], ['Overall_Avg_Score', 71.25]]
+
+======================================================================
+FAIL: test_full_grader_rejects_wrong_missing_or_duplicate_metric (regression.SummaryVerdictTests.test_full_grader_rejects_wrong_missing_or_duplicate_metric) (case='canvas-grade-summary', mutation=<function SummaryVerdictTests.test_full_grader_rejects_wrong_missing_or_duplicate_metric.<locals>.<lambda> at 0x1093699e0>)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 103, in test_full_grader_rejects_wrong_missing_or_duplicate_metric
+    self.assertNotEqual(self.verdict(case, filename, mutate), 0)
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_full_grader_rejects_wrong_missing_or_duplicate_metric (regression.SummaryVerdictTests.test_full_grader_rejects_wrong_missing_or_duplicate_metric) (case='canvas-quiz-report', mutation=<function SummaryVerdictTests.test_full_grader_rejects_wrong_missing_or_duplicate_metric.<locals>.<lambda> at 0x1093699e0>)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 103, in test_full_grader_rejects_wrong_missing_or_duplicate_metric
+    self.assertNotEqual(self.verdict(case, filename, mutate), 0)
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_full_grader_rejects_wrong_missing_or_duplicate_metric (regression.SummaryVerdictTests.test_full_grader_rejects_wrong_missing_or_duplicate_metric) (case='sf-hr-manager-report', mutation=<function SummaryVerdictTests.test_full_grader_rejects_wrong_missing_or_duplicate_metric.<locals>.<lambda> at 0x1093699e0>)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 103, in test_full_grader_rejects_wrong_missing_or_duplicate_metric
+    self.assertNotEqual(self.verdict(case, filename, mutate), 0)
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_full_grader_rejects_wrong_missing_or_duplicate_metric (regression.SummaryVerdictTests.test_full_grader_rejects_wrong_missing_or_duplicate_metric) (case='sf-hr-salary-growth', mutation=<function SummaryVerdictTests.test_full_grader_rejects_wrong_missing_or_duplicate_metric.<locals>.<lambda> at 0x1093699e0>)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 103, in test_full_grader_rejects_wrong_missing_or_duplicate_metric
+    self.assertNotEqual(self.verdict(case, filename, mutate), 0)
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_full_offline_grader_accepts_headerless_summary (regression.SummaryVerdictTests.test_full_offline_grader_accepts_headerless_summary) (case='canvas-grade-summary')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 94, in test_full_offline_grader_accepts_headerless_summary
+    self.assertEqual(self.verdict(case, filename, lambda ws: None), 0)
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_full_offline_grader_accepts_headerless_summary (regression.SummaryVerdictTests.test_full_offline_grader_accepts_headerless_summary) (case='canvas-quiz-report')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 94, in test_full_offline_grader_accepts_headerless_summary
+    self.assertEqual(self.verdict(case, filename, lambda ws: None), 0)
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_full_offline_grader_accepts_headerless_summary (regression.SummaryVerdictTests.test_full_offline_grader_accepts_headerless_summary) (case='sf-hr-manager-report')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 94, in test_full_offline_grader_accepts_headerless_summary
+    self.assertEqual(self.verdict(case, filename, lambda ws: None), 0)
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_full_offline_grader_accepts_headerless_summary (regression.SummaryVerdictTests.test_full_offline_grader_accepts_headerless_summary) (case='sf-hr-salary-growth')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 94, in test_full_offline_grader_accepts_headerless_summary
+    self.assertEqual(self.verdict(case, filename, lambda ws: None), 0)
+AssertionError: 1 != 0
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.499s
+
+FAILED (failures=32, errors=6)
+Baseline success: False
