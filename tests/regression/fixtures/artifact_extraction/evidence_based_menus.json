@@ -1,0 +1,96 @@
+{
+  "program": "Evidence-Based Workplace Nutrition Program",
+  "evidence_categories": [
+    "high-protein",
+    "low-sodium",
+    "vegetarian"
+  ],
+  "daily_targets": {
+    "calories_1800_2200": true,
+    "protein_gt_50g": true,
+    "fiber_gt_25g": true,
+    "sodium_lt_2300mg": true
+  },
+  "menus": [
+    {
+      "day": "Monday",
+      "breakfast": "Овсянка с фруктами",
+      "lunch": "Курица в сметане",
+      "lunch_category": "горячее",
+      "dinner": "Греческий салат",
+      "dinner_category": "салат",
+      "est_calories": 1400,
+      "dietary_compliance_pct": 75.0,
+      "targets_met": {
+        "calories_1800_2200": true,
+        "protein_gt_50g": true,
+        "fiber_gt_25g": true,
+        "sodium_lt_2300mg": false
+      }
+    },
+    {
+      "day": "Tuesday",
+      "breakfast": "Цельнозерновой тост с яйцом",
+      "lunch": "Гречневая каша",
+      "lunch_category": "гарнир",
+      "dinner": "Бефстроганов",
+      "dinner_category": "горячее",
+      "est_calories": 1550,
+      "dietary_compliance_pct": 100.0,
+      "targets_met": {
+        "calories_1800_2200": true,
+        "protein_gt_50g": true,
+        "fiber_gt_25g": true,
+        "sodium_lt_2300mg": true
+      }
+    },
+    {
+      "day": "Wednesday",
+      "breakfast": "Творог с ягодами и мёдом",
+      "lunch": "Греческий салат",
+      "lunch_category": "салат",
+      "dinner": "Котлеты домашние",
+      "dinner_category": "горячее",
+      "est_calories": 1400,
+      "dietary_compliance_pct": 75.0,
+      "targets_met": {
+        "calories_1800_2200": true,
+        "protein_gt_50g": true,
+        "fiber_gt_25g": true,
+        "sodium_lt_2300mg": false
+      }
+    },
+    {
+      "day": "Thursday",
+      "breakfast": "Омлет с овощами и цельнозерновым хлебом",
+      "lunch": "Рыба запечённая по-русски",
+      "lunch_category": "горячее",
+      "dinner": "Рис отварной",
+      "dinner_category": "гарнир",
+      "est_calories": 1550,
+      "dietary_compliance_pct": 75.0,
+      "targets_met": {
+        "calories_1800_2200": true,
+        "protein_gt_50g": false,
+        "fiber_gt_25g": true,
+        "sodium_lt_2300mg": true
+      }
+    },
+    {
+      "day": "Friday",
+      "breakfast": "Греческий йогурт с орехами и бананом",
+      "lunch": "Салат с курицей и грибами",
+      "lunch_category": "салат",
+      "dinner": "Курица в сметане",
+      "dinner_category": "горячее",
+      "est_calories": 1400,
+      "dietary_compliance_pct": 75.0,
+      "targets_met": {
+        "calories_1800_2200": true,
+        "protein_gt_50g": true,
+        "fiber_gt_25g": false,
+        "sodium_lt_2300mg": true
+      }
+    }
+  ]
+}

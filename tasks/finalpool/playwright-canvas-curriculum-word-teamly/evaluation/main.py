@@ -15,6 +15,7 @@ Pass threshold otherwise: accuracy >= 70%.
 """
 
 import argparse
+from html.parser import HTMLParser
 import os
 import re
 import sys
@@ -214,6 +215,41 @@ def _date_present(chunk):
             or "04/15/2026" in chunk)
 
 
+def _table_rows(body):
+    """Read row boundaries from Markdown and HTML tables."""
+    class TableParser(HTMLParser):
+        def __init__(self):
+            super().__init__()
+            self.rows = []
+            self.row = None
+            self.cell = None
+
+        def handle_starttag(self, tag, attrs):
+            if tag == "tr":
+                self.row = []
+            elif tag in ("td", "th") and self.row is not None:
+                self.cell = []
+
+        def handle_data(self, data):
+            if self.cell is not None:
+                self.cell.append(data)
+
+        def handle_endtag(self, tag):
+            if tag in ("td", "th") and self.cell is not None:
+                self.row.append("".join(self.cell).strip())
+                self.cell = None
+            elif tag == "tr" and self.row is not None:
+                self.rows.append(self.row)
+                self.row = None
+
+    parser = TableParser()
+    parser.feed(body)
+    if parser.rows:
+        return parser.rows
+    return [[cell.strip().strip("*`") for cell in re.split(r"(?<!\\)\|", line.strip().strip("|"))]
+            for line in body.splitlines() if "|" in line]
+
+
 def check_teamly(courses):
     """Check the Teamly 'Course Compliance Tracker' page."""
     print("\n=== Checking Teamly Tracker Page ===")
@@ -258,44 +294,25 @@ def check_teamly(courses):
         record(f"Tracker mentions column {col}", col.lower() in body_low,
                f"'{col}' not found in page body")
 
-    # Locate each course's row by the FULL course name (with the term suffix),
-    # which disambiguates same-department courses that differ only by term.
-    def row_index(course):
-        full = course["name"].lower()
-        idx = body_low.find(full)
-        if idx >= 0:
-            return idx
-        # Fallback: anchor on department prefix co-located with the term, e.g.
-        # 'biochemistry ... fall 2014' across a table row.
-        term = ""
-        if "(" in course["name"] and ")" in course["name"]:
-            term = course["name"].split("(", 1)[1].split(")", 1)[0].strip().lower()
-        if not term:
-            return -1
-        start = 0
-        while True:
-            di = body_low.find(course["short"], start)
-            if di < 0:
-                return -1
-            if term in body_low[di: di + 400]:
-                return di
-            start = di + 1
+    rows = {}
+    header = None
+    for cells in _table_rows(body_low):
+        if "course_name" in cells and "overall_status" in cells:
+            header = {name: i for i, name in enumerate(cells)}
+            continue
+        if header is None or len(cells) != len(header):
+            continue
+        row = {name: cells[i] for name, i in header.items()}
+        name = row.get("course_name", "")
+        if name in rows:
+            rows[name] = None
+        else:
+            rows[name] = row
 
-    # Map each course to its row start, then bound each row's chunk by the next
-    # row's start so date/status lookups do not bleed into adjacent rows.
-    course_idx = {c["name"]: row_index(c) for c in courses}
-    sorted_starts = sorted(i for i in course_idx.values() if i >= 0)
+    def course_row(course):
+        return rows.get(course["name"].lower())
 
-    def row_chunk(course):
-        idx = course_idx[course["name"]]
-        if idx < 0:
-            return None
-        end = len(body_low)
-        for s in sorted_starts:
-            if s > idx:
-                end = s
-                break
-        return body_low[idx: min(end, idx + 600)]
+    course_idx = {c["name"]: 0 if course_row(c) else -1 for c in courses}
 
     # CRITICAL: all 22 course rows present (located individually).
     missing = [c["name"] for c in courses if course_idx[c["name"]] < 0]
@@ -307,17 +324,13 @@ def check_teamly(courses):
 
     # CRITICAL: Overall_Status correct for every course.
     def status_ok(course):
-        chunk = row_chunk(course)
-        if chunk is None:
+        row = course_row(course)
+        if not row:
             return False
-        if course["compliant"]:
-            has_compliant = ("compliant" in chunk or "соответствует" in chunk)
-            has_non = ("non-compliant" in chunk or "non compliant" in chunk
-                       or "не соответствует" in chunk)
-            return has_compliant and not has_non
-        else:
-            return ("non-compliant" in chunk or "non compliant" in chunk
-                    or "не соответствует" in chunk)
+        status = row.get("overall_status", "")
+        allowed = ("compliant", "соответствует") if course["compliant"] else (
+            "non-compliant", "non compliant", "не соответствует")
+        return status in allowed
 
     status_correct = sum(1 for c in courses if status_ok(c))
     record(
@@ -328,13 +341,11 @@ def check_teamly(courses):
 
     # CRITICAL: Follow_Up_Date present for non-compliant, empty for compliant.
     def followup_ok(course):
-        chunk = row_chunk(course)
-        if chunk is None:
+        row = course_row(course)
+        if not row:
             return False
-        present = _date_present(chunk)
-        if course["compliant"]:
-            return not present   # compliant -> empty follow-up
-        return present           # non-compliant -> 2026-04-15
+        followup = row.get("follow_up_date", "")
+        return not followup if course["compliant"] else _date_present(followup)
 
     followup_correct = sum(1 for c in courses if followup_ok(c))
     record(

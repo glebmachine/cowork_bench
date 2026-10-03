@@ -244,7 +244,12 @@ def check_word(agent_workspace, investigation_products):
         check("Word file readable", False, str(e))
         return
 
-    full_text = "\n".join([p.text for p in doc.paragraphs]).lower()
+    full_text = "\n".join(
+        "".join(node.text or "" for node in paragraph.iter(
+            "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}t"))
+        for paragraph in doc.element.body.iter(
+            "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}p")
+    ).lower()
 
     # Check required sections — broadened to RU+EN alternatives, since the agent
     # legitimately writes Russian headings after russification. Each tuple is a

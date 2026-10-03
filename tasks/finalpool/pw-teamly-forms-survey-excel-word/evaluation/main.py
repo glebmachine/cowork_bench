@@ -160,9 +160,9 @@ def run_evaluation(agent_workspace, groundtruth_workspace, launch_time, res_log_
             total_items_v = None
             avg_gap_v = None
             for k, v in metric_map.items():
-                if "total_items" in k or "total items" in k:
+                if k in ("total_items", "total items"):
                     total_items_v = safe_float(v)
-                if "avg_gap" in k or "avg gap" in k or "средн" in k:
+                if k in ("avg_gap", "avg gap", "средний разрыв", "среднее отклонение"):
                     avg_gap_v = safe_float(v)
             total_ok = (total_items_v is not None and da_data_rows_count > 0
                         and abs(total_items_v - da_data_rows_count) < 0.5)

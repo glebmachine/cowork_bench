@@ -1,0 +1,159 @@
+FFFFFFFEFFFFFF
+======================================================================
+ERROR: test_course_noise_query_keeps_literal_percentages_separate_from_parameters (test_artifact_extraction.ArtifactExtraction.test_course_noise_query_keeps_literal_percentages_separate_from_parameters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-artifact-extraction/tests/regression/test_artifact_extraction.py", line 115, in test_course_noise_query_keeps_literal_percentages_separate_from_parameters
+    invoke(env,'check_email_calendar',[])
+  File "/private/tmp/cowork-fix-artifact-extraction/tests/regression/test_artifact_extraction.py", line 67, in invoke
+    return env[name](*args)
+           ^^^^^^^^^^^^^^^^
+  File "/private/tmp/cowork-artifact-baseline/tasks/finalpool/course-enrollment-analytics-dashboard/evaluation/main.py", line 315, in check_email_calendar
+    cur.execute("""SELECT COUNT(*) FROM email.messages
+  File "/private/tmp/cowork-fix-artifact-extraction/tests/regression/test_artifact_extraction.py", line 34, in execute
+    sql % tuple('value' for _ in args)
+    ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ValueError: unsupported format character '?' (0x440) at index 67
+
+======================================================================
+FAIL: test_archived_course_outputs_keep_semesters (test_artifact_extraction.ArtifactExtraction.test_archived_course_outputs_keep_semesters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-artifact-extraction/tests/regression/test_artifact_extraction.py", line 108, in test_archived_course_outputs_keep_semesters
+    self.assertTrue(outcome(checks, 'avg_score корректен'), checks)
+AssertionError: False is not true : {"Таблица 'Course Enrollment Analytics' существует": (True, 'найдено 1'), 'Department_Metrics содержит столбец Course_Name': (True, "шапка: ['course_name', 'total_enrollment', 'avg_score', 'completion_rate', 'risk_level']"), 'Department_Metrics содержит столбец Total_Enrollment': (True, "шапка: ['course_name', 'total_enrollment', 'avg_score', 'completion_rate', 'risk_level']"), 'Department_Metrics содержит столбец Avg_Score': (True, "шапка: ['course_name', 'total_enrollment', 'avg_score', 'completion_rate', 'risk_level']"), 'Department_Metrics содержит столбец Completion_Rate': (True, "шапка: ['course_name', 'total_enrollment', 'avg_score', 'completion_rate', 'risk_level']"), 'Department_Metrics содержит столбец Risk_Level': (True, "шапка: ['course_name', 'total_enrollment', 'avg_score', 'completion_rate', 'risk_level']"), 'Department_Metrics: по строке на курс': (True, 'строк 23 vs курсов 22'), 'Department_Metrics: avg_score корректен для всех курсов': (False, '10/22 совпали'), 'Department_Metrics отсортирован по Avg_Score по возрастанию': (True, 'avgs: [62.8, 64.3, 65.8, 66.5, 67.2, 67.8, 68.7, 70.0, 70.2, 74.7, 74.9, 76.0, 76.5, 76.6, 77.0, 77.2, 77.4, 77.4, 78.1, 78.8, 79.6, 81.3]'), 'Department_Metrics: Risk_Level соответствует порогам для всех курсов': (True, '19/22 совпали')}
+
+======================================================================
+FAIL: test_bonus_actual_critical_checks_reject_wrong_missing_and_duplicate_employees (test_artifact_extraction.ArtifactExtraction.test_bonus_actual_critical_checks_reject_wrong_missing_and_duplicate_employees) (mode='valid')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-artifact-extraction/tests/regression/test_artifact_extraction.py", line 271, in test_bonus_actual_critical_checks_reject_wrong_missing_and_duplicate_employees
+    self.assertEqual(all(ok for ok, _ in checks.values()),
+AssertionError: False != True : {'C1 adjustment factor present': (False, 'No factor or adjusted/current ratio found in JSON'), 'C2 adjusted bonus totals present': (False, 'No adjusted bonus amounts found in market_adjusted_bonuses.json'), 'C3 per-employee cap verifiable': (False, 'Could not pair adjusted bonus with salary'), 'C4 current bonuses match salary*tier_pct (>=3 spot-checks)': (False, "matched 0/3; mismatches [('Same Name', 5.0, 300.0), ('Same Name', 10.0, 300.0), ('Same Name', 10.0, 300.0)]")}
+
+======================================================================
+FAIL: test_bonus_actual_critical_checks_reject_wrong_missing_and_duplicate_employees (test_artifact_extraction.ArtifactExtraction.test_bonus_actual_critical_checks_reject_wrong_missing_and_duplicate_employees) (mode='tied_permutation')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-artifact-extraction/tests/regression/test_artifact_extraction.py", line 271, in test_bonus_actual_critical_checks_reject_wrong_missing_and_duplicate_employees
+    self.assertEqual(all(ok for ok, _ in checks.values()),
+AssertionError: False != True : {'C1 adjustment factor present': (False, 'No factor or adjusted/current ratio found in JSON'), 'C2 adjusted bonus totals present': (False, 'No adjusted bonus amounts found in market_adjusted_bonuses.json'), 'C3 per-employee cap verifiable': (False, 'Could not pair adjusted bonus with salary'), 'C4 current bonuses match salary*tier_pct (>=3 spot-checks)': (False, "matched 0/3; mismatches [('Same Name', 5.0, 300.0), ('Same Name', 10.0, 300.0), ('Same Name', 10.0, 300.0)]")}
+
+======================================================================
+FAIL: test_bonus_actual_critical_checks_reject_wrong_missing_and_duplicate_employees (test_artifact_extraction.ArtifactExtraction.test_bonus_actual_critical_checks_reject_wrong_missing_and_duplicate_employees) (mode='unique_salary_fallback')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-artifact-extraction/tests/regression/test_artifact_extraction.py", line 271, in test_bonus_actual_critical_checks_reject_wrong_missing_and_duplicate_employees
+    self.assertEqual(all(ok for ok, _ in checks.values()),
+AssertionError: False != True : {'C1 adjustment factor present': (False, 'No factor or adjusted/current ratio found in JSON'), 'C2 adjusted bonus totals present': (False, 'No adjusted bonus amounts found in market_adjusted_bonuses.json'), 'C3 per-employee cap verifiable': (False, 'Could not pair adjusted bonus with salary'), 'C4 current bonuses match salary*tier_pct (>=3 spot-checks)': (False, "matched 0/3; mismatches [('Same Name', 5.0, 300.0), ('Same Name', 10.0, 300.0), ('Same Name', 10.0, 300.0)]")}
+
+======================================================================
+FAIL: test_bonus_expected_source_does_not_overwrite_equal_names (test_artifact_extraction.ArtifactExtraction.test_bonus_expected_source_does_not_overwrite_equal_names)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-artifact-extraction/tests/regression/test_artifact_extraction.py", line 230, in test_bonus_expected_source_does_not_overwrite_equal_names
+    self.assertEqual(len(result),3,result)
+AssertionError: 1 != 3 : {'Same Name': {'region': 'R2', 'salary': 3000.0, 'pct': 10, 'bonus': 300.0}}
+
+======================================================================
+FAIL: test_bonus_rows_keys_and_duplicate_names_keep_identity (test_artifact_extraction.ArtifactExtraction.test_bonus_rows_keys_and_duplicate_names_keep_identity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-artifact-extraction/tests/regression/test_artifact_extraction.py", line 220, in test_bonus_rows_keys_and_duplicate_names_keep_identity
+    self.assertEqual(env['_entries']({'market_rows':[{'ticker':'ABC'}],'employees':employees}),employees)
+AssertionError: Lists differ: [{'ticker': 'ABC'}] != [{'employee_id': '0', 'name': 'Same Name', '[458 chars]: 1}]
+
+First differing element 0:
+{'ticker': 'ABC'}
+{'employee_id': '0', 'name': 'Same Name', '[119 chars]': 1}
+
+Second list contains 2 additional elements.
+First extra element 1:
+{'employee_id': '1', 'name': 'Same Name', 'salary': 2000, 'region': 'Region 1', 'bonus_percentage': 10, 'bonus_amount': 200, 'adjusted_bonus': 200, 'market_factor': 1}
+
+- [{'ticker': 'ABC'}]
++ [{'adjusted_bonus': 100,
++   'bonus_amount': 100,
++   'bonus_percentage': 10,
++   'employee_id': '0',
++   'market_factor': 1,
++   'name': 'Same Name',
++   'region': 'Region 0',
++   'salary': 1000},
++  {'adjusted_bonus': 200,
++   'bonus_amount': 200,
++   'bonus_percentage': 10,
++   'employee_id': '1',
++   'market_factor': 1,
++   'name': 'Same Name',
++   'region': 'Region 1',
++   'salary': 2000},
++  {'adjusted_bonus': 300,
++   'bonus_amount': 300,
++   'bonus_percentage': 10,
++   'employee_id': '2',
++   'market_factor': 1,
++   'name': 'Same Name',
++   'region': 'Region 2',
++   'salary': 3000}]
+
+======================================================================
+FAIL: test_compliance_overall_status_comes_from_its_cell_not_summary_or_other_columns (test_artifact_extraction.ArtifactExtraction.test_compliance_overall_status_comes_from_its_cell_not_summary_or_other_columns)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-artifact-extraction/tests/regression/test_artifact_extraction.py", line 165, in test_compliance_overall_status_comes_from_its_cell_not_summary_or_other_columns
+    self.assertEqual(outcome(checks,key),mode in ['original','html'],checks)
+AssertionError: False != True : {'Tracker mentions column Course_Name': (True, "'Course_Name' not found in page body"), 'Tracker mentions column Department': (True, "'Department' not found in page body"), 'Tracker mentions column Assignment_Count': (True, "'Assignment_Count' not found in page body"), 'Tracker mentions column Quiz_Count': (True, "'Quiz_Count' not found in page body"), 'Tracker mentions column Assignments_Compliant': (True, "'Assignments_Compliant' not found in page body"), 'Tracker mentions column Quizzes_Compliant': (True, "'Quizzes_Compliant' not found in page body"), 'Tracker mentions column Overall_Status': (True, "'Overall_Status' not found in page body"), 'Tracker mentions column Follow_Up_Date': (True, "'Follow_Up_Date' not found in page body"), 'Teamly tracker page exists with all 22 courses': (True, '22 live courses; missing rows: []'), 'Teamly tracker: Overall_Status correct for every course': (False, '21/22 courses have correct Overall_Status'), 'Teamly tracker: Follow_Up_Date present for non-compliant / empty for compliant': (True, '22/22 courses have correct Follow_Up_Date')}
+
+======================================================================
+FAIL: test_course_semesters_do_not_collide (test_artifact_extraction.ArtifactExtraction.test_course_semesters_do_not_collide)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-artifact-extraction/tests/regression/test_artifact_extraction.py", line 93, in test_course_semesters_do_not_collide
+    self.assertEqual(outcome(checks,'avg_score корректен'),not wrong,checks)
+AssertionError: True != False : {"Таблица 'Course Enrollment Analytics' существует": (True, 'найдено 1'), 'Department_Metrics содержит столбец Course_Name': (True, "шапка: ['course_name', 'total_enrollment', 'avg_score', 'completion_rate', 'risk_level']"), 'Department_Metrics содержит столбец Total_Enrollment': (True, "шапка: ['course_name', 'total_enrollment', 'avg_score', 'completion_rate', 'risk_level']"), 'Department_Metrics содержит столбец Avg_Score': (True, "шапка: ['course_name', 'total_enrollment', 'avg_score', 'completion_rate', 'risk_level']"), 'Department_Metrics содержит столбец Completion_Rate': (True, "шапка: ['course_name', 'total_enrollment', 'avg_score', 'completion_rate', 'risk_level']"), 'Department_Metrics содержит столбец Risk_Level': (True, "шапка: ['course_name', 'total_enrollment', 'avg_score', 'completion_rate', 'risk_level']"), 'Department_Metrics: по строке на курс': (True, 'строк 2 vs курсов 2'), 'Department_Metrics: avg_score корректен для всех курсов': (True, '1/2 совпали'), 'Department_Metrics отсортирован по Avg_Score по возрастанию': (False, 'avgs: [90.0, 30.0]'), 'Department_Metrics: Risk_Level соответствует порогам для всех курсов': (True, '1/2 совпали')}
+
+======================================================================
+FAIL: test_docx_table_products_and_nested_table_are_read (test_artifact_extraction.ArtifactExtraction.test_docx_table_products_and_nested_table_are_read) (mode='original')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-artifact-extraction/tests/regression/test_artifact_extraction.py", line 140, in test_docx_table_products_and_nested_table_are_read
+    self.assertEqual(outcome(checks,'mentions investigation products'),mode!='missing',checks)
+AssertionError: False != True : {'Root_Cause_Report.docx exists': (True, 'Expected /var/folders/8y/5gl7037n6bd8ny3frmvr9sdr0000gq/T/tmprso70mdq/Root_Cause_Report.docx'), 'CRITICAL: Word doc contains all required sections': (True, 'One or more required sections (RU/EN) missing'), 'CRITICAL: Word doc mentions investigation products': (False, 'One or more investigation products not mentioned')}
+
+======================================================================
+FAIL: test_docx_table_products_and_nested_table_are_read (test_artifact_extraction.ArtifactExtraction.test_docx_table_products_and_nested_table_are_read) (mode='nested')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-artifact-extraction/tests/regression/test_artifact_extraction.py", line 140, in test_docx_table_products_and_nested_table_are_read
+    self.assertEqual(outcome(checks,'mentions investigation products'),mode!='missing',checks)
+AssertionError: False != True : {'Root_Cause_Report.docx exists': (True, 'Expected /var/folders/8y/5gl7037n6bd8ny3frmvr9sdr0000gq/T/tmprso70mdq/Root_Cause_Report.docx'), 'CRITICAL: Word doc contains all required sections': (True, 'One or more required sections (RU/EN) missing'), 'CRITICAL: Word doc mentions investigation products': (False, 'One or more investigation products not mentioned')}
+
+======================================================================
+FAIL: test_exact_average_metric_does_not_collide_with_percentage (test_artifact_extraction.ArtifactExtraction.test_exact_average_metric_does_not_collide_with_percentage)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-artifact-extraction/tests/regression/test_artifact_extraction.py", line 181, in test_exact_average_metric_does_not_collide_with_percentage
+    self.assertEqual(outcome(checks,'Total_Items и Avg_Gap'),mode in ['original','reordered'],checks)
+AssertionError: False != True : {'Survey_Report.xlsx exists': (True, ''), 'Data_Analysis sheet exists': (True, ''), 'Data_Analysis has >= 2 rows': (True, 'got 5'), 'Data_Analysis has Item column': (True, "headers: ['item', 'internal_value', 'external_benchmark', 'gap']"), 'Data_Analysis has Internal_Value column': (True, "headers: ['item', 'internal_value', 'external_benchmark', 'gap']"), 'Data_Analysis has External_Benchmark column': (True, "headers: ['item', 'internal_value', 'external_benchmark', 'gap']"), 'Data_Analysis has Gap column': (True, "headers: ['item', 'internal_value', 'external_benchmark', 'gap']"), 'Data_Analysis: эталон с дашборда совпадает (>=2 категории)': (True, 'matched=5'), 'Data_Analysis: Gap == Internal_Value - External_Benchmark для всех строк': (True, 'gap_ok=True'), 'Metrics sheet exists': (True, ''), 'Metrics has >= 2 rows': (True, 'got 11'), 'Metrics has Metric column': (True, "headers: ['metric', 'value']"), 'Metrics has Value column': (True, "headers: ['metric', 'value']"), 'Metrics: Total_Items и Avg_Gap корректны': (False, 'total_items=5.0 (rows=5), avg_gap=6.67'), 'Recommendations sheet exists': (True, ''), 'Recommendations has >= 1 rows': (True, 'got 5'), 'Recommendations has Priority column': (True, "headers: ['priority', 'action']"), 'Recommendations has Action column': (True, "headers: ['priority', 'action']"), 'Teamly: страница Dashboard с русским резюме создана': (False, 'found 0 pages'), 'Forms: форма Feedback с >=1 вопросом создана': (False, 'forms=0'), 'Word document exists': (False, 'found 0 docx files'), 'notion_survey_processor.py exists': (False, '')}
+
+======================================================================
+FAIL: test_paper_identity_prefers_explicit_id_over_author_substrings (test_artifact_extraction.ArtifactExtraction.test_paper_identity_prefers_explicit_id_over_author_substrings)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-artifact-extraction/tests/regression/test_artifact_extraction.py", line 195, in test_paper_identity_prefers_explicit_id_over_author_substrings
+    self.assertEqual(outcome(checks,'Teamly has >= 6'),mode=='original',checks)
+AssertionError: False != True : {'Research Paper Tracker space exists': (True, "Spaces: [('RPT', 'Research Paper Tracker')]"), 'Teamly has >= 6 paper pages': (False, "Matched paper ids: ['1409.0473', '1706.03762', '1810.04805', '2005.14165', '2009.06732'] across 8 pages"), 'Teamly tracker has >=6 paper pages with correct Category/Source': (False, "Source=Both on 4/6 pages, anchored Category ok: ['1706.03762', '2009.06732']"), 'Teamly pages carry expected Category on all 6 papers': (False, "Correct Category on ['1409.0473', '1706.03762', '2005.14165', '2009.06732']")}
+
+======================================================================
+FAIL: test_wrapped_menu_and_root_forms_preserve_actual_day_semantics (test_artifact_extraction.ArtifactExtraction.test_wrapped_menu_and_root_forms_preserve_actual_day_semantics)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-artifact-extraction/tests/regression/test_artifact_extraction.py", line 213, in test_wrapped_menu_and_root_forms_preserve_actual_day_semantics
+    self.assertEqual(accepted,mode in ['wrapped','list','dict'],checks)
+AssertionError: False != True : {'evidence_based_menus has 5 day entries': (False, 'found 1'), 'No two consecutive days share the same lunch category': (False, 'not enough days')}
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.166s
+
+FAILED (failures=13, errors=1)

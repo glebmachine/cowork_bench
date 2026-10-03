@@ -19,6 +19,8 @@ map produced them (Russian); this eval never hardcodes those literals — it que
 them live so seed/eval/groundtruth stay in sync.
 """
 import argparse
+from collections import Counter
+from decimal import Decimal, InvalidOperation
 import json
 import os
 import sys
@@ -125,7 +127,7 @@ def tier_pct(revenue, tiers):
 
 def compute_expected_bonuses():
     """Recompute, live from clickhouse, the per-employee expected current bonus.
-    Returns dict {employee_name: {region, salary, pct, bonus}} or None.
+    Returns employee-id records and allowable region slots for tied names.
     Replicates: round-robin alphabetical assignment of Sales employees across the
     five customer regions sorted alphabetically; tier from that region's total
     revenue (orders joined to customers)."""
@@ -152,20 +154,21 @@ def compute_expected_bonuses():
         # Sales employees; sort in Python (matches the agent's typical sort and
         # avoids DB-collation divergence on Cyrillic names).
         cur.execute("""
-            SELECT "EMPLOYEE_NAME", "SALARY"
+            SELECT "EMPLOYEE_ID", "EMPLOYEE_NAME", "SALARY"
             FROM sf_data."HR_ANALYTICS__PUBLIC__EMPLOYEES"
             WHERE "DEPARTMENT" = 'Продажи'
         """)
-        emps = sorted(cur.fetchall(), key=lambda r: r[0])
+        emps = sorted(cur.fetchall(), key=lambda r: r[1])
         out = {}
         n_reg = len(regions)
-        for i, (name, salary) in enumerate(emps):
+        slots = {}
+        for i, (_, name, _) in enumerate(emps):
             reg = regions[i % n_reg] if n_reg else None
-            pct = region_pct.get(reg, 0)
-            salary = float(salary)
-            out[name] = {
-                "region": reg, "salary": salary,
-                "pct": pct, "bonus": salary * pct / 100.0,
+            slots.setdefault(name, []).append(reg)
+        for employee_id, name, salary in emps:
+            out[_employee_id(employee_id)] = {
+                "name": name, "salary": float(salary),
+                "region_slots": slots[name], "region_percentages": region_pct,
             }
         return out
     except Exception as e:
@@ -371,35 +374,47 @@ def _load_json(path):
 
 
 def _entries(data):
-    """Normalize a bonuses JSON file to a list of dict rows."""
+    """Normalize employee rows without selecting market-summary arrays."""
     if isinstance(data, list):
-        return [d for d in data if isinstance(d, dict)]
-    if isinstance(data, dict):
-        for v in data.values():
-            if isinstance(v, list):
-                return [d for d in v if isinstance(d, dict)]
-        # dict keyed by name -> record
-        rows = []
-        for k, v in data.items():
-            if isinstance(v, dict):
-                r = dict(v)
-                r.setdefault("name", k)
-                rows.append(r)
-        return rows
-    return []
+        return [row for row in data if isinstance(row, dict)]
+    if not isinstance(data, dict):
+        return []
+    for name in ("employees", "bonuses", "current_bonuses", "adjusted_bonuses"):
+        if name in data:
+            return _entries(data[name]) if isinstance(data[name], list) else []
+    lists = [value for value in data.values() if isinstance(value, list)]
+    if lists:
+        candidates = [rows for rows in lists if rows and all(
+            isinstance(row, dict) and _get(row, "name", "employee name", "имя") is not None
+            and _get(row, "salary", "bonus", "adjusted bonus") is not None for row in rows)]
+        return candidates[0] if len(candidates) == 1 else []
+    rows = []
+    for name, value in data.items():
+        if isinstance(value, dict) and _get(value, "salary", "bonus", "adjusted bonus") is not None:
+            rows.append(dict(value, name=value.get("name", name)))
+    return rows
 
 
 def _get(row, *keys):
-    low = {k.lower(): v for k, v in row.items()}
-    for k in keys:
-        if k.lower() in low:
-            return low[k.lower()]
-    # substring fallback
-    for k in keys:
-        for lk, lv in low.items():
-            if k.lower() in lk:
-                return lv
+    """Match normalized metric names, never prefixes such as bonus_percentage."""
+    low = {" ".join(str(k).lower().replace("_", " ").split()): v for k, v in row.items()}
+    aliases = {"bonus": ("bonus amount", "current bonus"),
+               "adjusted": ("adjusted bonus",), "factor": ("adjustment factor", "market factor")}
+    for key in keys:
+        key = " ".join(key.lower().replace("_", " ").split())
+        for name in (key, *aliases.get(key, ())):
+            if name in low:
+                return low[name]
     return None
+
+
+def _employee_id(value):
+    """Normalize numeric IDs serialized as either 123 or 123.0."""
+    try:
+        number = Decimal(str(value))
+        return str(number.quantize(Decimal(1))) if number.is_finite() and number == number.to_integral() else str(value)
+    except InvalidOperation:
+        return str(value)
 
 
 def check_json_outputs(workspace, expected_bonuses, headcount):
@@ -540,10 +555,12 @@ def critical_checks(workspace, expected_factor_info, expected_bonuses):
         name = _get(r, "name", "employee name", "имя")
         # salary may live only in current_bonuses; build a lookup if missing.
         if sal is None and name is not None:
-            for c in cb:
-                if _get(c, "name", "employee name", "имя") == name:
-                    sal = _get(c, "salary", "оклад")
-                    break
+            employee_id = _get(r, "employee_id")
+            matches = [c for c in cb if (
+                _employee_id(_get(c, "employee_id")) == _employee_id(employee_id)
+                if employee_id is not None else _get(c, "name", "employee name", "имя") == name)]
+            if len(matches) == 1:
+                sal = _get(matches[0], "salary", "оклад")
         try:
             if adj is not None and sal is not None and float(sal) > 0:
                 checked_any = True
@@ -566,27 +583,38 @@ def critical_checks(workspace, expected_factor_info, expected_bonuses):
         check("C4 current_bonuses.json usable for spot-check", False,
               "current_bonuses.json missing/unparseable", critical=True)
     else:
-        matched = 0
-        checked = 0
+        remaining = {e["name"]: Counter(e["region_slots"]) for e in expected_bonuses.values()}
+        seen = set()
         mismatches = []
-        for r in cb:
-            name = _get(r, "name", "employee name", "имя")
-            bonus = _get(r, "bonus amount", "bonus", "current bonus", "current_bonus")
-            if name in expected_bonuses and bonus is not None:
-                checked += 1
-                exp = expected_bonuses[name]["bonus"]
-                try:
-                    if num_close(bonus, exp, tol=max(1.0, abs(exp) * 0.01)):
-                        matched += 1
-                    else:
-                        mismatches.append((name, float(bonus), round(exp, 2)))
-                except Exception:
-                    mismatches.append((name, bonus, round(exp, 2)))
-                if checked >= 8 and matched >= 3:
-                    break
-        check("C4 current bonuses match salary*tier_pct (>=3 spot-checks)",
-              matched >= 3,
-              f"matched {matched}/{checked}; mismatches {mismatches[:3]}",
+        for row in cb:
+            name = _get(row, "name", "employee name", "имя")
+            employee_id = _get(row, "employee_id")
+            salary = _get(row, "salary", "оклад")
+            if employee_id is not None:
+                candidates = [_employee_id(employee_id)] if _employee_id(employee_id) in expected_bonuses else []
+            else:
+                candidates = [eid for eid, employee in expected_bonuses.items()
+                              if employee["name"] == name and num_close(salary, employee["salary"], tol=0.01)]
+            if len(candidates) != 1 or candidates[0] in seen:
+                mismatches.append((name, "missing, ambiguous or duplicate identity"))
+                continue
+            employee_id = candidates[0]
+            employee = expected_bonuses[employee_id]
+            region = _get(row, "region")
+            if (employee["name"] != name or not num_close(salary, employee["salary"], tol=0.01)
+                    or remaining[name][region] <= 0):
+                mismatches.append((name, "source salary/name or round-robin region mismatch"))
+                continue
+            expected = employee["salary"] * employee["region_percentages"][region] / 100.0
+            bonus = _get(row, "bonus amount", "bonus", "current bonus")
+            if not num_close(bonus, expected, tol=max(1.0, abs(expected) * 0.01)):
+                mismatches.append((name, "bonus does not match source salary and region tier"))
+                continue
+            seen.add(employee_id)
+            remaining[name][region] -= 1
+        check("C4 current bonuses match source employees and salary*tier_pct",
+              len(seen) == len(expected_bonuses) and not mismatches,
+              f"matched {len(seen)}/{len(expected_bonuses)}; mismatches {mismatches[:3]}",
               critical=True)
 
 

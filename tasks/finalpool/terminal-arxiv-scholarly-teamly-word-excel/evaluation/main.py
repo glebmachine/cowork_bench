@@ -10,6 +10,7 @@ and the Teamly tracker carries per-paper Category/Source. Any critical failure
 import argparse
 import json
 import os
+import re
 import sys
 
 import openpyxl
@@ -265,14 +266,24 @@ def check_teamly():
     cat_ok_ids = set()
     for title, body in pages:
         blob = (str(title) + " " + str(body)).lower()
-        for pid, anchor in title_anchors.items():
-            if pid in blob or anchor in blob:
-                matched_ids.add(pid)
-                if expected_cat[pid] in blob:
-                    cat_ok_ids.add(pid)
-                if "both" in blob:
-                    src_ok_ids.add(pid)
-                break
+        declared = re.findall(r"(?im)^\s*\*{0,2}paper[_ ]id\s*:\*{0,2}\s*(\d{4}\.\d{4,5})(?:v\d+)?\b", str(body))
+        if declared:
+            candidates = set(declared)
+        else:
+            candidates = {pid for pid, anchor in title_anchors.items()
+                          if re.search(r"(?<!\w)" + re.escape(anchor) + r"(?!\w)", str(title).lower())}
+            if not candidates:
+                candidates = set(re.findall(r"(?<!\d)\d{4}\.\d{4,5}(?!\d)", blob))
+        if len(candidates) != 1:
+            continue
+        pid = candidates.pop()
+        if pid not in title_anchors:
+            continue
+        matched_ids.add(pid)
+        if expected_cat[pid] in blob:
+            cat_ok_ids.add(pid)
+        if "both" in blob:
+            src_ok_ids.add(pid)
 
     check("Teamly has >= 6 paper pages", len(matched_ids) >= 6,
           f"Matched paper ids: {sorted(matched_ids)} across {len(pages)} pages")

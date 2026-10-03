@@ -1,0 +1,48 @@
+{
+  "baseline_revision": "d943e75bc0fc8e3b27141979300cd8cbcd1e890d",
+  "analysis_sha256": "dc190ddcb5b75a96e5dcdd2fe77c0f8245b03b78d9a96283c07187f125ef02b5",
+  "fixtures": [
+    {
+      "fixture": "Root_Cause_Report.docx",
+      "sha256": "188d7b55678b19ec14b56f46125c917260c5c680647e052dc6e62196751e256e",
+      "archive": "raw-runs.zip",
+      "source": "20261003T135408Z-f7c9cc18/insales-refund-root-cause-excel-word-email/dumps/workspace/Root_Cause_Report.docx",
+      "transformation": "none"
+    },
+    {
+      "fixture": "Survey_Report.xlsx",
+      "sha256": "8e98165ebe11e8378f19173b6f06a2029e5ebf43571974eff8bdf33c793c60fe",
+      "archive": "raw-runs.zip",
+      "source": "20261003T135408Z-f7c9cc18/pw-teamly-forms-survey-excel-word/dumps/workspace/Survey_Report.xlsx",
+      "transformation": "none"
+    },
+    {
+      "fixture": "evidence_based_menus.json",
+      "sha256": "85ec6376e9eefbebca42298ae10103a0b0efa8bfcb4e1e19f420414dc35a8c3a",
+      "archive": "raw-runs.zip",
+      "source": "20261003T135408Z-f7c9cc18/terminal-kulinar-scholarly-excel-word-forms/dumps/workspace/evidence_based_menus.json",
+      "transformation": "none"
+    },
+    {
+      "fixture": "compliance_page.json",
+      "sha256": "9a448879bbbdb3a722e111a391e09ac4c1d03a1fb624f9040002ccf9bba2fd54",
+      "archive": "raw-runs.zip",
+      "source": "20261003T135408Z-f7c9cc18/playwright-canvas-curriculum-word-teamly/traces/tool_calls.jsonl: teamly__create_page arguments",
+      "transformation": "Extract listed payload fields, preserve values, serialize as JSON."
+    },
+    {
+      "fixture": "paper_pages.json",
+      "sha256": "284a10c49a5e200b78784f53718fd733ae992b68f5ff12b40de766ca5c006c35",
+      "archive": "raw-runs.zip",
+      "source": "20261003T135408Z-f7c9cc18/terminal-arxiv-scholarly-teamly-word-excel/traces/tool_calls.jsonl: all teamly__create_page arguments",
+      "transformation": "Extract listed payload fields, preserve values, serialize as JSON."
+    },
+    {
+      "fixture": "course_outputs.json",
+      "sha256": "e99d96c5541ae807f50c4103877abc77f10ead90db95332a360e3e9c65404225",
+      "archive": "raw-runs.zip",
+      "source": "20261003T125520Z-489ea28e/course-enrollment-analytics-dashboard/traces/tool_calls.jsonl: final google_sheet__update_cells data and teamly__create_page body; dumps/workspace/performance.json",
+      "transformation": "Extract listed payload fields, preserve values, serialize as JSON."
+    }
+  ]
+}

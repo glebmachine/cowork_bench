@@ -95,9 +95,9 @@ def to_utc_naive(dt):
     return dt
 
 
-def short_name(course_name):
-    """Название курса без суффикса '(Term Year)', в нижнем регистре."""
-    return course_name.split("(")[0].strip().lower()
+def course_key(course_name):
+    """Normalize the full course identity, retaining its semester."""
+    return " ".join(course_name.casefold().split())
 
 
 def risk_level(avg):
@@ -202,7 +202,7 @@ def check_gsheet(expected):
           f"строк {len(data_rows)} vs курсов {len(expected)}")
 
     # Сопоставляем строки листа с эталоном по названию курса.
-    exp_by_short = {short_name(c["name"]): c for c in expected.values()}
+    exp_by_name = {course_key(c["name"]): c for c in expected.values()}
 
     # --- CRITICAL: avg_score корректность ---
     avg_ok = 0
@@ -214,8 +214,8 @@ def check_gsheet(expected):
         cn = col_val(r, "Course_Name")
         if cn is None:
             continue
-        key = short_name(str(cn))
-        exp = exp_by_short.get(key)
+        key = course_key(str(cn))
+        exp = exp_by_name.get(key)
         av = safe_float(col_val(r, "Avg_Score"))
         if av is not None:
             listed_avgs.append(av)
@@ -273,8 +273,8 @@ def check_teamly(expected, at_risk_names):
 
     # CRITICAL: ровно курсы группы риска. Все at-risk курсы должны
     # присутствовать; курсы НЕ из группы риска не должны упоминаться.
-    present_risk = sum(1 for n in at_risk_names if short_name(n) in bl)
-    non_risk = [short_name(c["name"]) for c in expected.values()
+    present_risk = sum(1 for n in at_risk_names if course_key(n) in bl)
+    non_risk = [course_key(c["name"]) for c in expected.values()
                 if c["risk_level"] == "on track"]
     false_positives = [n for n in non_risk if n and n in bl]
     no_fp = len(false_positives) == 0
@@ -305,7 +305,7 @@ def check_email_calendar(at_risk):
 
     # Тело письма перечисляет курсы группы риска (хотя бы большинство).
     bl = matched_body.lower()
-    listed = sum(1 for c in at_risk if short_name(c["name"]) in bl)
+    listed = sum(1 for c in at_risk if course_key(c["name"]) in bl)
     need = max(1, int(len(at_risk) * 0.6)) if at_risk else 0
     check("Тело письма перечисляет курсы группы риска",
           (len(at_risk) == 0) or (listed >= need),
@@ -313,9 +313,9 @@ def check_email_calendar(at_risk):
 
     # Reverse-noise: шумовая рассылка не отправлена.
     cur.execute("""SELECT COUNT(*) FROM email.messages
-        WHERE (subject ILIKE '%рассылк%' OR subject ILIKE '%newsletter%'
-               OR subject ILIKE '%обслуживание%')
-          AND to_addr::text ILIKE %s""", (f"%{TARGET_EMAIL}%",))
+        WHERE (subject ILIKE %s OR subject ILIKE %s
+               OR subject ILIKE %s)
+          AND to_addr::text ILIKE %s""", ("%рассылк%", "%newsletter%", "%обслуживание%", f"%{TARGET_EMAIL}%"))
     noise_fwd = cur.fetchone()[0]
     check("Шумовые письма не пересланы консультантам", noise_fwd == 0, f"найдено {noise_fwd}")
 
