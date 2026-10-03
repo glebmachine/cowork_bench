@@ -1,0 +1,32 @@
+{
+  "arxiv-research-tracker-teamly": {
+    "archive_member": "20261003T125520Z-489ea28e/arxiv-research-tracker-teamly/dumps/workspace/Transformer_Research_Tracker.xlsx",
+    "xlsx_sha256": "26070973a89fddbeb14f323579deede9d9c39de2391e7b018ffdd5335dd96797",
+    "baseline_eval_member": "20261003T125520Z-489ea28e/arxiv-research-tracker-teamly/dumps/eval_res.json",
+    "baseline_eval_sha256": "cb12455f8339a8ed7c16d5a116120660b496175a72c881b446218f531b25fada"
+  },
+  "pw-insales-coupon-effectiveness-gsheet-email": {
+    "archive_member": "20261003T135408Z-f7c9cc18/pw-insales-coupon-effectiveness-gsheet-email/dumps/workspace/Coupon_Effectiveness_Report.xlsx",
+    "xlsx_sha256": "4db28969411dfb8018b15b25ea9ee167fa958749eb610c0ad3e01286cb738d42",
+    "baseline_eval_member": "20261003T135408Z-f7c9cc18/pw-insales-coupon-effectiveness-gsheet-email/dumps/eval_res.json",
+    "baseline_eval_sha256": "88aa3146d89b040cc075cb4257676877f7fbe58ac1ae1d98300f6ec8c8fbd2e0"
+  },
+  "sf-hr-attrition-forecast-excel-word-gcal": {
+    "archive_member": "20261003T135408Z-f7c9cc18/sf-hr-attrition-forecast-excel-word-gcal/dumps/workspace/Attrition_Risk_Analysis.xlsx",
+    "xlsx_sha256": "05518160243ccc3e8f371a777576e3b5814bf01848b3b3879ec1e0e492825430",
+    "baseline_eval_member": "20261003T135408Z-f7c9cc18/sf-hr-attrition-forecast-excel-word-gcal/dumps/eval_res.json",
+    "baseline_eval_sha256": "96dc8f4f7bf439861497a1f468468aaed0fedb922afa9fc5c51bb89ac44766ff"
+  },
+  "terminal-canvas-gsheet-word-teamly-gcal": {
+    "archive_member": "20261003T135408Z-f7c9cc18/terminal-canvas-gsheet-word-teamly-gcal/dumps/workspace/Academic_Advising_Report.xlsx",
+    "xlsx_sha256": "8b52b0d2c1bf1c168bd1d42727350b685cda1bb6ac50568b7734168f45d7365d",
+    "baseline_eval_member": "20261003T135408Z-f7c9cc18/terminal-canvas-gsheet-word-teamly-gcal/dumps/eval_res.json",
+    "baseline_eval_sha256": "fe3675caa519533a0238a2fb747135f5fe9b1d4d8715740a746c3388c5619a01"
+  },
+  "yt-fireship-scholarly-excel-teamly": {
+    "archive_member": "20261003T135408Z-f7c9cc18/yt-fireship-scholarly-excel-teamly/dumps/workspace/Tech_Research_Map.xlsx",
+    "xlsx_sha256": "ad57c3b0b81fd8b4fc6050b86ccea5c8bebb9a3011b8a6a736f9c19073f15da5",
+    "baseline_eval_member": "20261003T135408Z-f7c9cc18/yt-fireship-scholarly-excel-teamly/dumps/eval_res.json",
+    "baseline_eval_sha256": "5c38e8e34375b1c43f57d2ce675b90587a6e99af65b575abd00fac394bf613a6"
+  }
+}

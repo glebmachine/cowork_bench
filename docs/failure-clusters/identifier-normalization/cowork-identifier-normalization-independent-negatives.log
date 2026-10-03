@@ -1,0 +1,12 @@
+reject distinct paper arXiv:2402.10003v2
+reject distinct paper arXiv:２４０２.１０００３
+reject distinct paper prefix arXiv:2402.10003
+reject distinct paper arXiv:2402.10001
+reject distinct factor job satisfaction score
+reject distinct factor dissatisfaction
+reject distinct factor Job-Satisfaction
+reject distinct factor satisfactiоn
+reject distinct header median_score
+reject distinct header meaning_score
+reject distinct header mean_score_wrong
+11 additional adversarial native-checker controls passed

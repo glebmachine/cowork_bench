@@ -1,0 +1,20 @@
+test_arxiv_archived_alias (test_native_checkers.NativeCheckers.test_arxiv_archived_alias) ... ok
+test_arxiv_canonical (test_native_checkers.NativeCheckers.test_arxiv_canonical) ... ok
+test_arxiv_wrong_value (test_native_checkers.NativeCheckers.test_arxiv_wrong_value) ... ok
+test_canvas_archived_alias (test_native_checkers.NativeCheckers.test_canvas_archived_alias) ... ok
+test_canvas_canonical (test_native_checkers.NativeCheckers.test_canvas_canonical) ... ok
+test_canvas_wrong_value (test_native_checkers.NativeCheckers.test_canvas_wrong_value) ... ok
+test_coupon_archived_alias (test_native_checkers.NativeCheckers.test_coupon_archived_alias) ... ok
+test_coupon_canonical (test_native_checkers.NativeCheckers.test_coupon_canonical) ... ok
+test_coupon_wrong_value (test_native_checkers.NativeCheckers.test_coupon_wrong_value) ... ok
+test_hr_archived_alias (test_native_checkers.NativeCheckers.test_hr_archived_alias) ... ok
+test_hr_canonical (test_native_checkers.NativeCheckers.test_hr_canonical) ... ok
+test_hr_wrong_value (test_native_checkers.NativeCheckers.test_hr_wrong_value) ... ok
+test_youtube_archived_alias (test_native_checkers.NativeCheckers.test_youtube_archived_alias) ... ok
+test_youtube_canonical (test_native_checkers.NativeCheckers.test_youtube_canonical) ... ok
+test_youtube_wrong_value (test_native_checkers.NativeCheckers.test_youtube_wrong_value) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.089s
+
+OK

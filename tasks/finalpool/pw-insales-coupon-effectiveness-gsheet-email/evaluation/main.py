@@ -36,6 +36,7 @@ BENCHMARK = {
 HEADER_ALIASES = {
     # Category (the join key / main dimension)
     'category': 'category',
+    'product_category': 'category',
     'категория': 'category',
     'категория товара': 'category',
     'категория товаров': 'category',
@@ -43,11 +44,13 @@ HEADER_ALIASES = {
     'название категории': 'category',
     # Product_Count
     'product_count': 'product_count',
+    'internal_product_count': 'product_count',
     'количество товаров': 'product_count',
     'кол-во товаров': 'product_count',
     'число товаров': 'product_count',
     # Our_Avg_Price (our internal value)
     'our_avg_price': 'our_avg_price',
+    'internal_avg_price': 'our_avg_price',
     'наша средняя цена': 'our_avg_price',
     'наш средний чек': 'our_avg_price',
     'наша средняя стоимость': 'our_avg_price',
@@ -60,6 +63,7 @@ HEADER_ALIASES = {
     'сумма продаж': 'total_sales',
     # Market_Avg_Price (external benchmark value)
     'market_avg_price': 'market_avg_price',
+    'benchmark_market_avg_price': 'market_avg_price',
     'рыночная средняя цена': 'market_avg_price',
     'бенчмарк средний чек': 'market_avg_price',
     'бенчмарк средняя цена': 'market_avg_price',
@@ -150,14 +154,30 @@ def run_evaluation(agent_workspace, groundtruth_workspace, launch_time, res_log_
                 check(f"Data_Analysis has {expected_col} column",
                       expected_col.lower() in headers, f"headers: {headers[:8]}")
 
+            conflicting_headers = set()
             for raw in data_rows:
                 if raw is None or all(v is None for v in raw):
                     continue
-                row = {headers[i]: raw[i] for i in range(min(len(headers), len(raw)))}
+                row = {}
+                row_conflicts = set()
+                for header, value in zip(headers, raw):
+                    if header in row and row[header] != value:
+                        row_conflicts.add(header)
+                    else:
+                        row[header] = value
+                if row_conflicts:
+                    conflicting_headers.update(row_conflicts)
+                    continue
                 da_rows.append(row)
                 cat = row.get('category')
                 if cat is not None and str(cat).strip():
                     da_categories.add(str(cat).strip())
+
+            if len(headers) != len(set(headers)):
+                check("Data_Analysis normalized columns have consistent duplicate values",
+                      not conflicting_headers,
+                      f"conflicting columns: {sorted(conflicting_headers)}",
+                      critical=True)
 
         check("Metrics sheet exists", "Metrics" in wb.sheetnames)
         if "Metrics" in wb.sheetnames:

@@ -139,6 +139,14 @@ def find_column_index(header_row, possible_names):
     return None
 
 
+def normalize_paper_id(value):
+    """Accept the standard arXiv label without changing the identifier itself."""
+    paper_id = str(value).strip()
+    if paper_id.lower().startswith("arxiv:"):
+        paper_id = paper_id[len("arxiv:"):].strip()
+    return paper_id
+
+
 def check_excel(agent_workspace):
     """Check Transformer_Research_Tracker.xlsx."""
     print("\n=== Checking Excel Output ===")
@@ -199,7 +207,7 @@ def check_excel(agent_workspace):
             id_order = []
             for row in data_rows:
                 if id_col < len(row) and row[id_col] is not None:
-                    pid = str(row[id_col]).strip()
+                    pid = normalize_paper_id(row[id_col])
                     found_ids.add(pid)
                     id_order.append(pid)
 
@@ -254,7 +262,7 @@ def check_excel(agent_workspace):
             cite_seq = []  # (paper_id, citation) in row order, for sort check
             for row in data_rows:
                 if id_col < len(row) and row[id_col] is not None:
-                    paper_id = str(row[id_col]).strip()
+                    paper_id = normalize_paper_id(row[id_col])
                     actual_cite = row[citation_col] if citation_col < len(row) else None
                     if paper_id in EXPECTED_PAPERS:
                         expected_cite = EXPECTED_PAPERS[paper_id]["citation_count"]

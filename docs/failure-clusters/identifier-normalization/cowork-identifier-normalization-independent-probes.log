@@ -1,0 +1,7 @@
+candidate {'Data_Analysis Category column carries the russified benchmark store categories': True, 'Market_Avg_Price matches scraped benchmark dashboard values': True, 'Price_Gap_Pct = (Our_Avg_Price - Market_Avg_Price)/Market_Avg_Price*100 per row': True}
+baseline {'Data_Analysis Category column carries the russified benchmark store categories': True, 'Market_Avg_Price matches scraped benchmark dashboard values': False, 'Price_Gap_Pct = (Our_Avg_Price - Market_Avg_Price)/Market_Avg_Price*100 per row': False}
+verified xlsx, eval SHA and complete cell projection: arxiv-research-tracker-teamly
+verified xlsx, eval SHA and complete cell projection: pw-insales-coupon-effectiveness-gsheet-email
+verified xlsx, eval SHA and complete cell projection: sf-hr-attrition-forecast-excel-word-gcal
+verified xlsx, eval SHA and complete cell projection: terminal-canvas-gsheet-word-teamly-gcal
+verified xlsx, eval SHA and complete cell projection: yt-fireship-scholarly-excel-teamly

@@ -1,0 +1,172 @@
+{
+  "filename": "Academic_Advising_Report.xlsx",
+  "sheets": {
+    "Course_Summary": [
+      [
+        "course_id",
+        "course_name",
+        "enrolled",
+        "mean_score",
+        "median_score",
+        "pass_rate"
+      ],
+      [
+        20,
+        "Глобальное управление и геополитика (Осень 2013)",
+        952,
+        80.26,
+        80,
+        89.09
+      ],
+      [
+        21,
+        "Глобальное управление и геополитика (Осень 2014)",
+        749,
+        79.08,
+        80,
+        88.15
+      ]
+    ],
+    "Grade_Distribution": [
+      [
+        "grade_band",
+        "submission_count",
+        "percentage"
+      ],
+      [
+        "failing",
+        1167,
+        11.31
+      ],
+      [
+        "D range",
+        1742,
+        16.88
+      ],
+      [
+        "C range",
+        1025,
+        9.93
+      ],
+      [
+        "B range",
+        2524,
+        24.46
+      ],
+      [
+        "A range",
+        3862,
+        37.42
+      ]
+    ],
+    "Advising_Needs": [
+      [
+        "advising_category",
+        "estimated_students",
+        "action_required"
+      ],
+      [
+        "Urgent Intervention",
+        1167,
+        "Immediate meeting with advisor and academic dean"
+      ],
+      [
+        "Academic Support",
+        1742,
+        "Schedule tutoring and study skills workshop"
+      ],
+      [
+        "Progress Monitoring",
+        1025,
+        "Bi-weekly check-in with advisor"
+      ],
+      [
+        "No Action Required",
+        6386,
+        "Standard semester review only"
+      ]
+    ],
+    "Appointment_Schedule": [
+      [
+        "date",
+        "time",
+        "available_slots"
+      ],
+      [
+        "2026-03-16",
+        "09:00",
+        1
+      ],
+      [
+        "2026-03-16",
+        "11:00",
+        1
+      ],
+      [
+        "2026-03-16",
+        "14:00",
+        1
+      ],
+      [
+        "2026-03-17",
+        "09:00",
+        1
+      ],
+      [
+        "2026-03-17",
+        "11:00",
+        1
+      ],
+      [
+        "2026-03-17",
+        "14:00",
+        1
+      ],
+      [
+        "2026-03-18",
+        "09:00",
+        1
+      ],
+      [
+        "2026-03-18",
+        "11:00",
+        1
+      ],
+      [
+        "2026-03-18",
+        "14:00",
+        1
+      ],
+      [
+        "2026-03-19",
+        "09:00",
+        1
+      ],
+      [
+        "2026-03-19",
+        "11:00",
+        1
+      ],
+      [
+        "2026-03-19",
+        "14:00",
+        1
+      ],
+      [
+        "2026-03-20",
+        "09:00",
+        1
+      ],
+      [
+        "2026-03-20",
+        "11:00",
+        1
+      ],
+      [
+        "2026-03-20",
+        "14:00",
+        1
+      ]
+    ]
+  }
+}

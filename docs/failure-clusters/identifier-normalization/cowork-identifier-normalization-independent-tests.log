@@ -1,0 +1,31 @@
+test_arxiv_archived_alias (test_native_checkers.NativeCheckers.test_arxiv_archived_alias) ... ok
+test_arxiv_canonical (test_native_checkers.NativeCheckers.test_arxiv_canonical) ... ok
+test_arxiv_prefixed_id_still_validates_citations (test_native_checkers.NativeCheckers.test_arxiv_prefixed_id_still_validates_citations) ... ok
+test_arxiv_wrong_value (test_native_checkers.NativeCheckers.test_arxiv_wrong_value) ... ok
+test_canvas_archived_alias (test_native_checkers.NativeCheckers.test_canvas_archived_alias) ... ok
+test_canvas_canonical (test_native_checkers.NativeCheckers.test_canvas_canonical) ... ok
+test_canvas_mean_alias_still_validates_numeric_value (test_native_checkers.NativeCheckers.test_canvas_mean_alias_still_validates_numeric_value) ... ok
+test_canvas_wrong_value (test_native_checkers.NativeCheckers.test_canvas_wrong_value) ... ok
+test_coupon_alias_still_validates_market_value (test_native_checkers.NativeCheckers.test_coupon_alias_still_validates_market_value) ... ok
+test_coupon_archived_alias (test_native_checkers.NativeCheckers.test_coupon_archived_alias) ... ok
+test_coupon_canonical (test_native_checkers.NativeCheckers.test_coupon_canonical) ... ok
+test_coupon_conflicting_alias_after_canonical_rejected (test_native_checkers.NativeCheckers.test_coupon_conflicting_alias_after_canonical_rejected) ... ok
+test_coupon_conflicting_alias_before_canonical_rejected (test_native_checkers.NativeCheckers.test_coupon_conflicting_alias_before_canonical_rejected) ... ok
+test_coupon_conflicting_canonical_before_alias_rejected (test_native_checkers.NativeCheckers.test_coupon_conflicting_canonical_before_alias_rejected) ... ok
+test_coupon_conflicting_category_alias_rejected (test_native_checkers.NativeCheckers.test_coupon_conflicting_category_alias_rejected) ... ok
+test_coupon_equal_canonical_and_alias_accepted (test_native_checkers.NativeCheckers.test_coupon_equal_canonical_and_alias_accepted) ... ok
+test_coupon_wrong_value (test_native_checkers.NativeCheckers.test_coupon_wrong_value) ... ok
+test_hr_archived_alias (test_native_checkers.NativeCheckers.test_hr_archived_alias) ... ok
+test_hr_canonical (test_native_checkers.NativeCheckers.test_hr_canonical) ... ok
+test_hr_policy_field_alias (test_native_checkers.NativeCheckers.test_hr_policy_field_alias) ... ok
+test_hr_satisfaction_substring_is_not_alias (test_native_checkers.NativeCheckers.test_hr_satisfaction_substring_is_not_alias) ... ok
+test_hr_wrong_value (test_native_checkers.NativeCheckers.test_hr_wrong_value) ... ok
+test_youtube_archived_alias (test_native_checkers.NativeCheckers.test_youtube_archived_alias) ... ok
+test_youtube_canonical (test_native_checkers.NativeCheckers.test_youtube_canonical) ... ok
+test_youtube_curly_apostrophe_does_not_allow_wrong_order (test_native_checkers.NativeCheckers.test_youtube_curly_apostrophe_does_not_allow_wrong_order) ... ok
+test_youtube_wrong_value (test_native_checkers.NativeCheckers.test_youtube_wrong_value) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.135s
+
+OK

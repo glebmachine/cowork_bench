@@ -102,6 +102,11 @@ def norm(s):
     return str(s).strip().lower() if s is not None else ""
 
 
+def normalize_video_title(value):
+    """Treat the source's typographic apostrophe as an ASCII apostrophe."""
+    return norm(value).replace("’", "'")
+
+
 def check_excel(agent_workspace):
     print("\n=== Check 1: Tech_Research_Map.xlsx ===")
     xlsx_path = os.path.join(agent_workspace, "Tech_Research_Map.xlsx")
@@ -186,10 +191,10 @@ def check_excel(agent_workspace):
         # CRITICAL: all 8 expected titles present, in view-desc order
         order_ok = False
         if title_i is not None and len(map_rows) >= 8:
-            got_titles = [norm(r[title_i]) for r in map_rows[:8] if title_i < len(r)]
+            got_titles = [normalize_video_title(r[title_i]) for r in map_rows[:8] if title_i < len(r)]
             order_ok = True
             for idx, (exp_title, _) in enumerate(EXPECTED_VIDEOS):
-                et = norm(exp_title)
+                et = normalize_video_title(exp_title)
                 if idx >= len(got_titles) or et not in got_titles[idx]:
                     order_ok = False
                     break

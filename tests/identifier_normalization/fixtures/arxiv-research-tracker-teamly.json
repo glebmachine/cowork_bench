@@ -1,0 +1,93 @@
+{
+  "filename": "Transformer_Research_Tracker.xlsx",
+  "sheets": {
+    "Paper Comparison": [
+      [
+        "Paper_ID",
+        "Title",
+        "Authors",
+        "Published_Date",
+        "Venue",
+        "Citation_Count",
+        "Primary_Category",
+        "Key_Contribution"
+      ],
+      [
+        "arXiv:2402.10003",
+        "LoRA: Low-Rank Adaptation of Large Language Models",
+        "Edward Hu, Yelong Shen",
+        "2024-02-20",
+        "ICLR",
+        1200,
+        "cs.CL",
+        "Introduces Low-Rank Adaptation (LoRA), a parameter-efficient fine-tuning method that freezes pre-trained weights and injects trainable low-rank matrices into transformer layers, cutting trainable parameters by 10,000x with no added inference latency."
+      ],
+      [
+        "arXiv:2402.10001",
+        "FlashAttention-3: Fast and Memory-Efficient Attention with IO-Awareness",
+        "Tri Dao, Daniel Fu",
+        "2024-02-15",
+        "NeurIPS",
+        520,
+        "cs.LG",
+        "Presents an IO-aware exact attention algorithm with asynchronous block-wise computation and improved memory tiling that reduces HBM accesses 3-5x and achieves 2.1x speedup over FlashAttention-2 while enabling 128K-token context."
+      ],
+      [
+        "arXiv:2402.10005",
+        "Sparse Mixture of Experts for Scalable Transformer Models",
+        "William Fedus, Jeff Dean",
+        "2024-02-25",
+        "JMLR",
+        340,
+        "cs.AI",
+        "Replaces dense feed-forward layers with sparsely-activated expert layers routed by a learned gating mechanism, scaling model capacity 8-64x at constant per-token cost with an improved load-balancing loss to prevent expert collapse."
+      ],
+      [
+        "arXiv:2402.10002",
+        "Efficient Transformers via Token Merging and Pruning",
+        "Daniel Bolya, Cheng-Yang Fu",
+        "2024-02-18",
+        "ICLR",
+        180,
+        "cs.CV",
+        "Proposes a unified framework that merges or prunes redundant tokens in intermediate transformer layers using bipartite matching, cutting processed tokens by up to 60% while preserving accuracy within 0.3% on ImageNet without retraining."
+      ],
+      [
+        "arXiv:2402.10004",
+        "Quantization-Aware Training for Efficient Transformer Inference",
+        "Jianlin Su, Minjia Zhang",
+        "2024-02-22",
+        "ICML",
+        95,
+        "cs.LG",
+        "Introduces a quantization-aware training framework with learnable step sizes, mixed-precision quantization and a low-bias gradient estimator, shrinking model size 4x and inference latency 2.8x within 0.5 perplexity of the full-precision baseline."
+      ]
+    ],
+    "Statistics": [
+      [
+        "Metric",
+        "Value"
+      ],
+      [
+        "Total_Papers",
+        5
+      ],
+      [
+        "Avg_Citations",
+        467
+      ],
+      [
+        "Most_Cited_Paper",
+        "LoRA: Low-Rank Adaptation of Large Language Models"
+      ],
+      [
+        "Top_Venue",
+        "ICLR"
+      ],
+      [
+        "Date_Range",
+        "2024-02-15 to 2024-02-25"
+      ]
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+test_arxiv_archived_alias (test_native_checkers.NativeCheckers.test_arxiv_archived_alias) ... FAIL
+test_arxiv_canonical (test_native_checkers.NativeCheckers.test_arxiv_canonical) ... ok
+test_arxiv_prefixed_id_still_validates_citations (test_native_checkers.NativeCheckers.test_arxiv_prefixed_id_still_validates_citations) ... FAIL
+test_arxiv_wrong_value (test_native_checkers.NativeCheckers.test_arxiv_wrong_value) ... ok
+test_canvas_archived_alias (test_native_checkers.NativeCheckers.test_canvas_archived_alias) ... FAIL
+test_canvas_canonical (test_native_checkers.NativeCheckers.test_canvas_canonical) ... ok
+test_canvas_mean_alias_still_validates_numeric_value (test_native_checkers.NativeCheckers.test_canvas_mean_alias_still_validates_numeric_value) ... ok
+test_canvas_wrong_value (test_native_checkers.NativeCheckers.test_canvas_wrong_value) ... ok
+test_coupon_alias_still_validates_market_value (test_native_checkers.NativeCheckers.test_coupon_alias_still_validates_market_value) ... ok
+test_coupon_archived_alias (test_native_checkers.NativeCheckers.test_coupon_archived_alias) ... FAIL
+test_coupon_canonical (test_native_checkers.NativeCheckers.test_coupon_canonical) ... ok
+test_coupon_conflicting_alias_after_canonical_rejected (test_native_checkers.NativeCheckers.test_coupon_conflicting_alias_after_canonical_rejected) ... ok
+test_coupon_conflicting_alias_before_canonical_rejected (test_native_checkers.NativeCheckers.test_coupon_conflicting_alias_before_canonical_rejected) ... ok
+test_coupon_conflicting_canonical_before_alias_rejected (test_native_checkers.NativeCheckers.test_coupon_conflicting_canonical_before_alias_rejected) ... ok
+test_coupon_conflicting_category_alias_rejected (test_native_checkers.NativeCheckers.test_coupon_conflicting_category_alias_rejected) ... ok
+test_coupon_equal_canonical_and_alias_accepted (test_native_checkers.NativeCheckers.test_coupon_equal_canonical_and_alias_accepted) ... FAIL
+test_coupon_wrong_value (test_native_checkers.NativeCheckers.test_coupon_wrong_value) ... ok
+test_hr_archived_alias (test_native_checkers.NativeCheckers.test_hr_archived_alias) ... FAIL
+test_hr_canonical (test_native_checkers.NativeCheckers.test_hr_canonical) ... ok
+test_hr_policy_field_alias (test_native_checkers.NativeCheckers.test_hr_policy_field_alias) ... FAIL
+test_hr_satisfaction_substring_is_not_alias (test_native_checkers.NativeCheckers.test_hr_satisfaction_substring_is_not_alias) ... ok
+test_hr_wrong_value (test_native_checkers.NativeCheckers.test_hr_wrong_value) ... ok
+test_youtube_archived_alias (test_native_checkers.NativeCheckers.test_youtube_archived_alias) ... FAIL
+test_youtube_canonical (test_native_checkers.NativeCheckers.test_youtube_canonical) ... ok
+test_youtube_curly_apostrophe_does_not_allow_wrong_order (test_native_checkers.NativeCheckers.test_youtube_curly_apostrophe_does_not_allow_wrong_order) ... ok
+test_youtube_wrong_value (test_native_checkers.NativeCheckers.test_youtube_wrong_value) ... ok
+
+======================================================================
+FAIL: test_arxiv_archived_alias (test_native_checkers.NativeCheckers.test_arxiv_archived_alias)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-identifier-normalization/tests/identifier_normalization/test_native_checkers.py", line 197, in test
+    self.assertEqual(self.relevant(case, results), variant != 'wrong_value', results)
+AssertionError: False != True : {'Excel file exists': True, 'Excel file readable': True, "Sheet 'Paper Comparison' exists": True, 'Paper Comparison has 5 data rows': True, 'Paper Comparison contains exactly the 5 target papers (no noise)': False, 'Paper ID 2402.10002 present': False, 'Paper ID 2402.10005 present': False, 'Paper ID 2402.10001 present': False, 'Paper ID 2402.10003 present': False, 'Paper ID 2402.10004 present': False, 'Noise paper 2402.10010 absent': True, 'Noise paper 2402.10011 absent': True, 'Title present: FlashAttention-3: Fast and Memory-Efficient Attent...': True, 'Title present: Efficient Transformers via Token Merging and Pruni...': True, 'Title present: LoRA: Low-Rank Adaptation of Large Language Models...': True, 'Title present: Quantization-Aware Training for Efficient Transfor...': True, 'Title present: Sparse Mixture of Experts for Scalable Transformer...': True, 'Citation counts exact for all 5 papers': True, 'Paper Comparison sorted by Citation_Count descending': True, "Sheet 'Statistics' exists": True, 'Statistics: Total_Papers = 5': True, 'Statistics: Avg_Citations': True, 'Statistics: Most_Cited_Paper is LoRA': True, 'Statistics: Top_Venue is ICLR': True, 'Statistics: Date_Range has content': True}
+
+======================================================================
+FAIL: test_arxiv_prefixed_id_still_validates_citations (test_native_checkers.NativeCheckers.test_arxiv_prefixed_id_still_validates_citations)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-identifier-normalization/tests/identifier_normalization/test_native_checkers.py", line 91, in test_arxiv_prefixed_id_still_validates_citations
+    self.assertTrue(self.relevant('arxiv', results))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_canvas_archived_alias (test_native_checkers.NativeCheckers.test_canvas_archived_alias)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-identifier-normalization/tests/identifier_normalization/test_native_checkers.py", line 197, in test
+    self.assertEqual(self.relevant(case, results), variant != 'wrong_value', results)
+AssertionError: False != True : {'Excel file exists': True, 'Has at least 4 sheets': True, 'Course_Summary has 2 course rows': True, 'Contains Global Governance': True, 'Course_Summary averages match live Canvas (per course, tol 1.0)': False, 'Course_Summary pass-rate matches live Canvas (per course, tol 1.5)': False, 'Grade_Distribution has 5 range rows': True, 'Grade_Distribution counts sum to total Canvas submissions': False, 'Grade_Distribution failing(<60) count matches Canvas (tol 1)': False, 'Advising_Needs has 4 category rows': True, 'Contains Urgent Intervention': True, 'Advising_Needs lists all 4 categories': True, 'Advising_Needs Urgent Intervention student estimate is positive and <= failing submissions': False, 'Appointment_Schedule has 5 weekday rows': True, 'Appointment_Schedule covers the weekdays 2026-03-16..20': True}
+
+======================================================================
+FAIL: test_coupon_archived_alias (test_native_checkers.NativeCheckers.test_coupon_archived_alias)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-identifier-normalization/tests/identifier_normalization/test_native_checkers.py", line 197, in test
+    self.assertEqual(self.relevant(case, results), variant != 'wrong_value', results)
+AssertionError: False != True : {'Coupon_Effectiveness_Report.xlsx exists': True, 'Data_Analysis sheet exists': True, 'Data_Analysis has >= 6 rows': True, 'Data_Analysis has Category column': False, 'Data_Analysis has Product_Count column': False, 'Data_Analysis has Our_Avg_Price column': False, 'Data_Analysis has Total_Sales column': False, 'Data_Analysis has Market_Avg_Price column': False, 'Data_Analysis has Price_Gap_Pct column': True, 'Metrics sheet exists': True, 'Metrics has >= 3 rows': True, 'Metrics has Metric column': True, 'Metrics has Value column': True, 'Recommendations sheet exists': True, 'Recommendations has >= 2 rows': True, 'Recommendations has Priority column': True, 'Recommendations has Action column': True, 'Recommendations has Category column': False, 'wc_coupons_processor.py exists': False, 'Data_Analysis Category column carries the russified benchmark store categories': False, 'Market_Avg_Price matches scraped benchmark dashboard values': False, 'Price_Gap_Pct = (Our_Avg_Price - Market_Avg_Price)/Market_Avg_Price*100 per row': False, "Email to team-lead@company.com subject 'Analysis Report Complete' with findings body": False, "Google Sheet 'Wc Coupons Tracker' exists with >= 1 category data row": False}
+
+======================================================================
+FAIL: test_coupon_equal_canonical_and_alias_accepted (test_native_checkers.NativeCheckers.test_coupon_equal_canonical_and_alias_accepted)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-identifier-normalization/tests/identifier_normalization/test_native_checkers.py", line 134, in test_coupon_equal_canonical_and_alias_accepted
+    self.assertTrue(self.relevant('coupon', self.coupon_duplicate_market()))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_hr_archived_alias (test_native_checkers.NativeCheckers.test_hr_archived_alias)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-identifier-normalization/tests/identifier_normalization/test_native_checkers.py", line 197, in test
+    self.assertEqual(self.relevant(case, results), variant != 'wrong_value', results)
+AssertionError: False != True : {'Excel file exists': True, 'Excel readable': True, 'Sheet Risk Assessment exists': True, 'Risk Assessment row count': True, 'Инженерия/High Employee_Count': True, 'Инженерия/High Avg_Satisfaction': True, 'Инженерия/High Avg_Performance': True, 'Инженерия/High Avg_Salary_Growth_Pct': True, 'Инженерия/Low Employee_Count': True, 'Инженерия/Low Avg_Satisfaction': True, 'Инженерия/Low Avg_Performance': True, 'Инженерия/Low Avg_Salary_Growth_Pct': True, 'Инженерия/Medium Employee_Count': True, 'Инженерия/Medium Avg_Satisfaction': True, 'Инженерия/Medium Avg_Performance': True, 'Инженерия/Medium Avg_Salary_Growth_Pct': True, 'Кадры/High Employee_Count': True, 'Кадры/High Avg_Satisfaction': True, 'Кадры/High Avg_Performance': True, 'Кадры/High Avg_Salary_Growth_Pct': True, 'Кадры/Low Employee_Count': True, 'Кадры/Low Avg_Satisfaction': True, 'Кадры/Low Avg_Performance': True, 'Кадры/Low Avg_Salary_Growth_Pct': True, 'Кадры/Medium Employee_Count': True, 'Кадры/Medium Avg_Satisfaction': True, 'Кадры/Medium Avg_Performance': True, 'Кадры/Medium Avg_Salary_Growth_Pct': True, 'НИОКР/High Employee_Count': True, 'НИОКР/High Avg_Satisfaction': True, 'НИОКР/High Avg_Performance': True, 'НИОКР/High Avg_Salary_Growth_Pct': True, 'НИОКР/Low Employee_Count': True, 'НИОКР/Low Avg_Satisfaction': True, 'НИОКР/Low Avg_Performance': True, 'НИОКР/Low Avg_Salary_Growth_Pct': True, 'НИОКР/Medium Employee_Count': True, 'НИОКР/Medium Avg_Satisfaction': True, 'НИОКР/Medium Avg_Performance': True, 'НИОКР/Medium Avg_Salary_Growth_Pct': True, 'Операции/High Employee_Count': True, 'Операции/High Avg_Satisfaction': True, 'Операции/High Avg_Performance': True, 'Операции/High Avg_Salary_Growth_Pct': True, 'Операции/Low Employee_Count': True, 'Операции/Low Avg_Satisfaction': True, 'Операции/Low Avg_Performance': True, 'Операции/Low Avg_Salary_Growth_Pct': True, 'Операции/Medium Employee_Count': True, 'Операции/Medium Avg_Satisfaction': True, 'Операции/Medium Avg_Performance': True, 'Операции/Medium Avg_Salary_Growth_Pct': True, 'Поддержка/High Employee_Count': True, 'Поддержка/High Avg_Satisfaction': True, 'Поддержка/High Avg_Performance': True, 'Поддержка/High Avg_Salary_Growth_Pct': True, 'Поддержка/Low Employee_Count': True, 'Поддержка/Low Avg_Satisfaction': True, 'Поддержка/Low Avg_Performance': True, 'Поддержка/Low Avg_Salary_Growth_Pct': True, 'Поддержка/Medium Employee_Count': True, 'Поддержка/Medium Avg_Satisfaction': True, 'Поддержка/Medium Avg_Performance': True, 'Поддержка/Medium Avg_Salary_Growth_Pct': True, 'Продажи/High Employee_Count': True, 'Продажи/High Avg_Satisfaction': True, 'Продажи/High Avg_Performance': True, 'Продажи/High Avg_Salary_Growth_Pct': True, 'Продажи/Low Employee_Count': True, 'Продажи/Low Avg_Satisfaction': True, 'Продажи/Low Avg_Performance': True, 'Продажи/Low Avg_Salary_Growth_Pct': True, 'Продажи/Medium Employee_Count': True, 'Продажи/Medium Avg_Satisfaction': True, 'Продажи/Medium Avg_Performance': True, 'Продажи/Medium Avg_Salary_Growth_Pct': True, 'Финансы/High Employee_Count': True, 'Финансы/High Avg_Satisfaction': True, 'Финансы/High Avg_Performance': True, 'Финансы/High Avg_Salary_Growth_Pct': True, 'Финансы/Low Employee_Count': True, 'Финансы/Low Avg_Satisfaction': True, 'Финансы/Low Avg_Performance': True, 'Финансы/Low Avg_Salary_Growth_Pct': True, 'Финансы/Medium Employee_Count': True, 'Финансы/Medium Avg_Satisfaction': True, 'Финансы/Medium Avg_Performance': True, 'Финансы/Medium Avg_Salary_Growth_Pct': True, 'Sheet Department Summary exists': True, 'Department Summary row count': True, 'Инженерия Total_Employees': True, 'Инженерия High_Risk_Count': True, 'Инженерия High_Risk_Pct': True, 'Инженерия Total_Intervention_Budget': True, 'Кадры Total_Employees': True, 'Кадры High_Risk_Count': True, 'Кадры High_Risk_Pct': True, 'Кадры Total_Intervention_Budget': True, 'НИОКР Total_Employees': True, 'НИОКР High_Risk_Count': True, 'НИОКР High_Risk_Pct': True, 'НИОКР Total_Intervention_Budget': True, 'Операции Total_Employees': True, 'Операции High_Risk_Count': True, 'Операции High_Risk_Pct': True, 'Операции Total_Intervention_Budget': True, 'Поддержка Total_Employees': True, 'Поддержка High_Risk_Count': True, 'Поддержка High_Risk_Pct': True, 'Поддержка Total_Intervention_Budget': True, 'Продажи Total_Employees': True, 'Продажи High_Risk_Count': True, 'Продажи High_Risk_Pct': True, 'Продажи Total_Intervention_Budget': True, 'Финансы Total_Employees': True, 'Финансы High_Risk_Count': True, 'Финансы High_Risk_Pct': True, 'Финансы Total_Intervention_Budget': True, 'Sheet Top Risk Factors exists': True, 'Top Risk Factors row count': True, 'Инженерия Top_Factor': False, 'Инженерия Factor_Score': True, 'Кадры Top_Factor': False, 'Кадры Factor_Score': True, 'НИОКР Top_Factor': False, 'НИОКР Factor_Score': True, 'Операции Top_Factor': False, 'Операции Factor_Score': True, 'Поддержка Top_Factor': False, 'Поддержка Factor_Score': True, 'Продажи Top_Factor': False, 'Продажи Factor_Score': True, 'Финансы Top_Factor': False, 'Финансы Factor_Score': True}
+
+======================================================================
+FAIL: test_hr_policy_field_alias (test_native_checkers.NativeCheckers.test_hr_policy_field_alias)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-identifier-normalization/tests/identifier_normalization/test_native_checkers.py", line 145, in test_hr_policy_field_alias
+    self.assertTrue(self.relevant('hr', self.evaluate('hr', mutate)))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_youtube_archived_alias (test_native_checkers.NativeCheckers.test_youtube_archived_alias)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-identifier-normalization/tests/identifier_normalization/test_native_checkers.py", line 197, in test
+    self.assertEqual(self.relevant(case, results), variant != 'wrong_value', results)
+AssertionError: False != True : {'Tech_Research_Map.xlsx exists': True, 'Excel file readable': True, 'Has Video_Paper_Mapping sheet': True, 'Has All_Papers sheet': True, 'Video_Paper_Mapping has 8 rows': True, 'Has Video_Rank, Video_Title, Video_Views columns': True, 'Rank 1 video is the DeepSeek R1 bubble video': True, 'Video_Paper_Mapping has all 8 expected video titles in order': False, 'Video_Views match source for top 3': True, 'AI topic Top_Paper is DeepSeek R1 (highest citations)': True, 'All_Papers has at least 10 papers': True, 'All_Papers citation counts correct for key papers': True}
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.151s
+
+FAILED (failures=8)

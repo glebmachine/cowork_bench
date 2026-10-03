@@ -155,6 +155,9 @@ def check_excel(workspace):
 
         id_i = col_idx(["identifier", "id", "идентиф", "курс"])
         avg_i = col_idx(["average", "avg", "сред"])
+        if avg_i is None:
+            avg_i = next((i for i, h in enumerate(header)
+                          if h.strip() in {"mean", "mean_score"}), None)
         pr_i = col_idx(["pass", "rate", "успеш", "доля", "процент"])
 
         avg_ok = True

@@ -57,6 +57,14 @@ def str_match(a, b):
     return str(a).strip().lower() == str(b).strip().lower()
 
 
+def normalize_top_factor(value):
+    """Map the policy's job-satisfaction name to the groundtruth factor key."""
+    if value is None:
+        return None
+    factor = str(value).strip().lower()
+    return {"job satisfaction": "satisfaction", "job_satisfaction": "satisfaction"}.get(factor, factor)
+
+
 def sheet_dicts(wb, name):
     """Get rows as list of dicts from a sheet, matching by case-insensitive name."""
     for sn in wb.sheetnames:
@@ -202,7 +210,8 @@ def check_excel(agent_ws, gt):
                 continue
             # CRITICAL: the single highest-contributing factor per department.
             record(f"{dept} Top_Factor",
-                   str_match(match.get("Top_Factor"), gt_row.get("Top_Factor")),
+                   str_match(normalize_top_factor(match.get("Top_Factor")),
+                             normalize_top_factor(gt_row.get("Top_Factor"))),
                    f"Got '{match.get('Top_Factor')}' vs '{gt_row.get('Top_Factor')}'",
                    critical=True)
             record(f"{dept} Factor_Score",

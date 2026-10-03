@@ -1,0 +1,32 @@
+{
+  "arxiv-research-tracker-teamly": {
+    "scope": "native workbook checker only; coupon external calls disabled; canvas synthetic analytics reference",
+    "failed_native_checks": []
+  },
+  "pw-insales-coupon-effectiveness-gsheet-email": {
+    "scope": "native workbook checker only; coupon external calls disabled; canvas synthetic analytics reference",
+    "failed_native_checks": [
+      "Data_Analysis has Total_Sales column",
+      "wc_coupons_processor.py exists",
+      "Email to team-lead@company.com subject 'Analysis Report Complete' with findings body",
+      "Google Sheet 'Wc Coupons Tracker' exists with >= 1 category data row"
+    ]
+  },
+  "sf-hr-attrition-forecast-excel-word-gcal": {
+    "scope": "native workbook checker only; coupon external calls disabled; canvas synthetic analytics reference",
+    "failed_native_checks": []
+  },
+  "terminal-canvas-gsheet-word-teamly-gcal": {
+    "scope": "native workbook checker only; coupon external calls disabled; canvas synthetic analytics reference",
+    "failed_native_checks": [
+      "Course_Summary pass-rate matches live Canvas (per course, tol 1.5)",
+      "Grade_Distribution counts sum to total Canvas submissions",
+      "Grade_Distribution failing(<60) count matches Canvas (tol 1)",
+      "Advising_Needs Urgent Intervention student estimate is positive and <= failing submissions"
+    ]
+  },
+  "yt-fireship-scholarly-excel-teamly": {
+    "scope": "native workbook checker only; coupon external calls disabled; canvas synthetic analytics reference",
+    "failed_native_checks": []
+  }
+}

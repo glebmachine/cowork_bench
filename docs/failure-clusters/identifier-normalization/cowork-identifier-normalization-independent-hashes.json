@@ -1,0 +1,30 @@
+{
+  "baseline": "d943e75",
+  "sha256": {
+    "docs/failure-clusters/identifier-normalization/README.md": "326917fea50f0986184aa3e5b6a7c7bd1e9e5bf18f0538d26dfcf8de002ef14f",
+    "docs/failure-clusters/identifier-normalization/arxiv-research-tracker-teamly-baseline.json": "cb12455f8339a8ed7c16d5a116120660b496175a72c881b446218f531b25fada",
+    "docs/failure-clusters/identifier-normalization/component-results.json": "2433ec0f74bd0a766796892f4d4587ce0207c68c75c22a8a5dcc3309f7b8dd9d",
+    "docs/failure-clusters/identifier-normalization/expanded-green.log": "b3059b6d5aca3331ec67975804e22f0dad17716407dcc92c112096bea542e3dc",
+    "docs/failure-clusters/identifier-normalization/expanded-red.log": "83dc235516af657c385c7b31ca8efb4e759576ac3b99130aa48d73ffcb742e2c",
+    "docs/failure-clusters/identifier-normalization/green.log": "a527384870cb93f843b571567487c3e36cd26b12f805d133f867b23b6f52f14a",
+    "docs/failure-clusters/identifier-normalization/provenance.json": "5da2d4f6024ce1e3656d4feb9ff7a030ee0adc5d963f9ee661a56ac58fa37dc5",
+    "docs/failure-clusters/identifier-normalization/pw-insales-coupon-effectiveness-gsheet-email-baseline.json": "88aa3146d89b040cc075cb4257676877f7fbe58ac1ae1d98300f6ec8c8fbd2e0",
+    "docs/failure-clusters/identifier-normalization/red.log": "c85f1f979942c7b8f51ef57d5e468e2684907d06b8ed2259847bb5a0e5019c25",
+    "docs/failure-clusters/identifier-normalization/review-green.log": "96f42d8984b1ba6b17cc4beead3b7a8738e80fbae747a3f1aa850531064a903f",
+    "docs/failure-clusters/identifier-normalization/review-red.log": "31ab2a0ae45969267c2f877b5f611c4cf10714c2c786739c69da5c49ff07712b",
+    "docs/failure-clusters/identifier-normalization/sf-hr-attrition-forecast-excel-word-gcal-baseline.json": "96dc8f4f7bf439861497a1f468468aaed0fedb922afa9fc5c51bb89ac44766ff",
+    "docs/failure-clusters/identifier-normalization/terminal-canvas-gsheet-word-teamly-gcal-baseline.json": "fe3675caa519533a0238a2fb747135f5fe9b1d4d8715740a746c3388c5619a01",
+    "docs/failure-clusters/identifier-normalization/yt-fireship-scholarly-excel-teamly-baseline.json": "5c38e8e34375b1c43f57d2ce675b90587a6e99af65b575abd00fac394bf613a6",
+    "tasks/finalpool/arxiv-research-tracker-teamly/evaluation/main.py": "dbc543a7594e3e3c5f11c7055b86ea7582bebc9d84f0e9df6f122e03b72f05b0",
+    "tasks/finalpool/pw-insales-coupon-effectiveness-gsheet-email/evaluation/main.py": "86494cc590d74b2ded60049d54dcf63a675cf1c609aacb30381a48900046b6d1",
+    "tasks/finalpool/sf-hr-attrition-forecast-excel-word-gcal/evaluation/main.py": "a8f44cc244a58001f5c9dc329a2e17e4ee8f110e8c16da04b16d8d2201637a9f",
+    "tasks/finalpool/terminal-canvas-gsheet-word-teamly-gcal/evaluation/main.py": "9490988dd83b1803fe39e8cf506ebc35a44d416c1df5f0c3647dd377504f3ec9",
+    "tasks/finalpool/yt-fireship-scholarly-excel-teamly/evaluation/main.py": "7a3bd1fbe4190e87682e90dcedb5802ef3858098a4856dfa27cb93f9637d64fa",
+    "tests/identifier_normalization/fixtures/arxiv-research-tracker-teamly.json": "d0d503f614c131900fab6fadf1a40daf671800b67541330c622bddac627393c4",
+    "tests/identifier_normalization/fixtures/pw-insales-coupon-effectiveness-gsheet-email.json": "408a5e959d3c1eaa4526b8ba280ddf6de252b6b3d78227989d837826ec6eef05",
+    "tests/identifier_normalization/fixtures/sf-hr-attrition-forecast-excel-word-gcal.json": "33fbe97cb37e5b3b6a3fb5994dcf9a84d384e0e5fef74661a32360b08641c2a7",
+    "tests/identifier_normalization/fixtures/terminal-canvas-gsheet-word-teamly-gcal.json": "be6bc2d38bbc6fbcd97a2f77b5e92e11914cd4db0c18198af93d4ed378b10519",
+    "tests/identifier_normalization/fixtures/yt-fireship-scholarly-excel-teamly.json": "abcedd62ee3fa1f630a6f02e1598adfa25803301ec342e1a93ef109b529da117",
+    "tests/identifier_normalization/test_native_checkers.py": "c518fdd324b5c383fe050669a065ccf555273b68de5b2aa17918743c68f963dd"
+  }
+}
