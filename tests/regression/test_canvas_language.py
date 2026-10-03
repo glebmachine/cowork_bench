@@ -143,6 +143,18 @@ class CanvasLanguageTests(unittest.TestCase):
         for body in [markdown, html]:
             self.assertTrue(self.module_verdict(body))
 
+    def test_unrelated_html_table_does_not_hide_markdown_tracker(self):
+        body = fixture("canvas-module-completion-teamly-gcal")["arguments"]["body"]
+        notes = "<table><tr><td>Notes</td><td>No blockers</td></tr></table>"
+        for mixed in [notes + "\n" + body, body + "\n" + notes]:
+            with self.subTest(mixed=mixed):
+                self.assertTrue(self.module_verdict(mixed))
+
+    def test_contradictory_html_module_count_does_not_hide_behind_markdown(self):
+        body = fixture("canvas-module-completion-teamly-gcal")["arguments"]["body"]
+        conflicting = "<table><tr><th>Module_Name</th><th>Item_Count</th></tr><tr><td>Week 1</td><td>999</td></tr></table>"
+        self.assertFalse(self.module_verdict(body + "\n" + conflicting))
+
     def summary_verdict(self, change=None):
         workbook = openpyxl.load_workbook(FIXTURES / "Curriculum_Review.xlsx")
         if change:

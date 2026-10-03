@@ -55,3 +55,7 @@ Normalize the supported course/module/metric aliases without changing task text.
 Read module counts from their actual table cells so unrelated numbers cannot
 produce false positives. Archived output regressions and paired negative controls
 pass; original benchmark results remain unchanged. Independent review pending.
+
+## Independent review follow-up
+
+Review found that any HTML table suppressed a valid Markdown tracker. Two new actual-grader subtests failed before changing `parser.rows or markdown_rows` to combine both representations. Eleven methods now pass, including a contradictory HTML count alongside Markdown, which remains FAIL. Independent re-review is clean; report /private/tmp/cowork-canvas-language-independent-review.md. Historical source artifacts remain unchanged.

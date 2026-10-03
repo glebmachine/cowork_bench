@@ -136,7 +136,7 @@ def _module_count_rows(body):
 
     parser = TableParser()
     parser.feed(body)
-    rows = parser.rows or [
+    rows = parser.rows + [
         [cell.strip().strip("*`") for cell in re.split(r"(?<!\\)\|", line.strip().strip("|"))]
         for line in body.splitlines() if "|" in line
     ]
