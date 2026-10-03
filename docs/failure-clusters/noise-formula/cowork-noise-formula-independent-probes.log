@@ -1,0 +1,23 @@
+PASS plain notice accepted
+PASS article notice accepted
+PASS notice without fullstop accepted
+PASS prior unrelated sentence accepted
+PASS prior unrelated multiline sentence accepted
+PASS trailing newline accepted
+PASS same paragraph positive first rejected
+PASS multiline positive first rejected
+PASS multiline positive after rejected
+PASS semicolon positive clause rejected
+PASS negated exclusion rejected
+PASS double negative rejected
+PASS quoted notice rejected
+PASS embedded assertion rejected
+PASS different paper name rejected
+PASS ID separately retained rejected
+PASS multiline clause contradiction rejected
+PASS notice plus positive table rejected
+PASS notice plus teamly ID rejected
+PASS notice plus gsheet ID rejected
+20 independent native controls passed
+verified original source, fixture, baseline bytes and SHA256: arxiv-latex-review-teamly-word
+verified original source, fixture, baseline bytes and SHA256: terminal-insales-pdf-excel-word-gform

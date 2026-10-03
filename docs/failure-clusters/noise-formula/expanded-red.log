@@ -1,0 +1,74 @@
+test_archived_explicit_exclusion_is_not_noise_inclusion (test_remaining_noise_formula.RemainingLanguageTests.test_archived_explicit_exclusion_is_not_noise_inclusion) ... FAIL
+test_archived_fixture_hashes (test_remaining_noise_formula.RemainingLanguageTests.test_archived_fixture_hashes) ... ok
+test_archived_formula_does_not_require_specific_local_variable_names (test_remaining_noise_formula.RemainingLanguageTests.test_archived_formula_does_not_require_specific_local_variable_names) ... FAIL
+test_comments_strings_and_wrong_sign_or_coefficient_do_not_prove_formula (test_remaining_noise_formula.RemainingLanguageTests.test_comments_strings_and_wrong_sign_or_coefficient_do_not_prove_formula) ... 
+  test_comments_strings_and_wrong_sign_or_coefficient_do_not_prove_formula (test_remaining_noise_formula.RemainingLanguageTests.test_comments_strings_and_wrong_sign_or_coefficient_do_not_prove_formula) (source='# avg_rating and 2 * pct_below_3stars\npass') ... FAIL
+  test_comments_strings_and_wrong_sign_or_coefficient_do_not_prove_formula (test_remaining_noise_formula.RemainingLanguageTests.test_comments_strings_and_wrong_sign_or_coefficient_do_not_prove_formula) (source='text="(avg_rating/5)*100 - 2*pct_below_3stars"') ... FAIL
+  test_comments_strings_and_wrong_sign_or_coefficient_do_not_prove_formula (test_remaining_noise_formula.RemainingLanguageTests.test_comments_strings_and_wrong_sign_or_coefficient_do_not_prove_formula) (source='qscore=(avg_rating/5)*100 + 2*pct_below_3stars') ... FAIL
+  test_comments_strings_and_wrong_sign_or_coefficient_do_not_prove_formula (test_remaining_noise_formula.RemainingLanguageTests.test_comments_strings_and_wrong_sign_or_coefficient_do_not_prove_formula) (source='qscore=(avg_rating/5)*100 - 3*pct_below_3stars') ... FAIL
+test_double_negation_and_conflicting_clauses_are_not_exclusions (test_remaining_noise_formula.RemainingLanguageTests.test_double_negation_and_conflicting_clauses_are_not_exclusions) ... ok
+test_exclusion_notice_must_not_hide_a_second_positive_noise_section (test_remaining_noise_formula.RemainingLanguageTests.test_exclusion_notice_must_not_hide_a_second_positive_noise_section) ... ok
+test_no_noise_reference_is_valid_control (test_remaining_noise_formula.RemainingLanguageTests.test_no_noise_reference_is_valid_control) ... ok
+test_noise_in_another_deliverable_is_not_excused (test_remaining_noise_formula.RemainingLanguageTests.test_noise_in_another_deliverable_is_not_excused) ... ok
+test_positive_table_record_is_not_excused (test_remaining_noise_formula.RemainingLanguageTests.test_positive_table_record_is_not_excused) ... FAIL
+
+======================================================================
+FAIL: test_archived_explicit_exclusion_is_not_noise_inclusion (test_remaining_noise_formula.RemainingLanguageTests.test_archived_explicit_exclusion_is_not_noise_inclusion)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-noise-formula/tests/graders/test_remaining_noise_formula.py", line 64, in test_archived_explicit_exclusion_is_not_noise_inclusion
+    self.assertTrue(self.noise())
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_archived_formula_does_not_require_specific_local_variable_names (test_remaining_noise_formula.RemainingLanguageTests.test_archived_formula_does_not_require_specific_local_variable_names)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-noise-formula/tests/graders/test_remaining_noise_formula.py", line 92, in test_archived_formula_does_not_require_specific_local_variable_names
+    self.assertTrue(self.formula())
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_comments_strings_and_wrong_sign_or_coefficient_do_not_prove_formula (test_remaining_noise_formula.RemainingLanguageTests.test_comments_strings_and_wrong_sign_or_coefficient_do_not_prove_formula) (source='# avg_rating and 2 * pct_below_3stars\npass')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-noise-formula/tests/graders/test_remaining_noise_formula.py", line 102, in test_comments_strings_and_wrong_sign_or_coefficient_do_not_prove_formula
+    self.assertFalse(self.formula(source))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_comments_strings_and_wrong_sign_or_coefficient_do_not_prove_formula (test_remaining_noise_formula.RemainingLanguageTests.test_comments_strings_and_wrong_sign_or_coefficient_do_not_prove_formula) (source='text="(avg_rating/5)*100 - 2*pct_below_3stars"')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-noise-formula/tests/graders/test_remaining_noise_formula.py", line 102, in test_comments_strings_and_wrong_sign_or_coefficient_do_not_prove_formula
+    self.assertFalse(self.formula(source))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_comments_strings_and_wrong_sign_or_coefficient_do_not_prove_formula (test_remaining_noise_formula.RemainingLanguageTests.test_comments_strings_and_wrong_sign_or_coefficient_do_not_prove_formula) (source='qscore=(avg_rating/5)*100 + 2*pct_below_3stars')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-noise-formula/tests/graders/test_remaining_noise_formula.py", line 102, in test_comments_strings_and_wrong_sign_or_coefficient_do_not_prove_formula
+    self.assertFalse(self.formula(source))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_comments_strings_and_wrong_sign_or_coefficient_do_not_prove_formula (test_remaining_noise_formula.RemainingLanguageTests.test_comments_strings_and_wrong_sign_or_coefficient_do_not_prove_formula) (source='qscore=(avg_rating/5)*100 - 3*pct_below_3stars')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-noise-formula/tests/graders/test_remaining_noise_formula.py", line 102, in test_comments_strings_and_wrong_sign_or_coefficient_do_not_prove_formula
+    self.assertFalse(self.formula(source))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_positive_table_record_is_not_excused (test_remaining_noise_formula.RemainingLanguageTests.test_positive_table_record_is_not_excused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-noise-formula/tests/graders/test_remaining_noise_formula.py", line 78, in test_positive_table_record_is_not_excused
+    self.assertFalse(self.noise(replace='Обзор посвящён только LLM.', table=True))
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.241s
+
+FAILED (failures=7)

@@ -1,0 +1,29 @@
+[
+  {
+    "avg_rating": 3,
+    "pct_below_3stars": 10,
+    "correct": 40.0,
+    "wrong_sign": 80.0,
+    "wrong_coefficient": 30.0,
+    "reversed_metric_roles": 194.0,
+    "unused_formula_constant_output": 0
+  },
+  {
+    "avg_rating": 4,
+    "pct_below_3stars": 5,
+    "correct": 70.0,
+    "wrong_sign": 90.0,
+    "wrong_coefficient": 65.0,
+    "reversed_metric_roles": 92.0,
+    "unused_formula_constant_output": 0
+  },
+  {
+    "avg_rating": 2,
+    "pct_below_3stars": 20,
+    "correct": 0.0,
+    "wrong_sign": 80.0,
+    "wrong_coefficient": -20.0,
+    "reversed_metric_roles": 396.0,
+    "unused_formula_constant_output": 0
+  }
+]

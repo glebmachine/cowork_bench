@@ -1,0 +1,20 @@
+{
+  "arxiv-latex-review-teamly-word": {
+    "source": {
+      "member": "20261003T125520Z-489ea28e/arxiv-latex-review-teamly-word/dumps/workspace/LLM_Paper_Synthesis.docx",
+      "fixture": "LLM_Paper_Synthesis.docx",
+      "sha256": "c980291ce0f144fb4fb574d557267231c586e0b73f36fe9f1d3f7c925b6f97d6"
+    },
+    "baseline_eval_member": "20261003T125520Z-489ea28e/arxiv-latex-review-teamly-word/dumps/eval_res.json",
+    "baseline_eval_sha256": "7071d06d459306574e17eedea6045545ba28eb629d820f976f0b1fb7f19457bc"
+  },
+  "terminal-insales-pdf-excel-word-gform": {
+    "source": {
+      "member": "20261003T135408Z-f7c9cc18/terminal-insales-pdf-excel-word-gform/dumps/workspace/quality_audit.py",
+      "fixture": "quality_audit.py.txt",
+      "sha256": "bb3d06aee25a567fb1e02a403180936b5908ffaf4c10a151b2c97c5c1f3689a0"
+    },
+    "baseline_eval_member": "20261003T135408Z-f7c9cc18/terminal-insales-pdf-excel-word-gform/dumps/eval_res.json",
+    "baseline_eval_sha256": "bef98eadd52453453fc23e84367d5245cbc1b26875151d4fe2eb2acb97314d5d"
+  }
+}

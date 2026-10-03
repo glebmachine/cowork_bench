@@ -1,0 +1,12 @@
+test_archived_explicit_exclusion_is_not_noise_inclusion (test_noise_exclusion.NoiseExclusionTests.test_archived_explicit_exclusion_is_not_noise_inclusion) ... ok
+test_archived_fixture_hashes (test_noise_exclusion.NoiseExclusionTests.test_archived_fixture_hashes) ... ok
+test_double_negation_and_conflicting_clauses_are_not_exclusions (test_noise_exclusion.NoiseExclusionTests.test_double_negation_and_conflicting_clauses_are_not_exclusions) ... ok
+test_exclusion_notice_must_not_hide_a_second_positive_noise_section (test_noise_exclusion.NoiseExclusionTests.test_exclusion_notice_must_not_hide_a_second_positive_noise_section) ... ok
+test_no_noise_reference_is_valid_control (test_noise_exclusion.NoiseExclusionTests.test_no_noise_reference_is_valid_control) ... ok
+test_noise_in_another_deliverable_is_not_excused (test_noise_exclusion.NoiseExclusionTests.test_noise_in_another_deliverable_is_not_excused) ... ok
+test_positive_table_record_is_not_excused (test_noise_exclusion.NoiseExclusionTests.test_positive_table_record_is_not_excused) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.126s
+
+OK

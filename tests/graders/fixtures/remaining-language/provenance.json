@@ -1,0 +1,16 @@
+{
+  "archive": "raw-runs.zip",
+  "benchmark_revision": "d943e75bc0fc8e3b27141979300cd8cbcd1e890d",
+  "sources": [
+    {
+      "member": "20261003T125520Z-489ea28e/arxiv-latex-review-teamly-word/dumps/workspace/LLM_Paper_Synthesis.docx",
+      "fixture": "LLM_Paper_Synthesis.docx",
+      "sha256": "c980291ce0f144fb4fb574d557267231c586e0b73f36fe9f1d3f7c925b6f97d6"
+    },
+    {
+      "member": "20261003T135408Z-f7c9cc18/terminal-insales-pdf-excel-word-gform/dumps/workspace/quality_audit.py",
+      "fixture": "quality_audit.py.txt",
+      "sha256": "bb3d06aee25a567fb1e02a403180936b5908ffaf4c10a151b2c97c5c1f3689a0"
+    }
+  ]
+}

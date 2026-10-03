@@ -1,0 +1,160 @@
+#!/usr/bin/env python3
+"""quality_audit.py — Аудит качества товаров интернет-магазина (InSales/WooCommerce).
+
+Извлекает данные по отзывам и заказам, рассчитывает метрики качества по каждой
+категории, анализирует закономерности возвратов и формирует книгу Excel
+Product_Quality_Audit.xlsx с четырьмя листами.
+"""
+import os, json
+from collections import defaultdict
+import psycopg2
+
+WORKDIR = os.path.dirname(os.path.abspath(__file__))
+
+# --- 1. Данные ------------------------------------------------------------
+SCOPE_FILE = os.path.join(WORKDIR, "audit_scope.json")
+with open(SCOPE_FILE, encoding="utf-8") as f:
+    scope = json.load(f)
+CATEGORIES = scope["categories_in_scope"]
+
+conn = psycopg2.connect(host=os.environ.get("PG_HOST", "db-proxy"),
+                        port=int(os.environ.get("PGPORT", "5432")),
+                        dbname=os.environ.get("PGDATABASE", "cowork_gym"),
+                        user=os.environ.get("PGUSER", "eigent"),
+                        password=os.environ.get("PGPASSWORD", "camel"))
+cur = conn.cursor()
+
+# товары -> категории
+cur.execute("SELECT id, categories FROM wc.products")
+products = cur.fetchall()
+cat_products = defaultdict(int)          # категория -> число товаров
+product_cats = {}                        # product_id -> [имена категорий]
+cat_by_id = {}
+for pid, cats in products:
+    names = []
+    for c in cats or []:
+        names.append(c["name"])
+        cat_by_id[c["id"]] = c["name"]
+        if c["name"] in CATEGORIES:
+            cat_products[c["name"]] += 1
+    product_cats[pid] = names
+
+# отзывы
+cur.execute("SELECT product_id, rating FROM wc.product_reviews")
+reviews = cur.fetchall()
+
+# заказы
+cur.execute("SELECT status, total FROM wc.orders")
+orders = cur.fetchall()
+
+# --- 2. Метрики по категориям -------------------------------------------
+stats = {c: {"reviews": 0, "sum": 0, "below3": 0} for c in CATEGORIES}
+for pid, rating in reviews:
+    for cname in product_cats.get(pid, []):
+        if cname in CATEGORIES:
+            stats[cname]["reviews"] += 1
+            stats[cname]["sum"] += rating
+            if rating < 3:
+                stats[cname]["below3"] += 1
+
+review_summary = []
+scorecard = []
+for cname in CATEGORIES:
+    nprod = cat_products.get(cname, 0)
+    nrev = stats[cname]["reviews"]
+    avg = round(stats[cname]["sum"] / nrev, 2) if nrev else 0.0
+    pct = round(100.0 * stats[cname]["below3"] / nrev, 2) if nrev else 0.0
+    qscore = round((avg / 5.0) * 100 - 2 * pct, 2)
+    risk = "High" if qscore < 70 else ("Medium" if qscore <= 85 else "Low")
+    review_summary.append([cname, nprod, avg, nrev, pct])
+    scorecard.append([cname, qscore, risk])
+
+# --- 3. Анализ заказов/возвратов ----------------------------------------
+order_stats = defaultdict(lambda: [0, 0.0])
+total_orders = len(orders)
+for status, total in orders:
+    order_stats[status][0] += 1
+    order_stats[status][1] += float(total or 0)
+refund_analysis = []
+for status in sorted(order_stats):
+    cnt, amt = order_stats[status]
+    pct_of_total = round(100.0 * cnt / total_orders, 2) if total_orders else 0.0
+    refund_analysis.append([status, cnt, round(amt, 2), pct_of_total])
+
+refunded_cnt = order_stats.get("refunded", [0])[0]
+cancelled_cnt = order_stats.get("cancelled", [0])[0]
+refund_rate = round(100.0 * refunded_cnt / total_orders, 2) if total_orders else 0.0
+cancel_rate = round(100.0 * cancelled_cnt / total_orders, 2) if total_orders else 0.0
+
+# --- 4. Вывод результатов -----------------------------------------------
+result = {
+    "review_summary": review_summary,
+    "refund_analysis": refund_analysis,
+    "scorecard": scorecard,
+    "total_orders": total_orders,
+    "refund_rate": refund_rate,
+    "cancel_rate": cancel_rate,
+}
+print(json.dumps(result, ensure_ascii=False, indent=2))
+
+# сохраняем для последующих этапов
+with open(os.path.join(WORKDIR, "audit_results.json"), "w", encoding="utf-8") as f:
+    json.dump(result, f, ensure_ascii=False, indent=2)
+
+# --- 5. Книга Excel -------------------------------------------------------
+from openpyxl import Workbook
+from openpyxl.styles import Font, PatternFill, Alignment
+
+wb = Workbook()
+hdr_fill = PatternFill("solid", fgColor="1F4E78")
+hdr_font = Font(bold=True, color="FFFFFF")
+
+def style_header(ws, ncol):
+    for j in range(1, ncol + 1):
+        c = ws.cell(row=1, column=j)
+        c.fill = hdr_fill; c.font = hdr_font
+        c.alignment = Alignment(horizontal="center", vertical="center")
+    ws.freeze_panes = "A2"
+
+# Лист 1
+ws = wb.active; ws.title = "Review_Summary"
+ws.append(["Категория", "Количество товаров", "Средний рейтинг",
+           "Всего отзывов", "% отзывов ниже 3 звёзд"])
+for row in review_summary: ws.append(row)
+style_header(ws, 5)
+for col, w in zip("ABCDE", [26, 18, 16, 14, 24]): ws.column_dimensions[col].width = w
+
+# Лист 2
+ws = wb.create_sheet("Refund_Analysis")
+ws.append(["Статус заказа", "Количество заказов", "Общая сумма", "% от общего числа заказов"])
+for row in refund_analysis: ws.append(row)
+style_header(ws, 4)
+for col, w in zip("ABCD", [20, 20, 16, 28]): ws.column_dimensions[col].width = w
+
+# Лист 3
+ws = wb.create_sheet("Quality_Scorecard")
+ws.append(["Категория", "Показатель качества", "Уровень риска"])
+for row in scorecard: ws.append(row)
+style_header(ws, 3)
+for col, w in zip("ABC", [26, 20, 16]): ws.column_dimensions[col].width = w
+
+# Лист 4
+survey = [
+    [1, "Какова доля бракованных товаров в последних поставках вашей продукции (в % от партии)?", "Открытый текст"],
+    [2, "Как быстро вы реагируете на уведомление о бракованном товаре?", "Шкала оценки (1-5)"],
+    [3, "Какие меры по улучшению качества продукции вы планируете внедрить в ближайшие 6 месяцев?", "Открытый текст"],
+    [4, "Соответствуют ли ваши стандарты упаковки требованиям к защите товара при транспортировке?", "Множественный выбор"],
+    [5, "Насколько вы в целом удовлетворены сотрудничеством с нашим магазином?", "Шкала оценки (1-10)"],
+    [6, "Какой процент ваших поставок проходит внутренний контроль качества перед отправкой?", "Множественный выбор"],
+    [7, "Опишите типовые причины брака/возвратов вашей продукции.", "Открытый текст"],
+]
+ws = wb.create_sheet("Survey_Questions")
+ws.append(["№ вопроса", "Текст вопроса", "Тип вопроса"])
+for row in survey: ws.append(row)
+style_header(ws, 3)
+for col, w in zip("ABC", [10, 78, 22]): ws.column_dimensions[col].width = w
+
+xlsx_path = os.path.join(WORKDIR, "Product_Quality_Audit.xlsx")
+wb.save(xlsx_path)
+print("Saved:", xlsx_path)
+conn.close()

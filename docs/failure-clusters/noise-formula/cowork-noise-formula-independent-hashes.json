@@ -1,0 +1,24 @@
+{
+  "baseline": "d943e75",
+  "candidate_sha256": {
+    "docs/failure-clusters/noise-formula/README.md": "c7134efaa250304f61b1b402aee0693681ecf08a8e22904c993fb65dc1f4fc4a",
+    "docs/failure-clusters/noise-formula/arxiv-latex-review-teamly-word-baseline.json": "7071d06d459306574e17eedea6045545ba28eb629d820f976f0b1fb7f19457bc",
+    "docs/failure-clusters/noise-formula/expanded-after-noise.log": "0204858c829a2178c0e0ced8e8e4a3dc7783a21af667dee9aa34279286c55d9d",
+    "docs/failure-clusters/noise-formula/expanded-red.log": "307d28283d3bebd27a35511d0f41fa6ebb1a9a6e74ed08146dd937493961cee9",
+    "docs/failure-clusters/noise-formula/formula-numeric-counterexamples.json": "8b61164a445bed9aa10ab2fe453fea1a8af9d5e824a4f43c45ee0f6248de460a",
+    "docs/failure-clusters/noise-formula/formula-unresolved-red.log": "82f6a0f732b173a1cb0d565eea7ad07fe78e55fadd6f979ed12bbe8b50c3c4c4",
+    "docs/failure-clusters/noise-formula/inherited-red.log": "294beaabf3733d6bc2ace09ce7af88daba1857a761329cf49308c2fb9d18a113",
+    "docs/failure-clusters/noise-formula/noise-green.log": "38707d0627b1459456dae12ed685e0824ff832aac710f08680c58d167fac218f",
+    "docs/failure-clusters/noise-formula/noise-red.log": "def6f3bdd0dd95e74edd8818f194631caa607827b5df564ce1a5f5118efba324",
+    "docs/failure-clusters/noise-formula/provenance.json": "85cfb61b93625897fcd969f6252012d70e9d655e8b8682083559bc1082d42af9",
+    "docs/failure-clusters/noise-formula/terminal-insales-pdf-excel-word-gform-baseline.json": "bef98eadd52453453fc23e84367d5245cbc1b26875151d4fe2eb2acb97314d5d",
+    "tasks/finalpool/arxiv-latex-review-teamly-word/evaluation/main.py": "2877607ad8690063761e967f85f1c37d48cf57e8ca9620ae92d7f1f7d9dee832",
+    "tests/graders/fixtures/remaining-language/LLM_Paper_Synthesis.docx": "c980291ce0f144fb4fb574d557267231c586e0b73f36fe9f1d3f7c925b6f97d6",
+    "tests/graders/fixtures/remaining-language/provenance.json": "d0e88e8c87415e558861046a01accbf5941754bf313fa21921664f18b1218915",
+    "tests/graders/fixtures/remaining-language/quality_audit.py.txt": "bb3d06aee25a567fb1e02a403180936b5908ffaf4c10a151b2c97c5c1f3689a0",
+    "tests/graders/noise_formula_support.py": "23d0570d0f8d0702bd8c408eecea99842cb1cef37e0050777eb4328ae00cc11b",
+    "tests/graders/research_formula.py": "62c026badd0db23b320154c407b99ca60e82b197f9c485ad32326afcaee7aaf9",
+    "tests/graders/test_noise_exclusion.py": "0f178abfb6e860ca2755c3e884ce8b1356e2ecc8ce5638d8b140e8c189bf90ba"
+  },
+  "review_probe_sha256": "0bc33dbd1d818119bcbbd9f24bf1d23b45514a3747ba0c5ad4c12dcc20f10824"
+}

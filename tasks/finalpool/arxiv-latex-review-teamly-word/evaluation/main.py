@@ -15,6 +15,7 @@ EXCLUDE the robotics noise paper (2309.16349). Both are enforced critically.
 import argparse
 import json
 import os
+import re
 import sys
 
 import psycopg2
@@ -109,6 +110,18 @@ def check_teamly():
            f"dpo={has_dpo}, llama={has_llama}, mistral={has_mistral}")
 
 
+def word_noise_mentions(doc):
+    """Remove only standalone exclusion notices; keep table records as evidence."""
+    exclusion = re.compile(
+        r"(?:^|(?<=[.!?])\s+)(?:работа|статья) robot learning with affordances"
+        r"(?:, относящаяся к робототехнике,)? в обзор не включена\.?\s*$"
+    )
+    paragraphs = [exclusion.sub("", p.text.lower()) for p in doc.paragraphs]
+    table_cells = [cell.text.lower() for table in doc.tables
+                   for row in table.rows for cell in row.cells]
+    return "\n".join(paragraphs + table_cells)
+
+
 def check_word(agent_workspace):
     print("\n=== Checking Word Document ===")
     doc_path = os.path.join(agent_workspace, "LLM_Paper_Synthesis.docx")
@@ -128,7 +141,7 @@ def check_word(agent_workspace):
     record("Word file readable", True)
 
     full_text = "\n".join(p.text for p in doc.paragraphs).lower()
-    _NOISE_CORPUS["word"] = full_text
+    _NOISE_CORPUS["word"] = word_noise_mentions(doc)
 
     has_heading = ("llm" in full_text or "fine-tun" in full_text) and \
         ("survey" in full_text or "synthesis" in full_text or "alignment" in full_text)
