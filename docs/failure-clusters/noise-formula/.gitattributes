@@ -1,0 +1,2 @@
+# Preserve byte-exact unittest output, including its trailing spaces.
+*.log -whitespace

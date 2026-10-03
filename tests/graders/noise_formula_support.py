@@ -59,4 +59,3 @@ class Harness(unittest.TestCase):
                 path.write_text(source)
             module.check_script(tmp)
         return checks["CRITICAL: quality_audit.py references the score formula"]
-
