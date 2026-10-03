@@ -179,6 +179,38 @@ def check_word_doc(agent_workspace):
     return True
 
 
+def mentions_assignment_total(text, expected):
+    """Recognize bounded total clauses; ignore qualified subsets and negated labels."""
+    text = re.sub(r"[*_`]", "", text.lower())
+    noun = r"(?:assignments?|задани[еяй])"
+    count = rf"(\d+)\s+{noun}"
+    total_tail = r"(?:\s+(?:in\s+total|overall|in\s+(?:the|this)\s+course))?"
+    course_scope = (
+        r"(?:total|(?:the|this)\s+course|ccc-2014j|"
+        r"creative\s+computing\s*(?:&|and)\s*culture(?:\s+\(fall\s+2014\))?|"
+        + re.escape(EXPECTED_COURSE_NAME.lower()) + r")"
+    )
+    patterns = (
+        r"(?:total\s+assignments|assignment\s+count|всего\s+заданий|количество\s+заданий)"
+        r"\s*[:=–—]?\s*(\d+)",
+        rf"(?:итого|всего|total)\s*[:=–—]?\s*{count}{total_tail}",
+        rf"(?:the\s+)?course\s+(?:has|contains|includes)\s+{count}{total_tail}",
+        rf"there\s+(?:are|is)\s+{count}(?:\s+in\s+{course_scope})?",
+        rf"(?:всего\s+)?в\s+курсе\s+{count}(?:\s+с\s+общей\s+суммой\s+(?:доступных\s+)?баллов\s+\d+(?:\.\d+)?)?",
+        rf"{count}{total_tail}",
+    )
+    counts = []
+    # Preserve decimal numbers so a fractional count cannot become a valid integer clause.
+    for clause in re.split(r"[;!?\n]|(?<!\d)[.,]|[.,](?!\d)", text):
+        clause = clause.strip()
+        for pattern in patterns:
+            match = re.fullmatch(pattern, clause)
+            if match:
+                counts.append(int(match.group(1)))
+                break
+    return bool(counts) and all(count == expected for count in counts)
+
+
 def check_teamly():
     """Check the teamly knowledge-base page — BLOCKING (critical)."""
     print("\n=== Checking Teamly Knowledge Base ===")
@@ -203,13 +235,13 @@ def check_teamly():
     check("Teamly overview page created", len(overview) >= 1,
           f"Total pages: {len(rows)}")
 
-    page_text = " ".join((str(t) + " " + str(b)) for t, b in overview)
+    page_text = "\n".join((str(t) + "\n" + str(b)) for t, b in overview)
     page_lower = page_text.lower()
 
     mentions_course = (
         "creative computing" in page_lower or "ccc-2014j" in page_lower
     )
-    mentions_count = bool(re.search(r"\b10\b", page_text))
+    mentions_count = mentions_assignment_total(page_text, EXPECTED_ASSIGNMENT_COUNT)
     mentions_points = bool(re.search(r"\b300(?:\.0)?\b", page_text))
 
     # CRITICAL: page exists AND mentions course name/code, count 10, points 300.

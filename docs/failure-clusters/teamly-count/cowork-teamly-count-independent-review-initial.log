@@ -1,0 +1,13 @@
+.........
+----------------------------------------------------------------------
+Ran 9 tests in 0.006s
+
+OK
+{'expected': False, 'actual': False, 'body': 'Total assignments: 10 is incorrect; the course has 11 assignments. Total points: 300.'}
+{'expected': False, 'actual': True, 'body': 'Not total assignments: 10. Total points: 300.'}
+{'expected': False, 'actual': True, 'body': 'Total assignments: 10. There are 11 assignments in the course. Total points: 300.'}
+{'expected': False, 'actual': True, 'body': 'Total assignments: 10 completed; 11 assignments overall. Total points: 300.'}
+{'expected': True, 'actual': False, 'body': 'There are 10 assignments in Creative Computing & Culture. Total points: 300.'}
+{'expected': True, 'actual': False, 'body': 'The course includes 10 assignments. Total points: 300.'}
+{'expected': True, 'actual': True, 'body': 'Всего в курсе 10 заданий. Общая сумма баллов: 300.'}
+{'expected': True, 'actual': False, 'body': 'Количество заданий: десять. Всего баллов: 300.'}

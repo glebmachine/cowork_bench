@@ -1,0 +1,9 @@
+..............
+----------------------------------------------------------------------
+Ran 14 tests in 0.010s
+
+OK
+'Всего в курсе 10 заданий. Общая сумма баллов: 300.' False
+'There are 10 assignments in total, including 2 exams. Total points: 300.' True
+'There are 10 assignments in draft. Total points: 300.' True
+'Total assignments: 10. There are 11 assignments in the course. Total points: 300.' False

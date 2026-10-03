@@ -1,0 +1,101 @@
+FF...F.
+======================================================================
+FAIL: test_archived_wrong_count_does_not_pass_due_to_date_month (test_main.TeamlyAssignmentCountTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-teamly-count-baseline/test_main.py", line 42, in test_archived_wrong_count_does_not_pass_due_to_date_month
+    self.assertFalse(self.accepted(body))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_conflicting_explicit_counts_fail (test_main.TeamlyAssignmentCountTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-teamly-count-baseline/test_main.py", line 63, in test_conflicting_explicit_counts_fail
+    self.assertFalse(self.accepted("10 assignments. Итого: 11 заданий. Total points: 300."))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_date_without_assignment_count_fails (test_main.TeamlyAssignmentCountTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-teamly-count-baseline/test_main.py", line 49, in test_date_without_assignment_count_fails
+    self.assertFalse(self.accepted("Total points: 300.0. Due date: 2014-10-19."))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_fraction_negative_and_subset_are_not_total (test_main.TeamlyAssignmentCountTests) (text='Total Assignments: 10.5')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-teamly-count-baseline/test_main.py", line 75, in test_fraction_negative_and_subset_are_not_total
+    self.assertFalse(self.accepted(text + "\nTotal points: 300. Date: 2014-10-19."))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_fraction_negative_and_subset_are_not_total (test_main.TeamlyAssignmentCountTests) (text='Total Assignments: -10')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-teamly-count-baseline/test_main.py", line 75, in test_fraction_negative_and_subset_are_not_total
+    self.assertFalse(self.accepted(text + "\nTotal points: 300. Date: 2014-10-19."))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_fraction_negative_and_subset_are_not_total (test_main.TeamlyAssignmentCountTests) (text='10 graded assignments')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-teamly-count-baseline/test_main.py", line 75, in test_fraction_negative_and_subset_are_not_total
+    self.assertFalse(self.accepted(text + "\nTotal points: 300. Date: 2014-10-19."))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_other_counts_do_not_borrow_ten_from_date (test_main.TeamlyAssignmentCountTests) (count=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-teamly-count-baseline/test_main.py", line 54, in test_other_counts_do_not_borrow_ten_from_date
+    self.assertFalse(self.accepted(f"{count} assignments. Points: 300. Date: 2014-10-19."))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_other_counts_do_not_borrow_ten_from_date (test_main.TeamlyAssignmentCountTests) (count=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-teamly-count-baseline/test_main.py", line 54, in test_other_counts_do_not_borrow_ten_from_date
+    self.assertFalse(self.accepted(f"{count} assignments. Points: 300. Date: 2014-10-19."))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_other_counts_do_not_borrow_ten_from_date (test_main.TeamlyAssignmentCountTests) (count=9)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-teamly-count-baseline/test_main.py", line 54, in test_other_counts_do_not_borrow_ten_from_date
+    self.assertFalse(self.accepted(f"{count} assignments. Points: 300. Date: 2014-10-19."))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_other_counts_do_not_borrow_ten_from_date (test_main.TeamlyAssignmentCountTests) (count=11)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-teamly-count-baseline/test_main.py", line 54, in test_other_counts_do_not_borrow_ten_from_date
+    self.assertFalse(self.accepted(f"{count} assignments. Points: 300. Date: 2014-10-19."))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_other_counts_do_not_borrow_ten_from_date (test_main.TeamlyAssignmentCountTests) (count=100)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-teamly-count-baseline/test_main.py", line 54, in test_other_counts_do_not_borrow_ten_from_date
+    self.assertFalse(self.accepted(f"{count} assignments. Points: 300. Date: 2014-10-19."))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_other_counts_do_not_borrow_ten_from_date (test_main.TeamlyAssignmentCountTests) (count=110)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-teamly-count-baseline/test_main.py", line 54, in test_other_counts_do_not_borrow_ten_from_date
+    self.assertFalse(self.accepted(f"{count} assignments. Points: 300. Date: 2014-10-19."))
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.015s
+
+FAILED (failures=12)

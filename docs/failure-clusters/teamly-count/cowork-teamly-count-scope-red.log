@@ -1,0 +1,37 @@
+............F..
+======================================================================
+FAIL: test_russian_total_course_prefix (test_main.TeamlyAssignmentCountTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-teamly-count/tasks/finalpool/canvas-assignment-word-teamly/evaluation/test_main.py", line 103, in test_russian_total_course_prefix
+    self.assertTrue(self.accepted("Всего в курсе 10 заданий. Общая сумма баллов: 300."))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_there_are_locator_must_identify_the_course (test_main.TeamlyAssignmentCountTests) (scope='draft')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-teamly-count/tasks/finalpool/canvas-assignment-word-teamly/evaluation/test_main.py", line 109, in test_there_are_locator_must_identify_the_course
+    self.assertFalse(self.accepted(f"There are 10 assignments in {scope}. Total points: 300."))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_there_are_locator_must_identify_the_course (test_main.TeamlyAssignmentCountTests) (scope='review')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-teamly-count/tasks/finalpool/canvas-assignment-word-teamly/evaluation/test_main.py", line 109, in test_there_are_locator_must_identify_the_course
+    self.assertFalse(self.accepted(f"There are 10 assignments in {scope}. Total points: 300."))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_there_are_locator_must_identify_the_course (test_main.TeamlyAssignmentCountTests) (scope='module one')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-teamly-count/tasks/finalpool/canvas-assignment-word-teamly/evaluation/test_main.py", line 109, in test_there_are_locator_must_identify_the_course
+    self.assertFalse(self.accepted(f"There are 10 assignments in {scope}. Total points: 300."))
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.031s
+
+FAILED (failures=4)
