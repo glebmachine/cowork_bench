@@ -1,6 +1,7 @@
 """Evaluation script for fetch-insales-market-analysis-excel-ppt-email."""
 import os
 import argparse, json, os, sys
+import re
 import openpyxl
 
 def num_close(a, b, rel_tol=0.15, abs_tol=0.5):
@@ -285,7 +286,8 @@ def run_evaluation(agent_workspace, groundtruth_workspace, launch_time, res_log_
 
         ceo_body_ok = (
             any(v in ceo_body for v in ["overall", "общая доля", "доля рынка", "market share"]) and
-            any(v in ceo_body for v in ["high priority", "высок", "приоритет"]) and
+            (re.search(r"\bhigh[\s_-]+priority(?:\b|_)", ceo_body) is not None
+             or any(v in ceo_body for v in ["высок", "приоритет"])) and
             any(v in ceo_body for v in ["growth", "рост", "возможност"])
         )
         check("CEO email body covers overall share + high-priority + growth opportunities (RU/EN)",

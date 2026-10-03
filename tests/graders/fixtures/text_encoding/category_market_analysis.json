@@ -1,0 +1,107 @@
+{
+  "ranking": [
+    {
+      "category": "ТВ и домашний кинотеатр",
+      "revenue": 20713.32,
+      "units": 78,
+      "num_products": 13,
+      "avg_price": 304.9,
+      "rank": 1
+    },
+    {
+      "category": "Электроника",
+      "revenue": 17524.84,
+      "units": 229,
+      "num_products": 30,
+      "avg_price": 61.13,
+      "rank": 2
+    },
+    {
+      "category": "Аудио",
+      "revenue": 12398.0,
+      "units": 119,
+      "num_products": 15,
+      "avg_price": 78.05,
+      "rank": 3
+    },
+    {
+      "category": "Колонки",
+      "revenue": 6205.12,
+      "units": 44,
+      "num_products": 5,
+      "avg_price": 135.16,
+      "rank": 4
+    },
+    {
+      "category": "Наушники",
+      "revenue": 6192.88,
+      "units": 75,
+      "num_products": 10,
+      "avg_price": 49.49,
+      "rank": 5
+    },
+    {
+      "category": "Часы",
+      "revenue": 2501.57,
+      "units": 39,
+      "num_products": 5,
+      "avg_price": 71.64,
+      "rank": 6
+    },
+    {
+      "category": "Камеры",
+      "revenue": 2369.28,
+      "units": 106,
+      "num_products": 10,
+      "avg_price": 23.91,
+      "rank": 7
+    },
+    {
+      "category": "Бытовая техника",
+      "revenue": 1928.2,
+      "units": 62,
+      "num_products": 8,
+      "avg_price": 35.77,
+      "rank": 8
+    }
+  ],
+  "top3": [
+    "ТВ и домашний кинотеатр",
+    "Электроника",
+    "Аудио"
+  ],
+  "worst3": [
+    "Часы",
+    "Камеры",
+    "Бытовая техника"
+  ],
+  "strategic_notes": {
+    "Электроника": "Core growth driver; broad assortment and healthy order flow.",
+    "ТВ и домашний кинотеатр": "Highest-ticket category; sensitive to consumer confidence.",
+    "Аудио": "Strong mid-ticket performance; expand the product line.",
+    "Колонки": "Solid niche; leverage cross-sell with Audio.",
+    "Наушники": "Steady volume; price-competitive segment.",
+    "Часы": "Underperforming basket; needs targeted promotions.",
+    "Камеры": "Low average price and revenue; inventory optimisation candidate.",
+    "Бытовая техника": "Smallest revenue; negotiate supplier costs."
+  },
+  "market_context": {
+    "MGNT.ME": {
+      "pct_change": -1.776,
+      "stdev": 130.9758
+    },
+    "SBER.ME": {
+      "pct_change": -5.123,
+      "stdev": 4.0286
+    },
+    "BENCHMARK": {
+      "pct_change": -2.364,
+      "stdev": 26.9114
+    }
+  },
+  "growth_priorities": [
+    "Электроника",
+    "ТВ и домашний кинотеатр",
+    "Аудио"
+  ]
+}

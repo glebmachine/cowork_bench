@@ -1,0 +1,29 @@
+............
+----------------------------------------------------------------------
+Ran 12 tests in 1.927s
+
+OK
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests

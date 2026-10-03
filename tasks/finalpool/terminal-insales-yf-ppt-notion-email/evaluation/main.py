@@ -409,6 +409,68 @@ def check_emails():
         conn.close()
 
 
+def _ranking_leader(entries):
+    if isinstance(entries, dict):
+        rows = []
+        for name, values in entries.items():
+            if not isinstance(values, dict):
+                return None
+            if "category" in values and values["category"] != name:
+                return None
+            rows.append({**values, "category": name})
+    elif isinstance(entries, list):
+        rows = [{"category": row} if isinstance(row, str) else row for row in entries]
+    else:
+        return None
+    if not rows or not all(isinstance(row, dict) for row in rows):
+        return None
+    names = [row.get("category") for row in rows]
+    if not all(isinstance(name, str) and name.strip() for name in names):
+        return None
+    names = [name.strip().casefold() for name in names]
+    if len(set(names)) != len(names):
+        return None
+    if all("rank" in row for row in rows):
+        ranks = [row["rank"] for row in rows]
+        if any(type(rank) is not int or rank < 1 for rank in ranks):
+            return None
+        if len(set(ranks)) != len(ranks) or 1 not in ranks:
+            return None
+        return names[ranks.index(1)]
+    if any("rank" in row for row in rows) or isinstance(entries, dict):
+        return None
+    # Without explicit ranks, only an ordered list establishes its first place.
+    return names[0]
+
+
+def identified_top_category(data):
+    """Read explicit ranking evidence; prose mentions do not identify a winner."""
+    if not isinstance(data, dict):
+        return None
+    leaders = []
+    for key in ("top_category", "best_category"):
+        if key in data:
+            if not isinstance(data[key], str) or not data[key].strip():
+                return None
+            leaders.append(data[key].strip().casefold())
+    for key in ("ranking", "top3", "top_categories"):
+        if key in data:
+            leader = _ranking_leader(data[key])
+            if leader is None:
+                return None
+            leaders.append(leader)
+    root_ranking = {
+        key: value for key, value in data.items()
+        if isinstance(value, dict) and "rank" in value
+    }
+    if root_ranking:
+        leader = _ranking_leader(root_ranking)
+        if leader is None:
+            return None
+        leaders.append(leader)
+    return leaders[0] if leaders and len(set(leaders)) == 1 else None
+
+
 def check_scripts(workspace):
     print("\n=== Check 4: Scripts and JSON outputs ===")
     check("market_correlation.py exists",
@@ -471,10 +533,10 @@ def check_scripts(workspace):
 
     # CRITICAL: identified top category == DB-computed top category (dynamic).
     top = EXPECTED.get("top_category")
-    cat_str = json.dumps(cat_data).lower() if cat_data is not None else ""
+    identified = identified_top_category(cat_data)
     check("category_market_analysis.json top category == DB-computed top category",
-          (top is not None) and (top in cat_str),
-          f"Expected top category '{top}' in JSON; got: {cat_str[:200]}")
+          (top is not None) and (identified == top.casefold()),
+          f"Expected top category '{top}'; identified: {identified!r}")
 
 
 def check_reverse_validation():
