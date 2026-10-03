@@ -109,7 +109,19 @@ def body_has_number(text, n):
 def load_sheet_rows(wb, sheet_name):
     for name in wb.sheetnames:
         if name.strip().lower() == sheet_name.strip().lower():
-            return [[cell.value for cell in row] for row in wb[name].iter_rows()]
+            rows = [[cell.value for cell in row] for row in wb[name].iter_rows()]
+            if sheet_name.strip().lower() == "summary":
+                # The task specifies metric rows, not a mandatory header row.
+                rows = [row for row in rows if any(v is not None for v in row)]
+                if rows and [str(v).strip().lower() for v in rows[0][:2]] == ["metric", "value"]:
+                    rows = rows[1:]
+                keys = [str(row[0]).strip().lower().replace(" ", "_") for row in rows]
+                if len(keys) != len(set(keys)) or any(
+                    len(row) < 2 or row[0] is None or row[1] is None for row in rows
+                ):
+                    return None
+                return [["Metric", "Value"], *rows]
+            return rows
     return None
 
 
@@ -188,6 +200,9 @@ def check_excel(agent_workspace):
     sum_rows = load_sheet_rows(wb, "Summary")
     if sum_rows is None:
         check("Sheet 'Summary' exists", False, f"Available: {wb.sheetnames}")
+        for name in ("Total_Courses = 22", "Total_TAs = 29", "Max_Assignment_Count = 14",
+                     "Most_Loaded_Course is Основы финансов (Осень 2013)"):
+            check(name, False, "Summary missing or invalid")
     else:
         check("Sheet 'Summary' exists", True)
         data_rows = sum_rows[1:] if len(sum_rows) > 1 else []
