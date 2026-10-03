@@ -390,20 +390,31 @@ def _recipe_category_map(workspace):
 
 
 def _menu_days(menus):
-    """Resolve a root list, named menus list, or weekday-keyed object."""
+    """Resolve exactly Monday-Friday and return entries in chronological order."""
     if isinstance(menus, dict) and "menus" in menus:
         menus = menus["menus"]
     order = ["monday", "tuesday", "wednesday", "thursday", "friday"]
-    if isinstance(menus, list):
-        return [day for day in menus if isinstance(day, dict)]
     if isinstance(menus, dict):
         days = []
-        for day in order:
-            matches = [v for k, v in menus.items() if k.lower() == day]
-            if len(matches) == 1 and isinstance(matches[0], dict):
-                days.append(dict(matches[0], day=day))
-        return days
-    return []
+        for key, value in menus.items():
+            if not isinstance(value, dict):
+                return []
+            day = str(key).strip().lower()
+            if "day" in value and str(value["day"]).strip().lower() != day:
+                return []
+            days.append(dict(value, day=day))
+        menus = days
+    if not isinstance(menus, list) or len(menus) != len(order):
+        return []
+    by_day = {}
+    for entry in menus:
+        if not isinstance(entry, dict):
+            return []
+        day = str(entry.get("day", "")).strip().lower()
+        if day not in order or day in by_day:
+            return []
+        by_day[day] = entry
+    return [by_day[day] for day in order]
 
 
 def check_menu_rule(workspace):

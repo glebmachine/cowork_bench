@@ -266,9 +266,13 @@ def check_teamly():
     cat_ok_ids = set()
     for title, body in pages:
         blob = (str(title) + " " + str(body)).lower()
-        declared = re.findall(r"(?im)^\s*\*{0,2}paper[_ ]id\s*:\*{0,2}\s*(\d{4}\.\d{4,5})(?:v\d+)?\b", str(body))
+        plain_body = str(body).replace("**", "").replace("`", "")
+        declared = re.findall(r"(?im)^[ \t]*paper[_ ]id[ \t]*:[ \t]*([^\r\n]*)", plain_body)
         if declared:
-            candidates = set(declared)
+            parsed = [re.fullmatch(r"(\d{4}\.\d{4,5})(?:v\d+)?", value.strip()) for value in declared]
+            if not all(parsed):
+                continue
+            candidates = {match.group(1) for match in parsed}
         else:
             candidates = {pid for pid, anchor in title_anchors.items()
                           if re.search(r"(?<!\w)" + re.escape(anchor) + r"(?!\w)", str(title).lower())}

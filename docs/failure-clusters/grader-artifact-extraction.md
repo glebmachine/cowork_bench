@@ -90,3 +90,30 @@ COWORK_GRADER_ROOT=/path/to/baseline-tree python -m unittest discover -s tests/r
 new test module also pass. No claim is made that all seven entire tasks now pass;
 independent content/contract failures remain visible. No prompts, groundtruth,
 preprocess fixtures or source data are changed. Independent review is pending.
+
+## Independent review follow-up
+
+Review of 65a3ab6 found two incomplete negative boundaries: bold markup around
+Paper_ID could bypass explicit-field authority, and menu lists checked record
+count without proving distinct weekday identities. Neither finding changes task
+text or the immutable baseline score.
+
+Added two actual-grader regression methods before changing production graders.
+The suite then produced 16 failing subtests across 13 methods against 65a3ab6;
+`evidence/grader-artifact-extraction/review-controls-red.txt` preserves that RED.
+Paper controls pair four ordinary label spellings with correct, contradictory,
+malformed and empty IDs. Menu controls exercise wrapped/list/map shapes with
+valid/shuffled order, duplicate/missing weekdays, and shuffled rows whose actual
+consecutive weekdays share a lunch category.
+
+The paper parser removes ordinary bold/code label markup and treats an explicit
+malformed/empty ID as invalid instead of falling back to title inference. Menu
+extraction validates exactly Monday-Friday with unique identities and returns
+weekday order before adjacency checks; weekday-keyed maps also reject a
+contradictory embedded day label. Correct shuffled rows remain accepted.
+
+The unchanged 13-method suite passes after the fix, including earlier wrong,
+missing-content and duplicate-identity controls. GREEN is preserved in
+`evidence/grader-artifact-extraction/review-controls-green.txt`. This follow-up
+still requires independent re-review and has not been published. It establishes
+component boundaries only, not seven full native task PASS results.

@@ -353,6 +353,50 @@ class ArtifactExtraction(unittest.TestCase):
             accepted = all(v[0] for v in checks.values())
             self.assertEqual(accepted, mode in ["wrapped", "list", "dict"], checks)
 
+    def test_markdown_paper_id_remains_authoritative(self):
+        pages = json.loads((FIXTURES / "paper_pages.json").read_text())
+        for label in ["**Paper_ID:**", "**Paper_ID**:", "Paper_ID:", "`Paper_ID`:"]:
+            for value in ["1910.10683", "9999.99999", "invalid", ""]:
+                with self.subTest(label=label, value=value):
+                    rows = []
+                    for page in pages:
+                        body = page["body"]
+                        if "1910.10683" in body:
+                            body = body.replace("**Paper_ID:** 1910.10683", label + " " + value)
+                        rows.append((page["title"], body))
+                    env, checks, _ = grader(
+                        "terminal-arxiv-scholarly-teamly-word-excel",
+                        [[(1, "RPT", "Research Paper Tracker")], rows],
+                    )
+                    invoke(env, "check_teamly")
+                    self.assertEqual(outcome(checks, "Teamly has >= 6"), value == "1910.10683", checks)
+
+    def test_menu_weekday_identity_and_chronological_adjacency(self):
+        original = json.loads((FIXTURES / "evidence_based_menus.json").read_text())
+        for shape in ["wrapped", "list", "map"]:
+            for mode in ["valid", "shuffled", "duplicate_day", "missing_day_label", "missing_day", "adjacent_category"]:
+                with self.subTest(shape=shape, mode=mode):
+                    days = copy.deepcopy(original["menus"])
+                    if mode == "duplicate_day":
+                        for day in days:
+                            day["day"] = "Monday"
+                    if mode == "missing_day_label":
+                        for day in days:
+                            day.pop("day")
+                    if mode == "missing_day":
+                        days.pop()
+                    if mode == "adjacent_category":
+                        days[1]["lunch_category"] = days[0]["lunch_category"]
+                    if mode in ["shuffled", "adjacent_category"]:
+                        days = [days[i] for i in [0, 2, 4, 1, 3]]
+                    data = {"menus": days} if shape == "wrapped" else days
+                    if shape == "map":
+                        data = {day.get("day", "unknown" + str(i)): day for i, day in enumerate(days)}
+                    (self.workspace / "evidence_based_menus.json").write_text(json.dumps(data))
+                    env, checks, _ = grader("terminal-kulinar-scholarly-excel-word-forms")
+                    invoke(env, "check_menu_rule", str(self.workspace))
+                    self.assertEqual(all(v[0] for v in checks.values()), mode in ["valid", "shuffled"], checks)
+
     def test_bonus_rows_keys_and_duplicate_names_keep_identity(self):
         env, checks, _ = grader("terminal-moex-sf-gsheet-word-gcal")
         employees = [
