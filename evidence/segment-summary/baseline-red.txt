@@ -1,0 +1,61 @@
+F.FFFFFF
+======================================================================
+FAIL: test_archived_document_passes_the_complete_word_check (test_segment_summary.SegmentSummaryTests.test_archived_document_passes_the_complete_word_check)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-segment-summary/tests/regression/test_segment_summary.py", line 41, in test_archived_document_passes_the_complete_word_check
+    self.assertTrue(all(verdict().values()), verdict())
+AssertionError: False is not true : {'Word file exists': True, 'Document has Q4 2025 segment heading (RU/EN)': True, 'Document has at least one table': True, 'Table has 4 segment rows': True, 'Table contains exactly the 4 RU segments (each once)': True, 'Segment Частные клиенты Q4_Actual matches DB (~106646.36)': True, 'Segment Частные клиенты Variance == -103353.64': True, 'Segment Частные клиенты Achievement_Pct == 50.8': True, 'Segment Частные клиенты Order_Count == 676': True, 'Segment Частные клиенты Q4_Target == 210000': True, 'Segment Корпоративный Q4_Actual matches DB (~112773.74)': True, 'Segment Корпоративный Variance == -87226.26': True, 'Segment Корпоративный Achievement_Pct == 56.4': True, 'Segment Корпоративный Order_Count == 656': True, 'Segment Корпоративный Q4_Target == 200000': True, 'Segment Государственный Q4_Actual matches DB (~89129.27)': True, 'Segment Государственный Variance == -80870.73': True, 'Segment Государственный Achievement_Pct == 52.4': True, 'Segment Государственный Order_Count == 621': True, 'Segment Государственный Q4_Target == 170000': True, 'Segment Малый и средний бизнес Q4_Actual matches DB (~85103.86)': True, 'Segment Малый и средний бизнес Variance == -94896.14': True, 'Segment Малый и средний бизнес Achievement_Pct == 47.3': True, 'Segment Малый и средний бизнес Order_Count == 585': True, 'Segment Малый и средний бизнес Q4_Target == 180000': True, 'Summary states total target 760000': True, 'Summary states total actual ~393653.23': True, 'Summary states 0 segments meeting target': False}
+
+======================================================================
+FAIL: test_equivalent_count_before_and_after_target_statement (test_segment_summary.SegmentSummaryTests.test_equivalent_count_before_and_after_target_statement) (text='Количество сегментов, выполнивших или перевыполнивших свои планы: 0.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-segment-summary/tests/regression/test_segment_summary.py", line 55, in test_equivalent_count_before_and_after_target_statement
+    self.assertTrue(checks["Summary states 0 segments meeting target"], checks)
+AssertionError: False is not true : {'Word file exists': True, 'Document has Q4 2025 segment heading (RU/EN)': True, 'Document has at least one table': True, 'Table has 4 segment rows': True, 'Table contains exactly the 4 RU segments (each once)': True, 'Segment Частные клиенты Q4_Actual matches DB (~106646.36)': True, 'Segment Частные клиенты Variance == -103353.64': True, 'Segment Частные клиенты Achievement_Pct == 50.8': True, 'Segment Частные клиенты Order_Count == 676': True, 'Segment Частные клиенты Q4_Target == 210000': True, 'Segment Корпоративный Q4_Actual matches DB (~112773.74)': True, 'Segment Корпоративный Variance == -87226.26': True, 'Segment Корпоративный Achievement_Pct == 56.4': True, 'Segment Корпоративный Order_Count == 656': True, 'Segment Корпоративный Q4_Target == 200000': True, 'Segment Государственный Q4_Actual matches DB (~89129.27)': True, 'Segment Государственный Variance == -80870.73': True, 'Segment Государственный Achievement_Pct == 52.4': True, 'Segment Государственный Order_Count == 621': True, 'Segment Государственный Q4_Target == 170000': True, 'Segment Малый и средний бизнес Q4_Actual matches DB (~85103.86)': True, 'Segment Малый и средний бизнес Variance == -94896.14': True, 'Segment Малый и средний бизнес Achievement_Pct == 47.3': True, 'Segment Малый и средний бизнес Order_Count == 585': True, 'Segment Малый и средний бизнес Q4_Target == 180000': True, 'Summary states total target 760000': True, 'Summary states total actual ~393653.23': True, 'Summary states 0 segments meeting target': False}
+
+======================================================================
+FAIL: test_equivalent_count_before_and_after_target_statement (test_segment_summary.SegmentSummaryTests.test_equivalent_count_before_and_after_target_statement) (text='Число сегментов, выполнивших план: 0.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-segment-summary/tests/regression/test_segment_summary.py", line 55, in test_equivalent_count_before_and_after_target_statement
+    self.assertTrue(checks["Summary states 0 segments meeting target"], checks)
+AssertionError: False is not true : {'Word file exists': True, 'Document has Q4 2025 segment heading (RU/EN)': True, 'Document has at least one table': True, 'Table has 4 segment rows': True, 'Table contains exactly the 4 RU segments (each once)': True, 'Segment Частные клиенты Q4_Actual matches DB (~106646.36)': True, 'Segment Частные клиенты Variance == -103353.64': True, 'Segment Частные клиенты Achievement_Pct == 50.8': True, 'Segment Частные клиенты Order_Count == 676': True, 'Segment Частные клиенты Q4_Target == 210000': True, 'Segment Корпоративный Q4_Actual matches DB (~112773.74)': True, 'Segment Корпоративный Variance == -87226.26': True, 'Segment Корпоративный Achievement_Pct == 56.4': True, 'Segment Корпоративный Order_Count == 656': True, 'Segment Корпоративный Q4_Target == 200000': True, 'Segment Государственный Q4_Actual matches DB (~89129.27)': True, 'Segment Государственный Variance == -80870.73': True, 'Segment Государственный Achievement_Pct == 52.4': True, 'Segment Государственный Order_Count == 621': True, 'Segment Государственный Q4_Target == 170000': True, 'Segment Малый и средний бизнес Q4_Actual matches DB (~85103.86)': True, 'Segment Малый и средний бизнес Variance == -94896.14': True, 'Segment Малый и средний бизнес Achievement_Pct == 47.3': True, 'Segment Малый и средний бизнес Order_Count == 585': True, 'Segment Малый и средний бизнес Q4_Target == 180000': True, 'Summary states total target 760000': True, 'Summary states total actual ~393653.23': True, 'Summary states 0 segments meeting target': False}
+
+======================================================================
+FAIL: test_equivalent_count_before_and_after_target_statement (test_segment_summary.SegmentSummaryTests.test_equivalent_count_before_and_after_target_statement) (text='Segments meeting or exceeding target: 0.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-segment-summary/tests/regression/test_segment_summary.py", line 55, in test_equivalent_count_before_and_after_target_statement
+    self.assertTrue(checks["Summary states 0 segments meeting target"], checks)
+AssertionError: False is not true : {'Word file exists': True, 'Document has Q4 2025 segment heading (RU/EN)': True, 'Document has at least one table': True, 'Table has 4 segment rows': True, 'Table contains exactly the 4 RU segments (each once)': True, 'Segment Частные клиенты Q4_Actual matches DB (~106646.36)': True, 'Segment Частные клиенты Variance == -103353.64': True, 'Segment Частные клиенты Achievement_Pct == 50.8': True, 'Segment Частные клиенты Order_Count == 676': True, 'Segment Частные клиенты Q4_Target == 210000': True, 'Segment Корпоративный Q4_Actual matches DB (~112773.74)': True, 'Segment Корпоративный Variance == -87226.26': True, 'Segment Корпоративный Achievement_Pct == 56.4': True, 'Segment Корпоративный Order_Count == 656': True, 'Segment Корпоративный Q4_Target == 200000': True, 'Segment Государственный Q4_Actual matches DB (~89129.27)': True, 'Segment Государственный Variance == -80870.73': True, 'Segment Государственный Achievement_Pct == 52.4': True, 'Segment Государственный Order_Count == 621': True, 'Segment Государственный Q4_Target == 170000': True, 'Segment Малый и средний бизнес Q4_Actual matches DB (~85103.86)': True, 'Segment Малый и средний бизнес Variance == -94896.14': True, 'Segment Малый и средний бизнес Achievement_Pct == 47.3': True, 'Segment Малый и средний бизнес Order_Count == 585': True, 'Segment Малый и средний бизнес Q4_Target == 180000': True, 'Summary states total target 760000': True, 'Summary states total actual ~393653.23': True, 'Summary states 0 segments meeting target': False}
+
+======================================================================
+FAIL: test_wrong_opposite_unrelated_and_conflicting_counts_fail (test_segment_summary.SegmentSummaryTests.test_wrong_opposite_unrelated_and_conflicting_counts_fail) (text='10 segments met their targets.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-segment-summary/tests/regression/test_segment_summary.py", line 69, in test_wrong_opposite_unrelated_and_conflicting_counts_fail
+    self.assertFalse(verdict(text)["Summary states 0 segments meeting target"])
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_wrong_opposite_unrelated_and_conflicting_counts_fail (test_segment_summary.SegmentSummaryTests.test_wrong_opposite_unrelated_and_conflicting_counts_fail) (text='0 segments missed their targets.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-segment-summary/tests/regression/test_segment_summary.py", line 69, in test_wrong_opposite_unrelated_and_conflicting_counts_fail
+    self.assertFalse(verdict(text)["Summary states 0 segments meeting target"])
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_wrong_opposite_unrelated_and_conflicting_counts_fail (test_segment_summary.SegmentSummaryTests.test_wrong_opposite_unrelated_and_conflicting_counts_fail) (text='0 сегментов не выполнили план.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-segment-summary/tests/regression/test_segment_summary.py", line 69, in test_wrong_opposite_unrelated_and_conflicting_counts_fail
+    self.assertFalse(verdict(text)["Summary states 0 segments meeting target"])
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 4 tests in 1.106s
+
+FAILED (failures=7)

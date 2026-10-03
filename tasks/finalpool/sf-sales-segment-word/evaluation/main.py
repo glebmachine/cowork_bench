@@ -86,6 +86,29 @@ def fetch_db_actuals():
     return out
 
 
+def _meeting_counts(text):
+    """Read explicit target-achievement counts without accepting unrelated zeroes."""
+    number = r"(?<![\w.])(\d+|ноль)(?!\d|\.\d)"
+    ru_met = r"(?:выполнил[а-я]*|перевыполнил[а-я]*)(?:\s+или\s+перевыполнил[а-я]*)?"
+    ru_target = r"(?:свои?\s+)?план[а-я]*"
+    en_met = r"(?:met|meeting)(?:\s+or\s+exceed(?:ed|ing))?"
+    en_target = r"(?:their\s+)?targets?"
+    patterns = [
+        r"(?:количество|число)\s+сегментов\s*,?\s+"
+        r"(?:выполнивших|перевыполнивших)(?:\s+или\s+перевыполнивших)?\s+"
+        + ru_target + r"\s*[:—-]\s*" + number,
+        number + r"\s+сегмент[а-я]*\s+" + ru_met + r"\s+" + ru_target,
+        number + r"\s+segments?\s+" + en_met + r"\s+" + en_target,
+        r"(?:number of\s+)?segments?\s+" + en_met + r"\s+" + en_target + r"\s*[:—-]\s*" + number,
+    ]
+    counts = [0 if match == "ноль" else int(match)
+              for pattern in patterns for match in re.findall(pattern, text.lower())]
+    if re.search(r"ни\s+один(?:\s+из\s+\w+)?\s+сегмент[а-я]*\s+не\s+"
+                 + ru_met + r"\s+" + ru_target, text.lower()):
+        counts.append(0)
+    return counts
+
+
 def check_word_doc(agent_workspace, db):
     """Check the Word document structure and content (semantic, critical)."""
     print("\n=== Checking Word Document ===")
@@ -191,12 +214,8 @@ def check_word_doc(agent_workspace, db):
     # 0 segments met target.
     n_meeting = sum(1 for seg, t in TARGETS.items()
                     if db.get(seg, {}).get("actual", 0) >= t)
-    # accept "0 сегментов" / "0 segments" / "ни один (из ... ) сегментов"
-    low_text = full_text.lower()
-    has_zero = bool(
-        re.search(r"(?:0|ноль|ни\s+од(?:ин|ного|на|но)(?:\s+из\s+\S+)?)[^.]{0,40}сегмент", low_text)
-        or re.search(r"0\s+segment", low_text)
-    )
+    stated_counts = _meeting_counts(full_text)
+    has_zero = bool(stated_counts) and all(count == 0 for count in stated_counts)
 
     check("Summary states total target 760000", has_total_target,
           f"text={full_text[:200]}", critical=True)
