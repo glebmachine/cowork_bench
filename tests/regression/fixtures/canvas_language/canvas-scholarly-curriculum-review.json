@@ -1,0 +1,46 @@
+{
+  "case_id": "canvas-scholarly-curriculum-review",
+  "trial_id": "20261003T125520Z-489ea28e/canvas-scholarly-curriculum-review",
+  "member": "20261003T125520Z-489ea28e/canvas-scholarly-curriculum-review/traces/tool_calls.jsonl",
+  "sha256": "30ea246c8820954b75f8718493e8e1426f8ed6a5138f1ce1e0695f39d89a44ab",
+  "line": 36,
+  "line_sha256": "d1f600eb506849fbb62f7035b1222c9e05b26abbebe2aaff022990758ff47fd2",
+  "arguments": {
+    "filepath": "/workspace/dumps/workspace/Curriculum_Review.xlsx",
+    "sheet_name": "Summary",
+    "data": [
+      [
+        "Metric",
+        "Value"
+      ],
+      [
+        "Общее количество курсов",
+        23
+      ],
+      [
+        "Количество соответствующих курсов",
+        18
+      ],
+      [
+        "Количество несоответствующих курсов",
+        5
+      ],
+      [
+        "Доля соответствия (в процентах)",
+        "78.26%"
+      ],
+      [
+        "Общее количество преподавателей по всем курсам",
+        70
+      ],
+      [
+        "Среднее соотношение студентов к преподавателям",
+        488.65
+      ],
+      [
+        "Количество найденных подтверждающих статей",
+        5
+      ]
+    ]
+  }
+}

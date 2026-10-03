@@ -1,0 +1,93 @@
+FFF.FF.FFFFFF
+======================================================================
+FAIL: test_archived_english_module_rows_match_live_russian_names (test_canvas_language.CanvasLanguageTests.test_archived_english_module_rows_match_live_russian_names)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-canvas-language/tests/regression/test_canvas_language.py", line 104, in test_archived_english_module_rows_match_live_russian_names
+    self.assertTrue(self.module_verdict(data["arguments"]["body"]))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_archived_russian_course_and_english_alias_are_both_valid (test_canvas_language.CanvasLanguageTests.test_archived_russian_course_and_english_alias_are_both_valid) (title=None)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-canvas-language/tests/regression/test_canvas_language.py", line 81, in test_archived_russian_course_and_english_alias_are_both_valid
+    self.assertTrue(self.calendar_verdict(title))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_archived_russian_summary_and_english_alias (test_canvas_language.CanvasLanguageTests.test_archived_russian_summary_and_english_alias)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-canvas-language/tests/regression/test_canvas_language.py", line 158, in test_archived_russian_summary_and_english_alias
+    self.assertTrue(self.summary_verdict())
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_module_counts_follow_named_columns_in_markdown_and_html (test_canvas_language.CanvasLanguageTests.test_module_counts_follow_named_columns_in_markdown_and_html)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-canvas-language/tests/regression/test_canvas_language.py", line 144, in test_module_counts_follow_named_columns_in_markdown_and_html
+    self.assertTrue(self.module_verdict(body))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_module_names_match_in_both_directions_and_same_language (test_canvas_language.CanvasLanguageTests.test_module_names_match_in_both_directions_and_same_language) (expected='ru', body='en')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-canvas-language/tests/regression/test_canvas_language.py", line 117, in test_module_names_match_in_both_directions_and_same_language
+    self.assertTrue(self.module_verdict(body, expected))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_wrong_course_date_duration_or_review_is_not_rescued_by_aliases (test_canvas_language.CanvasLanguageTests.test_wrong_course_date_duration_or_review_is_not_rescued_by_aliases) (options={'summary': 'BiochemistryX Grade Equity Review'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-canvas-language/tests/regression/test_canvas_language.py", line 93, in test_wrong_course_date_duration_or_review_is_not_rescued_by_aliases
+    self.assertFalse(self.calendar_verdict(**options))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_wrong_missing_duplicate_module_count_and_other_column_numbers_fail (test_canvas_language.CanvasLanguageTests.test_wrong_missing_duplicate_module_count_and_other_column_numbers_fail) (index=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-canvas-language/tests/regression/test_canvas_language.py", line 134, in test_wrong_missing_duplicate_module_count_and_other_column_numbers_fail
+    self.assertFalse(self.module_verdict(text, expected))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_wrong_missing_duplicate_module_count_and_other_column_numbers_fail (test_canvas_language.CanvasLanguageTests.test_wrong_missing_duplicate_module_count_and_other_column_numbers_fail) (index=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-canvas-language/tests/regression/test_canvas_language.py", line 134, in test_wrong_missing_duplicate_module_count_and_other_column_numbers_fail
+    self.assertFalse(self.module_verdict(text, expected))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_wrong_missing_duplicate_module_count_and_other_column_numbers_fail (test_canvas_language.CanvasLanguageTests.test_wrong_missing_duplicate_module_count_and_other_column_numbers_fail) (index=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-canvas-language/tests/regression/test_canvas_language.py", line 134, in test_wrong_missing_duplicate_module_count_and_other_column_numbers_fail
+    self.assertFalse(self.module_verdict(text, expected))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_wrong_missing_duplicate_module_count_and_other_column_numbers_fail (test_canvas_language.CanvasLanguageTests.test_wrong_missing_duplicate_module_count_and_other_column_numbers_fail) (index=4)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-canvas-language/tests/regression/test_canvas_language.py", line 134, in test_wrong_missing_duplicate_module_count_and_other_column_numbers_fail
+    self.assertFalse(self.module_verdict(text, expected))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_wrong_missing_duplicate_module_count_and_other_column_numbers_fail (test_canvas_language.CanvasLanguageTests.test_wrong_missing_duplicate_module_count_and_other_column_numbers_fail) (index=5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-canvas-language/tests/regression/test_canvas_language.py", line 134, in test_wrong_missing_duplicate_module_count_and_other_column_numbers_fail
+    self.assertFalse(self.module_verdict(text, expected))
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.050s
+
+FAILED (failures=11)

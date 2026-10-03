@@ -1,0 +1,28 @@
+{
+  "case_id": "canvas-module-completion-teamly-gcal",
+  "trial_id": "20261003T125520Z-489ea28e/canvas-module-completion-teamly-gcal",
+  "member": "20261003T125520Z-489ea28e/canvas-module-completion-teamly-gcal/traces/tool_calls.jsonl",
+  "sha256": "1331afe0c4a4aecd3ce10b9a87cd5bb16f1501006eaa10dbf8a0823557645ea8",
+  "line": 11,
+  "line_sha256": "33a1c23831b204462361a2b1d0bb30108ec5b8f9b718a0c03dad32b91ab6cdad",
+  "arguments": {
+    "space_key": "CCC",
+    "title": "CCC Fall 2014 - Module Tracker",
+    "author": "ta@university.example.com",
+    "labels": [
+      "module-tracker",
+      "fall-2014",
+      "creative-computing"
+    ],
+    "body": "# CCC Fall 2014 - Module Tracker\n\nTracking status of course modules for **Creative Computing and Culture (Fall 2014, Canvas course ID 7)**.\n\nColumn values for **Status**: `Not Started`, `In Progress`, `Completed`.\n\n| Module_Name | Item_Count | Type_Summary | Status |\n| --- | --- | --- | --- |\n| Introduction | 15 | 1 Discussion, 9 Files, 3 Pages, 2 Quizzes | Not Started |\n| Week 1 | 2 | 2 Files | Not Started |\n| Week 3 | 1 | 1 File | Not Started |\n| Week 5 | 1 | 1 File | Not Started |\n| Week 8 | 1 | 1 File | Not Started |\n\n_Item_Count values reflect the actual number of items retrieved from Canvas. Statuses are initialized to \"Not Started\" and updated after each weekly module review meeting._\n"
+  },
+  "source_module_counts": {
+    "Введение": 15,
+    "Неделя 1": 2,
+    "Неделя 3": 1,
+    "Неделя 5": 1,
+    "Неделя 8": 1
+  },
+  "source_line": 2,
+  "source_line_sha256": "7166b1648fc67b9c33a915ac4b6f835118aa55a0101310e8fbcb25a278348eba"
+}

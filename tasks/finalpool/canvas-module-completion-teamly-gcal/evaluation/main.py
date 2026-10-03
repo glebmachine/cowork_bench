@@ -20,6 +20,7 @@ CRITICAL_CHECKS (semantic): any failure => overall FAIL regardless of accuracy.
 Otherwise pass threshold: accuracy >= 70%.
 """
 import argparse
+from html.parser import HTMLParser
 import datetime as _dt
 import json
 import os
@@ -99,6 +100,64 @@ def expected_saturdays(launch_time):
     return [first + _dt.timedelta(weeks=i) for i in range(4)]
 
 
+def _module_key(name):
+    name = " ".join(str(name).casefold().split())
+    for canonical, aliases in MODULE_ALIASES.items():
+        if name in aliases:
+            return canonical.casefold()
+    return name
+
+
+def _module_count_rows(body):
+    class TableParser(HTMLParser):
+        def __init__(self):
+            super().__init__()
+            self.rows = []
+            self.row = None
+            self.cell = None
+
+        def handle_starttag(self, tag, attrs):
+            if tag == "tr":
+                self.row = []
+            elif tag in ("td", "th") and self.row is not None:
+                self.cell = []
+
+        def handle_data(self, data):
+            if self.cell is not None:
+                self.cell.append(data)
+
+        def handle_endtag(self, tag):
+            if tag in ("td", "th") and self.cell is not None:
+                self.row.append("".join(self.cell).strip())
+                self.cell = None
+            elif tag == "tr" and self.row is not None:
+                self.rows.append(self.row)
+                self.row = None
+
+    parser = TableParser()
+    parser.feed(body)
+    rows = parser.rows or [
+        [cell.strip().strip("*`") for cell in re.split(r"(?<!\\)\|", line.strip().strip("|"))]
+        for line in body.splitlines() if "|" in line
+    ]
+    header = None
+    counts = {}
+    for cells in rows:
+        labels = [cell.casefold() for cell in cells]
+        if "module_name" in labels and "item_count" in labels:
+            header = (labels.index("module_name"), labels.index("item_count"))
+            continue
+        if header is None or len(cells) <= max(header):
+            continue
+        name = _module_key(cells[header[0]])
+        try:
+            count = float(cells[header[1]])
+        except ValueError:
+            count = None
+        counts.setdefault(name, []).append(count)
+    return counts
+
+
 def check_teamly(expected):
     print("\n=== Checking Teamly Module Tracker ===")
     conn = psycopg2.connect(**DB)
@@ -152,20 +211,12 @@ def check_teamly(expected):
            all(present.values()) and (not_started_en + not_started_ru) >= 5,
            f"modules_present={present}, not_started={not_started_en + not_started_ru}")
 
-    # CRITICAL: Item_Count correctness. For each module present in the body, its
-    # correct live item count must appear near its name on the same line.
-    lines = [ln.lower() for ln in body.splitlines()]
+    # Only the named count cell establishes a module's count; other numbers cannot substitute.
+    counts = _module_count_rows(body)
     correct = 0
     misses = []
     for mod, cnt in expected.items():
-        aliases = MODULE_ALIASES.get(mod, [mod.lower()])
-        cnt_pat = r"(?<!\d)" + re.escape(str(cnt)) + r"(?!\d)"
-        ok = False
-        for ln in lines:
-            if any(a in ln for a in aliases) and re.search(cnt_pat, ln):
-                ok = True
-                break
-        if ok:
+        if counts.get(_module_key(mod)) == [cnt]:
             correct += 1
         else:
             misses.append(f"{mod}={cnt}")
