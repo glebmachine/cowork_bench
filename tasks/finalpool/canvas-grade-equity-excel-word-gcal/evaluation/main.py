@@ -16,6 +16,7 @@ CRITICAL_CHECKS (любой провал => FAIL всей задачи неза�
 """
 import argparse
 import os
+import re
 import sys
 from datetime import datetime
 
@@ -279,6 +280,10 @@ def _in_target_week(dt_val):
         return any(f"2026-03-{d}" in s for d in ("16", "17", "18", "19", "20"))
 
 
+def _mentions_equity_course(text):
+    return bool(re.search(r"\b(?:biochemistry|bioinformatics|биохимия|биоинформатика)\b", text.lower()))
+
+
 def check_calendar():
     print("\n=== Checking Google Calendar ===")
     try:
@@ -297,8 +302,7 @@ def check_calendar():
             if e[0] and (
                 "equity" in e[0].lower()
                 or ("grade" in e[0].lower() and "review" in e[0].lower())
-                or "biochemistry" in e[0].lower()
-                or "bioinformatics" in e[0].lower()
+                or _mentions_equity_course(e[0])
             )
         ]
         check("At least 1 grade equity review meeting scheduled",
@@ -311,7 +315,7 @@ def check_calendar():
         for e in equity_events:
             summary = (e[0] or "")
             slow = summary.lower()
-            mentions_course = ("biochemistry" in slow or "bioinformatics" in slow)
+            mentions_course = _mentions_equity_course(summary)
             mentions_review = ("grade equity review" in slow or
                                ("equity" in slow and "review" in slow))
             in_week = _in_target_week(e[2])
@@ -342,7 +346,7 @@ def check_calendar():
             (str(e[0]) + " " + str(e[1] or "")).lower() for e in equity_events
         )
         check("Meeting mentions 'Biochemistry' or relevant course",
-              "biochemistry" in event_texts or "bioinformatics" in event_texts,
+              _mentions_equity_course(event_texts),
               f"Event text: {event_texts[:300]}")
 
         cur.close()

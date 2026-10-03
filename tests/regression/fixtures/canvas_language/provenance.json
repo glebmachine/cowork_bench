@@ -1,0 +1,37 @@
+{
+  "benchmark_revision": "d943e75bc0fc8e3b27141979300cd8cbcd1e890d",
+  "archive": "raw-runs.zip",
+  "scope": "Original artifacts and source tool responses, no model rerun or baseline regrading.",
+  "sources": [
+    {
+      "case_id": "canvas-grade-equity-excel-word-gcal",
+      "fixture": "canvas-grade-equity-excel-word-gcal.json",
+      "sha256": "d540ecbd08f9ea537a47ff16a0f2e7a93a56b833230e487f4bd522e56b634c22",
+      "trace_member": "20261003T125520Z-489ea28e/canvas-grade-equity-excel-word-gcal/traces/tool_calls.jsonl",
+      "trace_sha256": "8d53fd98ab437004be1af0e0aa24f1f5ba5b3d838eb77030f626181f2b8860e2",
+      "line": 33
+    },
+    {
+      "case_id": "canvas-module-completion-teamly-gcal",
+      "fixture": "canvas-module-completion-teamly-gcal.json",
+      "sha256": "8f28918c169410529f60ac46527008f35c89cc6c7e74b452f1dc3ba11c534b25",
+      "trace_member": "20261003T125520Z-489ea28e/canvas-module-completion-teamly-gcal/traces/tool_calls.jsonl",
+      "trace_sha256": "1331afe0c4a4aecd3ce10b9a87cd5bb16f1501006eaa10dbf8a0823557645ea8",
+      "line": 11
+    },
+    {
+      "case_id": "canvas-scholarly-curriculum-review",
+      "fixture": "canvas-scholarly-curriculum-review.json",
+      "sha256": "a67de79dc1f570e0989c73bfefc0d2b13726b75e47ac67b15cf0850d903ee283",
+      "trace_member": "20261003T125520Z-489ea28e/canvas-scholarly-curriculum-review/traces/tool_calls.jsonl",
+      "trace_sha256": "30ea246c8820954b75f8718493e8e1426f8ed6a5138f1ce1e0695f39d89a44ab",
+      "line": 36
+    },
+    {
+      "case_id": "canvas-scholarly-curriculum-review",
+      "fixture": "Curriculum_Review.xlsx",
+      "sha256": "f3613fffe1a1e5e57a7ce1bf45e7709042390cdf966b92155a94d743709cb815",
+      "archive_member": "20261003T125520Z-489ea28e/canvas-scholarly-curriculum-review/dumps/workspace/Curriculum_Review.xlsx"
+    }
+  ]
+}

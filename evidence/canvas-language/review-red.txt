@@ -1,0 +1,21 @@
+........FF..
+======================================================================
+FAIL: test_unrelated_html_table_does_not_hide_markdown_tracker (test_canvas_language.CanvasLanguageTests.test_unrelated_html_table_does_not_hide_markdown_tracker) (mixed='<table><tr><td>Notes</td><td>No blockers</td></tr></table>\n# CCC Fall 2014 - Module Tracker\n\nTracking status of course modules for **Creative Computing and Culture (Fall 2014, Canvas course ID 7)**.\n\nColumn values for **Status**: `Not Started`, `In Progress`, `Completed`.\n\n| Module_Name | Item_Count | Type_Summary | Status |\n| --- | --- | --- | --- |\n| Introduction | 15 | 1 Discussion, 9 Files, 3 Pages, 2 Quizzes | Not Started |\n| Week 1 | 2 | 2 Files | Not Started |\n| Week 3 | 1 | 1 File | Not Started |\n| Week 5 | 1 | 1 File | Not Started |\n| Week 8 | 1 | 1 File | Not Started |\n\n_Item_Count values reflect the actual number of items retrieved from Canvas. Statuses are initialized to "Not Started" and updated after each weekly module review meeting._\n')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-canvas-language/tests/regression/test_canvas_language.py", line 151, in test_unrelated_html_table_does_not_hide_markdown_tracker
+    self.assertTrue(self.module_verdict(mixed))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_unrelated_html_table_does_not_hide_markdown_tracker (test_canvas_language.CanvasLanguageTests.test_unrelated_html_table_does_not_hide_markdown_tracker) (mixed='# CCC Fall 2014 - Module Tracker\n\nTracking status of course modules for **Creative Computing and Culture (Fall 2014, Canvas course ID 7)**.\n\nColumn values for **Status**: `Not Started`, `In Progress`, `Completed`.\n\n| Module_Name | Item_Count | Type_Summary | Status |\n| --- | --- | --- | --- |\n| Introduction | 15 | 1 Discussion, 9 Files, 3 Pages, 2 Quizzes | Not Started |\n| Week 1 | 2 | 2 Files | Not Started |\n| Week 3 | 1 | 1 File | Not Started |\n| Week 5 | 1 | 1 File | Not Started |\n| Week 8 | 1 | 1 File | Not Started |\n\n_Item_Count values reflect the actual number of items retrieved from Canvas. Statuses are initialized to "Not Started" and updated after each weekly module review meeting._\n\n<table><tr><td>Notes</td><td>No blockers</td></tr></table>')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-canvas-language/tests/regression/test_canvas_language.py", line 151, in test_unrelated_html_table_does_not_hide_markdown_tracker
+    self.assertTrue(self.module_verdict(mixed))
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.159s
+
+FAILED (failures=2)

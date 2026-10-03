@@ -251,14 +251,15 @@ def check_excel(agent_workspace):
         data_rows3 = [r for r in rows3[1:] if r and r[0] is not None]
         check("Summary has >= 5 rows", len(data_rows3) >= 5, f"got {len(data_rows3)}")
 
-        def find_metric(*needles):
-            for r in data_rows3:
-                label = str(r[0]).lower() if r[0] else ""
-                if all(n in label for n in needles) and len(r) > 1:
-                    return safe_float(r[1])
-            return None
-
-        s_total = find_metric("total", "course")
+        total_aliases = {
+            "total courses", "total number of courses", "total course count",
+            "общее количество курсов", "общее число курсов", "количество курсов", "всего курсов",
+        }
+        total_values = [
+            safe_float(r[1]) for r in data_rows3 if len(r) > 1
+            and " ".join(str(r[0]).casefold().replace("_", " ").split()) in total_aliases
+        ]
+        s_total = total_values[0] if len(total_values) == 1 else None
         # compliant / non-compliant rows: match on 'compliant' and (non/not) prefix.
         s_compliant = None
         s_noncompliant = None

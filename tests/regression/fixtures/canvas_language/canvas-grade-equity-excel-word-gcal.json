@@ -1,0 +1,20 @@
+{
+  "case_id": "canvas-grade-equity-excel-word-gcal",
+  "trial_id": "20261003T125520Z-489ea28e/canvas-grade-equity-excel-word-gcal",
+  "member": "20261003T125520Z-489ea28e/canvas-grade-equity-excel-word-gcal/traces/tool_calls.jsonl",
+  "sha256": "8d53fd98ab437004be1af0e0aa24f1f5ba5b3d838eb77030f626181f2b8860e2",
+  "line": 33,
+  "line_sha256": "07efa386e5d403373f4dd9d18e38b417a33f97be7207f085323fb73521b4855d",
+  "arguments": {
+    "summary": "Биохимия и биоинформатика Grade Equity Review",
+    "description": "Проверка справедливости оценивания (faculty review) по курсу «Биохимия и биоинформатика».\n\nСравнение Fall 2013 и Fall 2014:\n- Средний балл: 77.0 (2013) → 64.3 (2014), разница -12.7 (|Δ| > 10)\n- Pass Rate: 97.5% (2013) → 80.0% (2014), изменение -17.5 п.п.\n- Статус справедливости: Action Required\n\nПричина: существенное падение среднего балла и доли успешно сдавших между двумя подряд идущими осенними семестрами. Требуется пересмотр критериев и сложности заданий, а также порогов оценивания.\n\nИсточники: данные LMS (Canvas) по осенним семестрам 2013/2014, Grading_Standards.pdf, guide.md.",
+    "start": {
+      "dateTime": "2026-03-16T13:00:00",
+      "timeZone": "Europe/Moscow"
+    },
+    "end": {
+      "dateTime": "2026-03-16T13:45:00",
+      "timeZone": "Europe/Moscow"
+    }
+  }
+}
