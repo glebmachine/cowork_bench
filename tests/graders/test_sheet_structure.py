@@ -64,6 +64,56 @@ class SummaryTests(unittest.TestCase):
                 self.assertFalse(g.num_close(rows[1][1], 22))
 
 
+class SummaryCriticalGateTests(unittest.TestCase):
+    def test_exam_invalid_summary_fails_critical_metric_gate(self):
+        case = 'canvas-exam-prep-scheduler'
+        for mutation in ('duplicate', 'missing-value', 'missing-sheet'):
+            with self.subTest(mutation=mutation):
+                g = grader(case)
+                wb = book('Quiz Performance', [['Course', 'Quiz', 'Avg_Score', 'Below_Threshold'],
+                                              ['Algebra', 'Quiz', 70, 'Yes']])
+                ws = wb.create_sheet('Review Schedule')
+                ws.append(['Course', 'Topic', 'Date', 'Time', 'Room'])
+                ws.append(['Algebra', 'Quiz Review Algebra', '2026-03-16', '16:00', 'Room 101'])
+                ws = wb.create_sheet('Summary')
+                for row in [('Total_Quizzes_Analyzed', 1), ('Below_Threshold_Quizzes', 1),
+                            ('Courses_Needing_Review', 1), ('Review_Sessions_Scheduled', 1)]:
+                    ws.append(row)
+                self.break_summary(wb, mutation)
+                with tempfile.TemporaryDirectory() as tmp, contextlib.redirect_stdout(io.StringIO()):
+                    wb.save(Path(tmp) / 'Exam_Prep.xlsx')
+                    expected = [('Algebra', 'Quiz', 70)]
+                    g.check_excel(tmp, expected, expected, {'Algebra'})
+                critical = 'Summary: Total_Quizzes_Analyzed и Below_Threshold_Quizzes верны'
+                self.assertIn(critical, g.FAILED_NAMES)
+                self.assertIn(critical, g.CRITICAL_CHECKS)
+
+    def test_ta_invalid_summary_fails_critical_metric_gate(self):
+        case = 'canvas-ta-workload-excel-email'
+        source = ROOT / 'tasks/finalpool' / case / 'groundtruth_workspace/TA_Workload_Report.xlsx'
+        for mutation in ('duplicate', 'missing-value', 'missing-sheet'):
+            with self.subTest(mutation=mutation):
+                g = grader(case)
+                wb = openpyxl.load_workbook(source)
+                self.break_summary(wb, mutation)
+                with tempfile.TemporaryDirectory() as tmp, contextlib.redirect_stdout(io.StringIO()):
+                    wb.save(Path(tmp) / 'TA_Workload_Report.xlsx')
+                    g.check_excel(tmp)
+                self.assertIn('Total_Courses = 22', g.FAILED_NAMES)
+                self.assertIn('Total_Courses = 22', g.CRITICAL_CHECKS)
+
+    @staticmethod
+    def break_summary(wb, mutation):
+        ws = wb['Summary']
+        row = 2 if ws.cell(1, 1).value == 'Metric' else 1
+        if mutation == 'duplicate':
+            ws.append([ws.cell(row, 1).value, 999])
+        elif mutation == 'missing-value':
+            ws.cell(row, 2).value = None
+        else:
+            del wb['Summary']
+
+
 class SummaryVerdictTests(unittest.TestCase):
     CASE_FILES = {
         'canvas-grade-summary': 'Canvas_Grade_Summary.xlsx',

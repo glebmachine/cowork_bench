@@ -80,3 +80,19 @@ that all eight tasks now pass every independent check. Task text, groundtruth,
 agent/runtime and data seeds are unchanged. Evaluators remain standalone because
 execution packages individual task directories; Summary normalization is local to
 those six evaluators rather than a new cross-task runtime dependency.
+
+## Independent review follow-up: fail-closed Summary gates
+
+Reviewer found a P1 in the first candidate: Summary validation returned `None`,
+but the exam/TA callers marked only the noncritical sheet-presence check and skipped
+all Summary critical checks. A duplicate or missing-value Summary could therefore
+avoid the critical gate. Three actual `check_excel` controls per grader reproduced
+this (six RED subcases): duplicate metric, absent value and absent sheet. These use
+a complete synthetic exam workbook and the tracked TA groundtruth workbook.
+Both callers now explicitly fail their existing critical Summary check names when
+the sheet is absent or malformed. No threshold or required field changed.
+
+After correction: **13 tests passed**, including all six new gate regressions.
+Evidence: `evidence/grader-sheet-structure/critical-gate-{red,green}.txt`.
+The earlier parser tests alone did not prove this gate; the new checks assert actual
+`FAILED_NAMES` membership in `CRITICAL_CHECKS` from the real evaluator functions.

@@ -1,0 +1,53 @@
+......FFFFFF.....
+======================================================================
+FAIL: test_exam_invalid_summary_fails_critical_metric_gate (test_sheet_structure.SummaryCriticalGateTests.test_exam_invalid_summary_fails_critical_metric_gate) (mutation='duplicate')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 88, in test_exam_invalid_summary_fails_critical_metric_gate
+    self.assertIn(critical, g.FAILED_NAMES)
+AssertionError: 'Summary: Total_Quizzes_Analyzed и Below_Threshold_Quizzes верны' not found in ["Sheet 'Summary' exists"]
+
+======================================================================
+FAIL: test_exam_invalid_summary_fails_critical_metric_gate (test_sheet_structure.SummaryCriticalGateTests.test_exam_invalid_summary_fails_critical_metric_gate) (mutation='missing-value')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 88, in test_exam_invalid_summary_fails_critical_metric_gate
+    self.assertIn(critical, g.FAILED_NAMES)
+AssertionError: 'Summary: Total_Quizzes_Analyzed и Below_Threshold_Quizzes верны' not found in ["Sheet 'Summary' exists"]
+
+======================================================================
+FAIL: test_exam_invalid_summary_fails_critical_metric_gate (test_sheet_structure.SummaryCriticalGateTests.test_exam_invalid_summary_fails_critical_metric_gate) (mutation='missing-sheet')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 88, in test_exam_invalid_summary_fails_critical_metric_gate
+    self.assertIn(critical, g.FAILED_NAMES)
+AssertionError: 'Summary: Total_Quizzes_Analyzed и Below_Threshold_Quizzes верны' not found in ["Sheet 'Summary' exists"]
+
+======================================================================
+FAIL: test_ta_invalid_summary_fails_critical_metric_gate (test_sheet_structure.SummaryCriticalGateTests.test_ta_invalid_summary_fails_critical_metric_gate) (mutation='duplicate')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 102, in test_ta_invalid_summary_fails_critical_metric_gate
+    self.assertIn('Total_Courses = 22', g.FAILED_NAMES)
+AssertionError: 'Total_Courses = 22' not found in ["Sheet 'Summary' exists"]
+
+======================================================================
+FAIL: test_ta_invalid_summary_fails_critical_metric_gate (test_sheet_structure.SummaryCriticalGateTests.test_ta_invalid_summary_fails_critical_metric_gate) (mutation='missing-value')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 102, in test_ta_invalid_summary_fails_critical_metric_gate
+    self.assertIn('Total_Courses = 22', g.FAILED_NAMES)
+AssertionError: 'Total_Courses = 22' not found in ["Sheet 'Summary' exists"]
+
+======================================================================
+FAIL: test_ta_invalid_summary_fails_critical_metric_gate (test_sheet_structure.SummaryCriticalGateTests.test_ta_invalid_summary_fails_critical_metric_gate) (mutation='missing-sheet')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-sheet-structure/tests/graders/test_sheet_structure.py", line 102, in test_ta_invalid_summary_fails_critical_metric_gate
+    self.assertIn('Total_Courses = 22', g.FAILED_NAMES)
+AssertionError: 'Total_Courses = 22' not found in ["Sheet 'Summary' exists"]
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.494s
+
+FAILED (failures=6)

@@ -200,6 +200,9 @@ def check_excel(agent_workspace):
     sum_rows = load_sheet_rows(wb, "Summary")
     if sum_rows is None:
         check("Sheet 'Summary' exists", False, f"Available: {wb.sheetnames}")
+        for name in ("Total_Courses = 22", "Total_TAs = 29", "Max_Assignment_Count = 14",
+                     "Most_Loaded_Course is Основы финансов (Осень 2013)"):
+            check(name, False, "Summary missing or invalid")
     else:
         check("Sheet 'Summary' exists", True)
         data_rows = sum_rows[1:] if len(sum_rows) > 1 else []
