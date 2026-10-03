@@ -1,0 +1,8 @@
+{
+  "source_run": "20261003T135408Z-f7c9cc18",
+  "case_id": "terminal-insales-yf-ppt-notion-email",
+  "archive": "cowork-full496-20261003/raw-runs.zip",
+  "member": "20261003T135408Z-f7c9cc18/terminal-insales-yf-ppt-notion-email/dumps/workspace/category_market_analysis.json",
+  "sha256": "ade45a878785c770b9f3afaed4343e106a632cad1861c499661828d3b9dafe72",
+  "finding": "Expected category exists at rank2, not rank1; Unicode decoding alone must not turn this artifact into PASS."
+}

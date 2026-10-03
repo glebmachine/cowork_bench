@@ -1,0 +1,77 @@
+......FF..FFFF..
+======================================================================
+FAIL: test_explicit_category_keyed_rankings (test_text_encoding.UnicodeCategoryTests.test_explicit_category_keyed_rankings) (data={'ranking': {'Электроника': {'rank': 1}, 'Камеры': {'rank': 2}}})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-text-encoding/tests/graders/test_text_encoding.py", line 152, in test_explicit_category_keyed_rankings
+    self.assertTrue(self.verdict(data))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_explicit_category_keyed_rankings (test_text_encoding.UnicodeCategoryTests.test_explicit_category_keyed_rankings) (data={'Электроника': {'rank': 1}, 'Камеры': {'rank': 2}, 'notes': 'strategy'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-text-encoding/tests/graders/test_text_encoding.py", line 152, in test_explicit_category_keyed_rankings
+    self.assertTrue(self.verdict(data))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_top_list_cannot_override_ranks_or_duplicate_names (test_text_encoding.UnicodeCategoryTests.test_top_list_cannot_override_ranks_or_duplicate_names) (data={'top3': [{'category': 'Электроника', 'rank': 2}, {'category': 'Камеры', 'rank': 1}]})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-text-encoding/tests/graders/test_text_encoding.py", line 162, in test_top_list_cannot_override_ranks_or_duplicate_names
+    self.assertFalse(self.verdict(data))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_top_list_cannot_override_ranks_or_duplicate_names (test_text_encoding.UnicodeCategoryTests.test_top_list_cannot_override_ranks_or_duplicate_names) (data={'top3': ['Электроника', 'Электроника']})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-text-encoding/tests/graders/test_text_encoding.py", line 162, in test_top_list_cannot_override_ranks_or_duplicate_names
+    self.assertFalse(self.verdict(data))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_top_list_cannot_override_ranks_or_duplicate_names (test_text_encoding.UnicodeCategoryTests.test_top_list_cannot_override_ranks_or_duplicate_names) (data={'top_categories': [{'category': 'Электроника', 'rank': 2}, {'category': 'Камеры', 'rank': 1}]})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-text-encoding/tests/graders/test_text_encoding.py", line 162, in test_top_list_cannot_override_ranks_or_duplicate_names
+    self.assertFalse(self.verdict(data))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_top_list_cannot_override_ranks_or_duplicate_names (test_text_encoding.UnicodeCategoryTests.test_top_list_cannot_override_ranks_or_duplicate_names) (data={'top_categories': [{'category': 'Электроника'}, {'category': 'Электроника'}]})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-text-encoding/tests/graders/test_text_encoding.py", line 162, in test_top_list_cannot_override_ranks_or_duplicate_names
+    self.assertFalse(self.verdict(data))
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 12 tests in 1.289s
+
+FAILED (failures=6)
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests

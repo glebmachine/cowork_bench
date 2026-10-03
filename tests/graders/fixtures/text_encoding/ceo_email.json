@@ -1,0 +1,5 @@
+{
+  "to": "ceo@company.com",
+  "subject": "Competitive Market Analysis - Executive Summary",
+  "body": "Dear CEO,\n\nHere is the executive summary of our competitive market analysis (InSales vs. overall market), based on the Executive_Summary sheet.\n\nKey figures:\n- Total_Own_Products: 97\n- Total_Own_Revenue: 69,833.21\n- Total_Market_Size: 5,000,000\n- Overall_Market_Share_Pct: 1.40%\n- Categories_Price_Leader: 5\n- Categories_Premium: 3\n- High_Priority_Categories: 2\n- Growth_Opportunities_Count: 4\n\nHighlights:\n- Our overall market share is 1.40%.\n- We have 2 high-priority categories (Электроника, Наушники) — ideal expansion targets.\n- We identified 4 growth opportunities (categories with market growth above 10% and our share below 5%): Электроника, Наушники, Колонки, Часы.\n- We are price leaders in 5 categories and premium in 3.\n\nDetailed analysis is available in the attached-style workbook (Competitive_Analysis.xlsx) and Strategy_Presentation.pptx.\n\nBest regards,\nBusiness Development Team"
+}

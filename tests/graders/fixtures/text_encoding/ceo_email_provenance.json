@@ -1,0 +1,8 @@
+{
+  "source_run": "20261003T125520Z-489ea28e",
+  "case_id": "fetch-insales-market-analysis-excel-ppt-email",
+  "archive_member": "20261003T125520Z-489ea28e/fetch-insales-market-analysis-excel-ppt-email/traces/tool_calls.jsonl",
+  "trace_sha256": "644ce144cb63026229c8a1bf2fa4b0f59783aa3d02c5dee980fbc5d32dacc44e",
+  "line": 54,
+  "line_sha256": "31c344dd6503527785c9bcf9024c05e7baacb84534af529bad5cb55a345e8009"
+}

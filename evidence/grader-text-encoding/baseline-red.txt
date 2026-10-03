@@ -1,0 +1,111 @@
+FFFF.F.FFFFF.F.
+======================================================================
+FAIL: test_equivalent_priority_separators (test_text_encoding.MarketEmailTests.test_equivalent_priority_separators) (label='2 high-priority categories')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-text-encoding/tests/graders/test_text_encoding.py", line 104, in test_equivalent_priority_separators
+    self.assertTrue(self.verdict(label))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_equivalent_priority_separators (test_text_encoding.MarketEmailTests.test_equivalent_priority_separators) (label='High_Priority_Categories: 2')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-text-encoding/tests/graders/test_text_encoding.py", line 104, in test_equivalent_priority_separators
+    self.assertTrue(self.verdict(label))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_equivalent_priority_separators (test_text_encoding.MarketEmailTests.test_equivalent_priority_separators) (label='HIGH  PRIORITY: 2')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-text-encoding/tests/graders/test_text_encoding.py", line 104, in test_equivalent_priority_separators
+    self.assertTrue(self.verdict(label))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_missing_or_similar_priority_not_accepted (test_text_encoding.MarketEmailTests.test_missing_or_similar_priority_not_accepted) (label='high priorityless')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-text-encoding/tests/graders/test_text_encoding.py", line 115, in test_missing_or_similar_priority_not_accepted
+    self.assertFalse(self.verdict(label))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_ascii_mention_is_not_top_rank (test_text_encoding.UnicodeCategoryTests.test_ascii_mention_is_not_top_rank)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-text-encoding/tests/graders/test_text_encoding.py", line 139, in test_ascii_mention_is_not_top_rank
+    self.assertFalse(
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_explicit_top_representations (test_text_encoding.UnicodeCategoryTests.test_explicit_top_representations) (data={'ranking': [{'category': 'Камеры', 'rank': 2}, {'category': 'Электроника', 'rank': 1}]})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-text-encoding/tests/graders/test_text_encoding.py", line 165, in test_explicit_top_representations
+    self.assertTrue(self.verdict(data))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_explicit_top_representations (test_text_encoding.UnicodeCategoryTests.test_explicit_top_representations) (data={'ranking': [{'category': 'Электроника'}, {'category': 'Камеры'}]})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-text-encoding/tests/graders/test_text_encoding.py", line 165, in test_explicit_top_representations
+    self.assertTrue(self.verdict(data))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_explicit_top_representations (test_text_encoding.UnicodeCategoryTests.test_explicit_top_representations) (data={'top3': ['Электроника', 'Камеры']})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-text-encoding/tests/graders/test_text_encoding.py", line 165, in test_explicit_top_representations
+    self.assertTrue(self.verdict(data))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_explicit_top_representations (test_text_encoding.UnicodeCategoryTests.test_explicit_top_representations) (data={'top_categories': [{'category': 'Электроника'}]})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-text-encoding/tests/graders/test_text_encoding.py", line 165, in test_explicit_top_representations
+    self.assertTrue(self.verdict(data))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_explicit_top_representations (test_text_encoding.UnicodeCategoryTests.test_explicit_top_representations) (data={'top_category': 'Электроника'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-text-encoding/tests/graders/test_text_encoding.py", line 165, in test_explicit_top_representations
+    self.assertTrue(self.verdict(data))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_unicode_top_category (test_text_encoding.UnicodeCategoryTests.test_unicode_top_category)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-text-encoding/tests/graders/test_text_encoding.py", line 134, in test_unicode_top_category
+    self.assertTrue(
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 9 tests in 1.317s
+
+FAILED (failures=11)
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests

@@ -1,0 +1,34 @@
+..FFF..
+======================================================================
+FAIL: test_category_mention_does_not_prove_top_rank (test_text_encoding.UnicodeCategoryTests.test_category_mention_does_not_prove_top_rank) (data={'ranking': [{'category': 'Камеры', 'rank': 1}, {'category': 'Электроника', 'rank': 2}]})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-text-encoding/tests/graders/test_text_encoding.py", line 143, in test_category_mention_does_not_prove_top_rank
+    self.assertFalse(self.verdict(data))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_category_mention_does_not_prove_top_rank (test_text_encoding.UnicodeCategoryTests.test_category_mention_does_not_prove_top_rank) (data={'notes': 'Электроника is not the top category'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-text-encoding/tests/graders/test_text_encoding.py", line 143, in test_category_mention_does_not_prove_top_rank
+    self.assertFalse(self.verdict(data))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_category_mention_does_not_prove_top_rank (test_text_encoding.UnicodeCategoryTests.test_category_mention_does_not_prove_top_rank) (data={'ranking': [{'category': 'Камеры', 'rank': 1}], 'top_category': 'Электроника'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-text-encoding/tests/graders/test_text_encoding.py", line 143, in test_category_mention_does_not_prove_top_rank
+    self.assertFalse(self.verdict(data))
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.617s
+
+FAILED (failures=3)
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
+  [WARN] DB recomputation failed: No live DB in offline tests
