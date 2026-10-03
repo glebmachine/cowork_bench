@@ -308,10 +308,8 @@ def check_json_outputs(workspace):
                     total = sum(len(v) if isinstance(v, list) else 1 for v in data.values())
                     check("categorized_recipes has 10+ entries", total >= 10, f"Found {total}")
             elif fname == "evidence_based_menus.json":
-                if isinstance(data, list):
-                    check("evidence_based_menus has 5 days", len(data) >= 5, f"Found {len(data)}")
-                elif isinstance(data, dict):
-                    check("evidence_based_menus has 5 days", len(data) >= 5, f"Found {len(data)} keys")
+                days = _menu_days(data)
+                check("evidence_based_menus has 5 days", len(days) == 5, f"Found {len(days)}")
         except json.JSONDecodeError:
             check(f"{fname} is valid JSON", False, "Invalid JSON")
 
@@ -391,26 +389,41 @@ def _recipe_category_map(workspace):
     return out
 
 
+def _menu_days(menus):
+    """Resolve exactly Monday-Friday and return entries in chronological order."""
+    if isinstance(menus, dict) and "menus" in menus:
+        menus = menus["menus"]
+    order = ["monday", "tuesday", "wednesday", "thursday", "friday"]
+    if isinstance(menus, dict):
+        days = []
+        for key, value in menus.items():
+            if not isinstance(value, dict):
+                return []
+            day = str(key).strip().lower()
+            if "day" in value and str(value["day"]).strip().lower() != day:
+                return []
+            days.append(dict(value, day=day))
+        menus = days
+    if not isinstance(menus, list) or len(menus) != len(order):
+        return []
+    by_day = {}
+    for entry in menus:
+        if not isinstance(entry, dict):
+            return []
+        day = str(entry.get("day", "")).strip().lower()
+        if day not in order or day in by_day:
+            return []
+        by_day[day] = entry
+    return [by_day[day] for day in order]
+
+
 def check_menu_rule(workspace):
     """CRITICAL: 5 days Mon-Fri and no two consecutive days share lunch category."""
     print("\n=== Semantic Check: Weekly menu rule ===")
     menus = _load_json(workspace, "evidence_based_menus.json")
-    days = []
-    if isinstance(menus, list):
-        days = [d for d in menus if isinstance(d, dict)]
-    elif isinstance(menus, dict):
-        # dict keyed by day name
-        order = ["monday", "tuesday", "wednesday", "thursday", "friday"]
-        items = list(menus.items())
-        items.sort(key=lambda kv: order.index(kv[0].lower())
-                   if kv[0].lower() in order else 99)
-        for k, v in items:
-            if isinstance(v, dict):
-                vv = dict(v)
-                vv.setdefault("day", k)
-                days.append(vv)
+    days = _menu_days(menus)
 
-    check("evidence_based_menus has 5 day entries", len(days) >= 5,
+    check("evidence_based_menus has 5 day entries", len(days) == 5,
           f"found {len(days)}", critical=True)
     if len(days) < 2:
         check("No two consecutive days share the same lunch category", False,
@@ -453,7 +466,7 @@ def check_menu_rule(workspace):
                 names.append(str(lunch or "").lower())
         no_consec_name = all(names[i] != names[i + 1] for i in range(len(names) - 1) if names[i])
         check("No two consecutive days share the same lunch (category unresolved -> by name)",
-              no_consec_name, f"lunches: {names}", critical=True)
+              all(names) and no_consec_name, f"lunches: {names}", critical=True)
 
 
 def check_confidence_mapping(workspace):

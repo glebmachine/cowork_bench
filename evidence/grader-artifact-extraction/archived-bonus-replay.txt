@@ -1,0 +1,47 @@
+{
+  "current_bonuses.json exists": [
+    true,
+    ""
+  ],
+  "current_bonuses has entries": [
+    true,
+    "Found 7232 entries (threshold 5785, headcount 7232)"
+  ],
+  "current_bonuses has required fields": [
+    true,
+    "Keys: ['name', 'employee_id', 'region', 'salary', 'bonus_percentage', 'bonus_amount', 'performance_rating', 'years_experience', 'role']"
+  ],
+  "market_adjusted_bonuses.json exists": [
+    true,
+    ""
+  ],
+  "adjusted_bonuses has entries": [
+    true,
+    "Found 7232 entries (threshold 5785)"
+  ],
+  "adjusted_bonuses has adjusted field": [
+    true,
+    "Keys: ['name', 'region', 'salary', 'bonus_percentage', 'current_bonus', 'market_factor', 'adjusted_bonus', 'difference_from_current']"
+  ],
+  "C1 adjustment factor matches recomputed driver YoY factor": [
+    true,
+    "expected 1, observed [1.0]"
+  ],
+  "C2 total adjusted bonuses within budget cap": [
+    true,
+    "total adjusted = 29999997.57, cap = 30000000.0"
+  ],
+  "C2 scaled total equals cap (scaling applied)": [
+    true,
+    "pre-scaling 34911287.19 > cap; total 29999997.57"
+  ],
+  "C3 no adjusted bonus exceeds 20% of salary": [
+    true,
+    "0 violations, e.g. []"
+  ],
+  "C4 current bonuses match source employees and salary*tier_pct": [
+    true,
+    "matched 7232/7232; mismatches []"
+  ]
+}
+PASS: unchanged 7232-employee archived JSON; captured source CSV rows injected, no live DB/model, baseline verdict unchanged

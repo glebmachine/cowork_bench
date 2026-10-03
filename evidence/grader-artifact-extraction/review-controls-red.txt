@@ -1,0 +1,133 @@
+.........FFFFFFFFFFFFFFFF..
+======================================================================
+FAIL: test_markdown_paper_id_remains_authoritative (test_artifact_extraction.ArtifactExtraction.test_markdown_paper_id_remains_authoritative) (label='**Paper_ID:**', value='invalid')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-artifact-extraction/tests/regression/test_artifact_extraction.py", line 372, in test_markdown_paper_id_remains_authoritative
+    self.assertEqual(outcome(checks, "Teamly has >= 6"), value == "1910.10683", checks)
+AssertionError: True != False : {'Research Paper Tracker space exists': (True, "Spaces: [('RPT', 'Research Paper Tracker')]"), 'Teamly has >= 6 paper pages': (True, "Matched paper ids: ['1409.0473', '1706.03762', '1810.04805', '1910.10683', '2005.14165', '2009.06732'] across 8 pages"), 'Teamly tracker has >=6 paper pages with correct Category/Source': (False, "Source=Both on 5/6 pages, anchored Category ok: ['1706.03762', '2009.06732']"), 'Teamly pages carry expected Category on all 6 papers': (False, "Correct Category on ['1409.0473', '1706.03762', '1910.10683', '2005.14165', '2009.06732']")}
+
+======================================================================
+FAIL: test_markdown_paper_id_remains_authoritative (test_artifact_extraction.ArtifactExtraction.test_markdown_paper_id_remains_authoritative) (label='**Paper_ID:**', value='')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-artifact-extraction/tests/regression/test_artifact_extraction.py", line 372, in test_markdown_paper_id_remains_authoritative
+    self.assertEqual(outcome(checks, "Teamly has >= 6"), value == "1910.10683", checks)
+AssertionError: True != False : {'Research Paper Tracker space exists': (True, "Spaces: [('RPT', 'Research Paper Tracker')]"), 'Teamly has >= 6 paper pages': (True, "Matched paper ids: ['1409.0473', '1706.03762', '1810.04805', '1910.10683', '2005.14165', '2009.06732'] across 8 pages"), 'Teamly tracker has >=6 paper pages with correct Category/Source': (False, "Source=Both on 5/6 pages, anchored Category ok: ['1706.03762', '2009.06732']"), 'Teamly pages carry expected Category on all 6 papers': (False, "Correct Category on ['1409.0473', '1706.03762', '1910.10683', '2005.14165', '2009.06732']")}
+
+======================================================================
+FAIL: test_markdown_paper_id_remains_authoritative (test_artifact_extraction.ArtifactExtraction.test_markdown_paper_id_remains_authoritative) (label='**Paper_ID**:', value='9999.99999')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-artifact-extraction/tests/regression/test_artifact_extraction.py", line 372, in test_markdown_paper_id_remains_authoritative
+    self.assertEqual(outcome(checks, "Teamly has >= 6"), value == "1910.10683", checks)
+AssertionError: True != False : {'Research Paper Tracker space exists': (True, "Spaces: [('RPT', 'Research Paper Tracker')]"), 'Teamly has >= 6 paper pages': (True, "Matched paper ids: ['1409.0473', '1706.03762', '1810.04805', '1910.10683', '2005.14165', '2009.06732'] across 8 pages"), 'Teamly tracker has >=6 paper pages with correct Category/Source': (False, "Source=Both on 5/6 pages, anchored Category ok: ['1706.03762', '2009.06732']"), 'Teamly pages carry expected Category on all 6 papers': (False, "Correct Category on ['1409.0473', '1706.03762', '1910.10683', '2005.14165', '2009.06732']")}
+
+======================================================================
+FAIL: test_markdown_paper_id_remains_authoritative (test_artifact_extraction.ArtifactExtraction.test_markdown_paper_id_remains_authoritative) (label='**Paper_ID**:', value='invalid')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-artifact-extraction/tests/regression/test_artifact_extraction.py", line 372, in test_markdown_paper_id_remains_authoritative
+    self.assertEqual(outcome(checks, "Teamly has >= 6"), value == "1910.10683", checks)
+AssertionError: True != False : {'Research Paper Tracker space exists': (True, "Spaces: [('RPT', 'Research Paper Tracker')]"), 'Teamly has >= 6 paper pages': (True, "Matched paper ids: ['1409.0473', '1706.03762', '1810.04805', '1910.10683', '2005.14165', '2009.06732'] across 8 pages"), 'Teamly tracker has >=6 paper pages with correct Category/Source': (False, "Source=Both on 5/6 pages, anchored Category ok: ['1706.03762', '2009.06732']"), 'Teamly pages carry expected Category on all 6 papers': (False, "Correct Category on ['1409.0473', '1706.03762', '1910.10683', '2005.14165', '2009.06732']")}
+
+======================================================================
+FAIL: test_markdown_paper_id_remains_authoritative (test_artifact_extraction.ArtifactExtraction.test_markdown_paper_id_remains_authoritative) (label='**Paper_ID**:', value='')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-artifact-extraction/tests/regression/test_artifact_extraction.py", line 372, in test_markdown_paper_id_remains_authoritative
+    self.assertEqual(outcome(checks, "Teamly has >= 6"), value == "1910.10683", checks)
+AssertionError: True != False : {'Research Paper Tracker space exists': (True, "Spaces: [('RPT', 'Research Paper Tracker')]"), 'Teamly has >= 6 paper pages': (True, "Matched paper ids: ['1409.0473', '1706.03762', '1810.04805', '1910.10683', '2005.14165', '2009.06732'] across 8 pages"), 'Teamly tracker has >=6 paper pages with correct Category/Source': (False, "Source=Both on 5/6 pages, anchored Category ok: ['1706.03762', '2009.06732']"), 'Teamly pages carry expected Category on all 6 papers': (False, "Correct Category on ['1409.0473', '1706.03762', '1910.10683', '2005.14165', '2009.06732']")}
+
+======================================================================
+FAIL: test_markdown_paper_id_remains_authoritative (test_artifact_extraction.ArtifactExtraction.test_markdown_paper_id_remains_authoritative) (label='Paper_ID:', value='invalid')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-artifact-extraction/tests/regression/test_artifact_extraction.py", line 372, in test_markdown_paper_id_remains_authoritative
+    self.assertEqual(outcome(checks, "Teamly has >= 6"), value == "1910.10683", checks)
+AssertionError: True != False : {'Research Paper Tracker space exists': (True, "Spaces: [('RPT', 'Research Paper Tracker')]"), 'Teamly has >= 6 paper pages': (True, "Matched paper ids: ['1409.0473', '1706.03762', '1810.04805', '1910.10683', '2005.14165', '2009.06732'] across 8 pages"), 'Teamly tracker has >=6 paper pages with correct Category/Source': (False, "Source=Both on 5/6 pages, anchored Category ok: ['1706.03762', '2009.06732']"), 'Teamly pages carry expected Category on all 6 papers': (False, "Correct Category on ['1409.0473', '1706.03762', '1910.10683', '2005.14165', '2009.06732']")}
+
+======================================================================
+FAIL: test_markdown_paper_id_remains_authoritative (test_artifact_extraction.ArtifactExtraction.test_markdown_paper_id_remains_authoritative) (label='Paper_ID:', value='')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-artifact-extraction/tests/regression/test_artifact_extraction.py", line 372, in test_markdown_paper_id_remains_authoritative
+    self.assertEqual(outcome(checks, "Teamly has >= 6"), value == "1910.10683", checks)
+AssertionError: True != False : {'Research Paper Tracker space exists': (True, "Spaces: [('RPT', 'Research Paper Tracker')]"), 'Teamly has >= 6 paper pages': (True, "Matched paper ids: ['1409.0473', '1706.03762', '1810.04805', '1910.10683', '2005.14165', '2009.06732'] across 8 pages"), 'Teamly tracker has >=6 paper pages with correct Category/Source': (False, "Source=Both on 5/6 pages, anchored Category ok: ['1706.03762', '2009.06732']"), 'Teamly pages carry expected Category on all 6 papers': (False, "Correct Category on ['1409.0473', '1706.03762', '1910.10683', '2005.14165', '2009.06732']")}
+
+======================================================================
+FAIL: test_markdown_paper_id_remains_authoritative (test_artifact_extraction.ArtifactExtraction.test_markdown_paper_id_remains_authoritative) (label='`Paper_ID`:', value='9999.99999')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-artifact-extraction/tests/regression/test_artifact_extraction.py", line 372, in test_markdown_paper_id_remains_authoritative
+    self.assertEqual(outcome(checks, "Teamly has >= 6"), value == "1910.10683", checks)
+AssertionError: True != False : {'Research Paper Tracker space exists': (True, "Spaces: [('RPT', 'Research Paper Tracker')]"), 'Teamly has >= 6 paper pages': (True, "Matched paper ids: ['1409.0473', '1706.03762', '1810.04805', '1910.10683', '2005.14165', '2009.06732'] across 8 pages"), 'Teamly tracker has >=6 paper pages with correct Category/Source': (False, "Source=Both on 5/6 pages, anchored Category ok: ['1706.03762', '2009.06732']"), 'Teamly pages carry expected Category on all 6 papers': (False, "Correct Category on ['1409.0473', '1706.03762', '1910.10683', '2005.14165', '2009.06732']")}
+
+======================================================================
+FAIL: test_markdown_paper_id_remains_authoritative (test_artifact_extraction.ArtifactExtraction.test_markdown_paper_id_remains_authoritative) (label='`Paper_ID`:', value='invalid')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-artifact-extraction/tests/regression/test_artifact_extraction.py", line 372, in test_markdown_paper_id_remains_authoritative
+    self.assertEqual(outcome(checks, "Teamly has >= 6"), value == "1910.10683", checks)
+AssertionError: True != False : {'Research Paper Tracker space exists': (True, "Spaces: [('RPT', 'Research Paper Tracker')]"), 'Teamly has >= 6 paper pages': (True, "Matched paper ids: ['1409.0473', '1706.03762', '1810.04805', '1910.10683', '2005.14165', '2009.06732'] across 8 pages"), 'Teamly tracker has >=6 paper pages with correct Category/Source': (False, "Source=Both on 5/6 pages, anchored Category ok: ['1706.03762', '2009.06732']"), 'Teamly pages carry expected Category on all 6 papers': (False, "Correct Category on ['1409.0473', '1706.03762', '1910.10683', '2005.14165', '2009.06732']")}
+
+======================================================================
+FAIL: test_markdown_paper_id_remains_authoritative (test_artifact_extraction.ArtifactExtraction.test_markdown_paper_id_remains_authoritative) (label='`Paper_ID`:', value='')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-artifact-extraction/tests/regression/test_artifact_extraction.py", line 372, in test_markdown_paper_id_remains_authoritative
+    self.assertEqual(outcome(checks, "Teamly has >= 6"), value == "1910.10683", checks)
+AssertionError: True != False : {'Research Paper Tracker space exists': (True, "Spaces: [('RPT', 'Research Paper Tracker')]"), 'Teamly has >= 6 paper pages': (True, "Matched paper ids: ['1409.0473', '1706.03762', '1810.04805', '1910.10683', '2005.14165', '2009.06732'] across 8 pages"), 'Teamly tracker has >=6 paper pages with correct Category/Source': (False, "Source=Both on 5/6 pages, anchored Category ok: ['1706.03762', '2009.06732']"), 'Teamly pages carry expected Category on all 6 papers': (False, "Correct Category on ['1409.0473', '1706.03762', '1910.10683', '2005.14165', '2009.06732']")}
+
+======================================================================
+FAIL: test_menu_weekday_identity_and_chronological_adjacency (test_artifact_extraction.ArtifactExtraction.test_menu_weekday_identity_and_chronological_adjacency) (shape='wrapped', mode='shuffled')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-artifact-extraction/tests/regression/test_artifact_extraction.py", line 398, in test_menu_weekday_identity_and_chronological_adjacency
+    self.assertEqual(all(v[0] for v in checks.values()), mode in ["valid", "shuffled"], checks)
+AssertionError: False != True : {'evidence_based_menus has 5 day entries': (True, 'found 5'), 'No two consecutive days share the same lunch category': (False, "lunch categories: ['горячее', 'салат', 'салат', 'гарнир', 'горячее']")}
+
+======================================================================
+FAIL: test_menu_weekday_identity_and_chronological_adjacency (test_artifact_extraction.ArtifactExtraction.test_menu_weekday_identity_and_chronological_adjacency) (shape='wrapped', mode='duplicate_day')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-artifact-extraction/tests/regression/test_artifact_extraction.py", line 398, in test_menu_weekday_identity_and_chronological_adjacency
+    self.assertEqual(all(v[0] for v in checks.values()), mode in ["valid", "shuffled"], checks)
+AssertionError: True != False : {'evidence_based_menus has 5 day entries': (True, 'found 5'), 'No two consecutive days share the same lunch category': (True, "lunch categories: ['горячее', 'гарнир', 'салат', 'горячее', 'салат']")}
+
+======================================================================
+FAIL: test_menu_weekday_identity_and_chronological_adjacency (test_artifact_extraction.ArtifactExtraction.test_menu_weekday_identity_and_chronological_adjacency) (shape='wrapped', mode='missing_day_label')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-artifact-extraction/tests/regression/test_artifact_extraction.py", line 398, in test_menu_weekday_identity_and_chronological_adjacency
+    self.assertEqual(all(v[0] for v in checks.values()), mode in ["valid", "shuffled"], checks)
+AssertionError: True != False : {'evidence_based_menus has 5 day entries': (True, 'found 5'), 'No two consecutive days share the same lunch category': (True, "lunch categories: ['горячее', 'гарнир', 'салат', 'горячее', 'салат']")}
+
+======================================================================
+FAIL: test_menu_weekday_identity_and_chronological_adjacency (test_artifact_extraction.ArtifactExtraction.test_menu_weekday_identity_and_chronological_adjacency) (shape='list', mode='shuffled')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-artifact-extraction/tests/regression/test_artifact_extraction.py", line 398, in test_menu_weekday_identity_and_chronological_adjacency
+    self.assertEqual(all(v[0] for v in checks.values()), mode in ["valid", "shuffled"], checks)
+AssertionError: False != True : {'evidence_based_menus has 5 day entries': (True, 'found 5'), 'No two consecutive days share the same lunch category': (False, "lunch categories: ['горячее', 'салат', 'салат', 'гарнир', 'горячее']")}
+
+======================================================================
+FAIL: test_menu_weekday_identity_and_chronological_adjacency (test_artifact_extraction.ArtifactExtraction.test_menu_weekday_identity_and_chronological_adjacency) (shape='list', mode='duplicate_day')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-artifact-extraction/tests/regression/test_artifact_extraction.py", line 398, in test_menu_weekday_identity_and_chronological_adjacency
+    self.assertEqual(all(v[0] for v in checks.values()), mode in ["valid", "shuffled"], checks)
+AssertionError: True != False : {'evidence_based_menus has 5 day entries': (True, 'found 5'), 'No two consecutive days share the same lunch category': (True, "lunch categories: ['горячее', 'гарнир', 'салат', 'горячее', 'салат']")}
+
+======================================================================
+FAIL: test_menu_weekday_identity_and_chronological_adjacency (test_artifact_extraction.ArtifactExtraction.test_menu_weekday_identity_and_chronological_adjacency) (shape='list', mode='missing_day_label')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/cowork-fix-artifact-extraction/tests/regression/test_artifact_extraction.py", line 398, in test_menu_weekday_identity_and_chronological_adjacency
+    self.assertEqual(all(v[0] for v in checks.values()), mode in ["valid", "shuffled"], checks)
+AssertionError: True != False : {'evidence_based_menus has 5 day entries': (True, 'found 5'), 'No two consecutive days share the same lunch category': (True, "lunch categories: ['горячее', 'гарнир', 'салат', 'горячее', 'салат']")}
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.291s
+
+FAILED (failures=16)

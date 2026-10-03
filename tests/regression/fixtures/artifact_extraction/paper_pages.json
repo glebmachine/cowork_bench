@@ -1,0 +1,82 @@
+[
+  {
+    "space_key": "RPT",
+    "title": "Batch Normalization: Accelerating Deep Network Training",
+    "body": "**Title:** Batch Normalization: Accelerating Deep Network Training\n**Paper_ID:** 1502.03167\n**Authors:** Sergey Ioffe, Christian Szegedy\n**Year:** 2015\n**Category:** Training Methods\n**Source:** Arxiv\n**Abstract_Summary:** Training deep neural networks is complicated by the fact that the distribution of each layer inputs changes during training. We propose batch normalization.",
+    "labels": [
+      "transformer",
+      "training-methods",
+      "arxiv"
+    ]
+  },
+  {
+    "space_key": "RPT",
+    "title": "Attention Is All You Need",
+    "body": "**Title:** Attention Is All You Need\n**Paper_ID:** 1706.03762\n**Authors:** Ashish Vaswani, Noam Shazeer, Niki Parmar\n**Year:** 2017\n**Category:** Architecture Design\n**Source:** Both\n**Abstract_Summary:** The dominant sequence transduction models are based on complex recurrent or convolutional neural networks. We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely.",
+    "labels": [
+      "transformer",
+      "architecture-design",
+      "both"
+    ]
+  },
+  {
+    "space_key": "RPT",
+    "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    "body": "**Title:** BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding\n**Paper_ID:** 1810.04805\n**Authors:** Jacob Devlin, Ming-Wei Chang, Kenton Lee\n**Year:** 2018\n**Category:** Architecture Design\n**Source:** Both\n**Abstract_Summary:** We introduce a new language representation model called BERT, designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context. The pre-trained model can be fine-tuned for various tasks.",
+    "labels": [
+      "transformer",
+      "architecture-design",
+      "both"
+    ]
+  },
+  {
+    "space_key": "RPT",
+    "title": "Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+    "body": "**Title:** Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer\n**Paper_ID:** 1910.10683\n**Authors:** Colin Raffel, Noam Shazeer, Adam Roberts\n**Year:** 2019\n**Category:** Architecture Design\n**Source:** Both\n**Abstract_Summary:** We introduce T5, an encoder-decoder Transformer architecture whose unified design converts all text-based language problems into a text-to-text format. The architecture of the model -- its layer structure and attention mechanism -- is the central contribution of this work.",
+    "labels": [
+      "transformer",
+      "architecture-design",
+      "both"
+    ]
+  },
+  {
+    "space_key": "RPT",
+    "title": "Language Models are Few-Shot Learners",
+    "body": "**Title:** Language Models are Few-Shot Learners\n**Paper_ID:** 2005.14165\n**Authors:** Tom B. Brown, Benjamin Mann, Nick Ryder\n**Year:** 2020\n**Category:** Training Methods\n**Source:** Both\n**Abstract_Summary:** We demonstrate that scaling up language models greatly improves task-agnostic, few-shot performance, sometimes even reaching competitiveness with prior state-of-the-art fine-tuning approaches. We train GPT-3, a Transformer-based language model with 175 billion parameters, and evaluate its performance in the few-shot setting.",
+    "labels": [
+      "transformer",
+      "training-methods",
+      "both"
+    ]
+  },
+  {
+    "space_key": "RPT",
+    "title": "Efficient Transformers: A Survey",
+    "body": "**Title:** Efficient Transformers: A Survey\n**Paper_ID:** 2009.06732\n**Authors:** Yi Tay, Mostafa Dehghani, Dara Bahri\n**Year:** 2020\n**Category:** Survey\n**Source:** Both\n**Abstract_Summary:** Transformers have been the driving force behind many recent advances in NLP. This paper provides a comprehensive survey and review of efficient transformer architectures, giving an overview of methods that reduce the computational and memory complexity of transformers.",
+    "labels": [
+      "transformer",
+      "survey",
+      "both"
+    ]
+  },
+  {
+    "space_key": "RPT",
+    "title": "Neural Machine Translation by Jointly Learning to Align and Translate",
+    "body": "**Title:** Neural Machine Translation by Jointly Learning to Align and Translate\n**Paper_ID:** 1409.0473\n**Authors:** Dzmitry Bahdanau, Kyunghyun Cho, Yoshua Bengio\n**Year:** 2014\n**Category:** Applications\n**Source:** Scholarly\n**Abstract_Summary:** Neural machine translation is a recently proposed approach to the machine translation task. We conjecture that the use of a fixed-length vector is a bottleneck and propose to automatically search for parts of a source sentence that are relevant to predicting a target word. This soft attention markedly improves translation quality on standard benchmark translation tasks, with the largest gains on long sentences.",
+    "labels": [
+      "transformer",
+      "applications",
+      "scholarly"
+    ]
+  },
+  {
+    "space_key": "RPT",
+    "title": "Improving Neural Networks by Preventing Co-adaptation of Feature Detectors",
+    "body": "**Title:** Improving Neural Networks by Preventing Co-adaptation of Feature Detectors\n**Paper_ID:** 1207.00580\n**Authors:** Geoffrey E. Hinton, Nitish Srivastava\n**Year:** 2012\n**Category:** Applications\n**Source:** Arxiv\n**Abstract_Summary:** We describe a technique called dropout for addressing overfitting in neural networks.",
+    "labels": [
+      "transformer",
+      "applications",
+      "arxiv"
+    ]
+  }
+]
